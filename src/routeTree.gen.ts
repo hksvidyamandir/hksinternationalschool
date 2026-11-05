@@ -10,33 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AcademicsRouteImport } from './routes/academics'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
+import { Route as BoardingRouteImport } from './routes/boarding'
+import { Route as CampusRouteImport } from './routes/campus'
+import { Route as CampusLifeRouteImport } from './routes/campus-life'
+import { Route as CompetitiveExamsRouteImport } from './routes/competitive-exams'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ExperientialLearningRouteImport } from './routes/experiential-learning'
+import { Route as LeadershipRouteImport } from './routes/leadership'
+import { Route as SportsRouteImport } from './routes/sports'
+import { Route as WhyHksRouteImport } from './routes/why-hks'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsRoute = AcademicsRouteImport.update({
+  id: '/academics',
+  path: '/academics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoardingRoute = BoardingRouteImport.update({
+  id: '/boarding',
+  path: '/boarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusRoute = CampusRouteImport.update({
+  id: '/campus',
+  path: '/campus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusLifeRoute = CampusLifeRouteImport.update({
+  id: '/campus-life',
+  path: '/campus-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompetitiveExamsRoute = CompetitiveExamsRouteImport.update({
+  id: '/competitive-exams',
+  path: '/competitive-exams',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperientialLearningRoute = ExperientialLearningRouteImport.update({
+  id: '/experiential-learning',
+  path: '/experiential-learning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportsRoute = SportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhyHksRoute = WhyHksRouteImport.update({
+  id: '/why-hks',
+  path: '/why-hks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/boarding': typeof BoardingRoute
+  '/campus': typeof CampusRoute
+  '/campus-life': typeof CampusLifeRoute
+  '/competitive-exams': typeof CompetitiveExamsRoute
+  '/contact': typeof ContactRoute
+  '/experiential-learning': typeof ExperientialLearningRoute
+  '/leadership': typeof LeadershipRoute
+  '/sports': typeof SportsRoute
+  '/why-hks': typeof WhyHksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/boarding': typeof BoardingRoute
+  '/campus': typeof CampusRoute
+  '/campus-life': typeof CampusLifeRoute
+  '/competitive-exams': typeof CompetitiveExamsRoute
+  '/contact': typeof ContactRoute
+  '/experiential-learning': typeof ExperientialLearningRoute
+  '/leadership': typeof LeadershipRoute
+  '/sports': typeof SportsRoute
+  '/why-hks': typeof WhyHksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academics': typeof AcademicsRoute
+  '/admissions': typeof AdmissionsRoute
+  '/boarding': typeof BoardingRoute
+  '/campus': typeof CampusRoute
+  '/campus-life': typeof CampusLifeRoute
+  '/competitive-exams': typeof CompetitiveExamsRoute
+  '/contact': typeof ContactRoute
+  '/experiential-learning': typeof ExperientialLearningRoute
+  '/leadership': typeof LeadershipRoute
+  '/sports': typeof SportsRoute
+  '/why-hks': typeof WhyHksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/boarding'
+    | '/campus'
+    | '/campus-life'
+    | '/competitive-exams'
+    | '/contact'
+    | '/experiential-learning'
+    | '/leadership'
+    | '/sports'
+    | '/why-hks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/boarding'
+    | '/campus'
+    | '/campus-life'
+    | '/competitive-exams'
+    | '/contact'
+    | '/experiential-learning'
+    | '/leadership'
+    | '/sports'
+    | '/why-hks'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academics'
+    | '/admissions'
+    | '/boarding'
+    | '/campus'
+    | '/campus-life'
+    | '/competitive-exams'
+    | '/contact'
+    | '/experiential-learning'
+    | '/leadership'
+    | '/sports'
+    | '/why-hks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AcademicsRoute: typeof AcademicsRoute
+  AdmissionsRoute: typeof AdmissionsRoute
+  BoardingRoute: typeof BoardingRoute
+  CampusRoute: typeof CampusRoute
+  CampusLifeRoute: typeof CampusLifeRoute
+  CompetitiveExamsRoute: typeof CompetitiveExamsRoute
+  ContactRoute: typeof ContactRoute
+  ExperientialLearningRoute: typeof ExperientialLearningRoute
+  LeadershipRoute: typeof LeadershipRoute
+  SportsRoute: typeof SportsRoute
+  WhyHksRoute: typeof WhyHksRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +208,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics': {
+      id: '/academics'
+      path: '/academics'
+      fullPath: '/academics'
+      preLoaderRoute: typeof AcademicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boarding': {
+      id: '/boarding'
+      path: '/boarding'
+      fullPath: '/boarding'
+      preLoaderRoute: typeof BoardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus': {
+      id: '/campus'
+      path: '/campus'
+      fullPath: '/campus'
+      preLoaderRoute: typeof CampusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-life': {
+      id: '/campus-life'
+      path: '/campus-life'
+      fullPath: '/campus-life'
+      preLoaderRoute: typeof CampusLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/competitive-exams': {
+      id: '/competitive-exams'
+      path: '/competitive-exams'
+      fullPath: '/competitive-exams'
+      preLoaderRoute: typeof CompetitiveExamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiential-learning': {
+      id: '/experiential-learning'
+      path: '/experiential-learning'
+      fullPath: '/experiential-learning'
+      preLoaderRoute: typeof ExperientialLearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sports': {
+      id: '/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof SportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-hks': {
+      id: '/why-hks'
+      path: '/why-hks'
+      fullPath: '/why-hks'
+      preLoaderRoute: typeof WhyHksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AcademicsRoute: AcademicsRoute,
+  AdmissionsRoute: AdmissionsRoute,
+  BoardingRoute: BoardingRoute,
+  CampusRoute: CampusRoute,
+  CampusLifeRoute: CampusLifeRoute,
+  CompetitiveExamsRoute: CompetitiveExamsRoute,
+  ContactRoute: ContactRoute,
+  ExperientialLearningRoute: ExperientialLearningRoute,
+  LeadershipRoute: LeadershipRoute,
+  SportsRoute: SportsRoute,
+  WhyHksRoute: WhyHksRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

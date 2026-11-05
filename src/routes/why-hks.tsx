@@ -9,7 +9,7 @@ export const Route = createFileRoute("/why-hks")({
 });
 
 const reasons = [
-  { t: "Academic excellence with global standards", i: img.prog_cbse ?? img.progCbse, pts: ["Strong foundation from early years", "Activity-based learning", "Practical understanding over rote memorisation", "Individual attention for every student"] },
+  { t: "Academic excellence with global standards", i: img.progCbse, pts: ["Strong foundation from early years", "Activity-based learning", "Practical understanding over rote memorisation", "Individual attention for every student"] },
   { t: "State-of-the-art infrastructure", i: img.infra1, pts: ["Smart classrooms", "Science, computer & robotics labs", "Library and reading spaces", "Spacious playgrounds and sports courts"] },
   { t: "Safe, caring residential campus", i: img.infra4, pts: ["Separate hostels with 24×7 supervision", "Nutritious, hygienic meals", "Supervised study hours", "Regular parent communication"] },
   { t: "Future-ready skills", i: img.campus2, pts: ["Coding, AI and app development", "NEET/JEE foundation from Grade 6", "Public speaking and leadership", "Financial literacy and life skills"] },
