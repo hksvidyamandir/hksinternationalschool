@@ -70,6 +70,7 @@
   --gradient-hero: linear-gradient(180deg, oklch(0.2 0.08 260 / 0.25) 0%, oklch(0.2 0.08 260 / 0.85) 100%);
   --gradient-flame: linear-gradient(90deg, var(--gold), var(--flame));
   --shadow-soft: 0 20px 50px -24px oklch(0.3 0.1 258 / 0.35);
+  --hero-doodle: oklch(1 0 0);
 }
 
 @layer base {
@@ -122,6 +123,24 @@
 .home-hero-photo { position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transition: opacity 900ms ease; z-index: -3; }
 .home-hero-photo.is-active { opacity: 1; }
 .home-hero-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, color-mix(in oklab, var(--navy) 88%, transparent), color-mix(in oklab, var(--navy) 8%, transparent)), linear-gradient(0deg, color-mix(in oklab, var(--navy) 75%, transparent), transparent 55%); }
+.home-hero-doodles { position: absolute; right: 1%; top: 8%; width: 49%; height: 78%; pointer-events: none; color: var(--hero-doodle); z-index: -1; }
+.home-hero-doodles svg { width: 100%; height: 100%; overflow: visible; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.home-doodle-stroke path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: home-doodle-draw 2.2s ease-in-out both; }
+.home-doodle-first path { animation-delay: .9s; }
+.home-doodle-first path:nth-child(2) { animation-delay: 1.3s; }
+.home-doodle-second path { animation-delay: 1.8s; }
+.home-doodle-second path:nth-child(2) { animation-delay: 2.1s; }
+.home-doodle-second path:nth-child(3) { animation-delay: 2.4s; }
+.home-doodle-third path { animation-delay: 2.7s; }
+.home-doodle-third path:nth-child(2) { animation-delay: 3s; }
+.home-hero-copy > * { animation: home-hero-reveal .8s ease-out both; }
+.home-hero-copy > :nth-child(1) { animation-delay: .15s; }
+.home-hero-copy > :nth-child(2) { animation-delay: .3s; }
+.home-hero-copy > :nth-child(3) { animation-delay: .65s; }
+.home-hero-copy > :nth-child(4) { animation-delay: .85s; }
+.home-hero.is-paused .home-doodle-stroke path, .home-hero.is-paused .home-hero-copy > * { animation-play-state: paused; }
+@keyframes home-doodle-draw { from { stroke-dashoffset: 1; opacity: 0; } 5% { opacity: 1; } to { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes home-hero-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 .home-hero-content { min-height: clamp(580px, 74svh, 840px); display: flex; flex-direction: column; justify-content: space-between; padding-block: 32px 24px; }
 .home-hero-top { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; text-transform: uppercase; }
 .home-hero-copy { padding-block: 56px 34px; }
@@ -316,6 +335,8 @@
   .home-hero-top > span:last-child { flex-shrink: 0; }
   .home-hero h1 { font-size: 46px; }
   .home-hero-copy { padding-block: 45px 30px; }
+  .home-hero-doodles { width: 220px; height: 184px; right: -28px; top: 4%; opacity: .65; }
+  .home-hero-doodles svg { stroke-width: 2.5; }
   .home-hero-script { font-size: 25px; min-height: 38px; }
   .home-hero-actions { gap: 20px; flex-wrap: wrap; margin-top: 22px; }
   .home-hero-actions .home-action { padding-inline: 16px; }
@@ -384,6 +405,8 @@
   .home-final > div > div { flex-direction: column; gap: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .home-doodle-stroke path { animation: none; stroke-dashoffset: 0; }
+  .home-hero-copy > * { animation: none; }
   .home-marquee { animation: none; }
   .home-hero-photo, .hks-home img, .home-orbit { transition: none; }
   .hks-home { scroll-behavior: auto; }
