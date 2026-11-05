@@ -12,3 +12,4 @@
 - Site nav and contact details live in src/lib/site.ts; every route builds head() via src/lib/seo.ts — keeps menu, footer and SEO consistent.
 - Scraped school photos are CDN asset pointers exposed through src/assets/site/index.ts — import `img` rather than raw files.
 - Homepage presentation and interactive sections live in a dedicated browser-safe site component with scoped global styles, keeping the index route focused on page metadata.
+- Hero line art lives in a decorative, browser-safe HeroDoodles component; slide changes replay CSS drawing sequences, and pause/reduced-motion settings apply to all hero effects.

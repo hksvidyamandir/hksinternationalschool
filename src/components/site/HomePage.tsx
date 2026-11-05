@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, ArrowLeft, ArrowRight, BookOpen, Heart, Sparkl
 import { Button } from "@/components/ui/button";
 import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
+import { HeroDoodles } from "./HeroDoodles";
 
 const banners = [
   { image: img.campus1, label: "A place to belong. A world to discover.", word: "Spread your wings.", caption: "CBSE day & residential school · Hassan" },
@@ -75,12 +76,13 @@ export function HomePage() {
   const activeBanner = banners[slide];
   if (!activeProgramme || !activeFamily || !activeGallery || !activeBanner) return null;
   return <div className="hks-home">
-    <section className="home-hero" aria-label="Welcome to HKS">
+    <section className={`home-hero ${paused ? "is-paused" : ""}`} aria-label="Welcome to HKS">
       {banners.map((banner, index) => <img key={banner.image} src={banner.image} alt={index === 0 ? "HKS International School campus in Hassan" : index === 1 ? "Learning at HKS International School" : "Sports and school life at HKS"} className={`home-hero-photo ${index === slide ? "is-active" : ""}`} fetchPriority={index === 0 ? "high" : "auto"} />)}
       <div className="home-hero-shade" />
+      <HeroDoodles key={slide} slide={slide} />
       <div className="container-site home-hero-content">
         <div className="home-hero-top"><span>{activeBanner.caption}</span><span>Since {SITE.founded}</span></div>
-        <div className="home-hero-copy"><p className="home-kicker">{activeBanner.label}</p><h1>HKS International<br />School</h1><p className="home-hero-script">{activeBanner.word}</p><div className="home-hero-actions"><Action to="/admissions" light>Admissions 2026–27</Action><Link to="/campus" className="home-text-link">Explore our world <ArrowUpRight size={18} /></Link></div></div>
+        <div key={slide} className="home-hero-copy"><p className="home-kicker">{activeBanner.label}</p><h1>HKS International<br />School</h1><p className="home-hero-script">{activeBanner.word}</p><div className="home-hero-actions"><Action to="/admissions" light>Admissions 2026–27</Action><Link to="/campus" className="home-text-link">Explore our world <ArrowUpRight size={18} /></Link></div></div>
         <div className="home-hero-bottom"><a href="#welcome" className="home-scroll"><ArrowDown size={18} /> Discover HKS</a><div className="home-slide-controls"><span>0{slide + 1} / 0{banners.length}</span><Button variant="ghost" size="icon" aria-label="Previous banner" onClick={() => setSlide(s => (s + banners.length - 1) % banners.length)}><ArrowLeft /></Button><Button variant="ghost" size="icon" aria-label={paused ? "Play banners" : "Pause banners"} onClick={() => setPaused(p => !p)}>{paused ? <Play /> : <Pause />}</Button><Button variant="ghost" size="icon" aria-label="Next banner" onClick={() => setSlide(s => (s + 1) % banners.length)}><ArrowRight /></Button></div></div>
       </div>
     </section>
