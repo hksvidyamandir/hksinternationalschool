@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Site nav and contact details live in src/lib/site.ts; every route builds head() via src/lib/seo.ts — keeps menu, footer and SEO consistent.
+- Scraped school photos are CDN asset pointers exposed through src/assets/site/index.ts — import `img` rather than raw files.
