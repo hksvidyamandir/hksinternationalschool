@@ -169,9 +169,9 @@ function Home() {
       {/* Achievers */}
       <Section tone="muted">
         <SectionHead eyebrow="Our pride" title="Achievers & campus moments" />
-        <div className="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
+        <div className="mt-12 columns-2 gap-4 md:columns-3">
           {[img.topper1, img.topper2, img.topper3, img.topper4, img.topper5, img.campus5].map((s, i) => (
-            <img key={i} src={s} alt="HKS International School students and achievers" loading="lazy" className={`w-full rounded-2xl object-cover ${i === 0 ? "md:row-span-2 h-full" : "aspect-[4/3]"}`} />
+            <img key={i} src={s} alt="HKS International School students and achievers" loading="lazy" className="mb-4 w-full rounded-2xl shadow-soft" />
           ))}
         </div>
       </Section>
