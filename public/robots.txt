@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://hksinternationalschool.in/sitemap.xml
+Sitemap: https://hksinternationalschool.lovable.app/sitemap.xml
