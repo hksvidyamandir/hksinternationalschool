@@ -12,7 +12,7 @@ export const Route = createFileRoute("/admissions")({
 
 const steps = [["Enquire", "Fill the enquiry form or call our admissions office."], ["Campus Visit", "Tour the campus and meet our team."], ["Application", "Submit the admission form with documents."], ["Interaction", "Age-appropriate interaction / assessment."], ["Confirmation", "Receive offer and complete fee payment."]];
 const ages = [["Nursery", "3+ years"], ["LKG", "4+ years"], ["UKG", "5+ years"], ["Grade 1", "6+ years"], ["Grade 2 onwards", "As per CBSE norms & previous class"]];
-const faqs = [
+const faqs: [string, string][] = [
   ["When do admissions open?", "Admissions for 2026–27 are open now for Nursery to Grade 12, subject to seat availability."],
   ["Do you offer boarding?", "Yes — full boarding and HKS Flexi-Boarding (weekday residential) programmes."],
   ["Is transport available?", "Yes, school buses cover Hassan city and surrounding areas."],
