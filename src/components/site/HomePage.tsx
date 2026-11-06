@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
 import { HeroFilm } from "./HeroFilm";
+import { FamilyStories } from "./FamilyStories";
 
 const programmes = [
   { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
@@ -41,10 +42,6 @@ const galleries = [
   { title: "Learning spaces", images: [img.infra1, img.infra2, img.infra3, img.infra4, img.infra5, img.infra6] },
   { title: "Our achievers", images: [img.topper1, img.topper2, img.topper3, img.topper4, img.topper5] },
 ];
-const families = [
-  { name: "Dr. Maimoona Arshi", role: "Parent of Abdul Majeeb", text: "HKSIS has excellent infrastructure in a serene environment, with highly qualified staff. Teachers always go that extra mile to bring out the best in every child. I would recommend this esteemed institution to anyone seeking all-round development.", short: "Every child’s potential matters." },
-  { name: "Mr. Kariappa", role: "Parent of Lakshitha", text: "HKS has provided a strong academic foundation supported by well-trained teachers. Concepts are explained clearly with personal attention, and there's a good balance of academics, sports and cultural activities. I feel I made a good decision.", short: "A strong foundation. A balanced childhood." },
-];
 
 function Heading({ label, title, text }: { label: string; title: string; text?: string }) {
   return <div className="home-heading"><span className="home-kicker">{label}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
@@ -56,12 +53,10 @@ function Action({ to, children, light = false }: { to: "/about" | "/academics" |
 export function HomePage() {
   const [programme, setProgramme] = useState(0);
   const [gallery, setGallery] = useState(0);
-  const [family, setFamily] = useState(0);
   const [community, setCommunity] = useState(0);
   const activeProgramme = programmes[programme];
-  const activeFamily = families[family];
   const activeGallery = galleries[gallery];
-  if (!activeProgramme || !activeFamily || !activeGallery) return null;
+  if (!activeProgramme || !activeGallery) return null;
   return <div className="hks-home">
     <HeroFilm />
 
@@ -89,7 +84,7 @@ export function HomePage() {
 
     <nav className="home-quicklinks" aria-label="Explore HKS"><div className="container-site">{[{ t: "Admissions", to: "/admissions" as const }, { t: "Curriculum", to: "/academics" as const }, { t: "Campus life", to: "/campus-life" as const }, { t: "Residential life", to: "/boarding" as const }].map(l => <Link key={l.t} to={l.to}>{l.t}<ArrowUpRight /></Link>)}</div></nav>
 
-    <section className="home-section home-families"><div className="container-site"><Heading label="Hear from our families" title="Their children. Their experiences." /><div className="home-family-layout"><div className="home-family-visual"><img src={img.primary} alt="HKS students learning together" loading="lazy" /><span className="home-family-stamp">The HKS<br />community<Heart size={22} /></span></div><div className="home-family-quote" aria-live="polite"><Quote size={42} /><h3>{activeFamily.short}</h3><blockquote>{activeFamily.text}</blockquote><div className="home-family-bottom"><div><strong>{activeFamily.name}</strong><small>{activeFamily.role}</small></div><div className="home-family-controls"><Button variant="outline" size="icon" aria-label="Previous parent story" onClick={() => setFamily(f => (f + families.length - 1) % families.length)}><ArrowLeft /></Button><Button variant="outline" size="icon" aria-label="Next parent story" onClick={() => setFamily(f => (f + 1) % families.length)}><ArrowRight /></Button></div></div></div></div></div></section>
+    <FamilyStories />
 
     <section className="home-stories"><div className="container-site"><Heading label="Our stories & experiences" title="Many ways to find your wings." /><div className="home-story-cards">{[{ image: img.acad3, title: "Curiosity in action", text: "A closer look at experiential learning.", to: "/experiential-learning" as const }, { image: img.campus4, title: "Confidence beyond the classroom", text: "Sport, teamwork and personal growth.", to: "/sports" as const }, { image: img.infra4, title: "A place to call home", text: "Discover the HKS residential programme.", to: "/boarding" as const }].map(p => <Link key={p.title} to={p.to}><img src={p.image} alt={p.title + " at HKS"} loading="lazy" /><div><ArrowUpRight /><h3>{p.title}</h3><p>{p.text}</p></div></Link>)}</div></div></section>
 

@@ -13,3 +13,4 @@
 - Scraped school photos are CDN asset pointers exposed through src/assets/site/index.ts — import `img` rather than raw files.
 - Homepage presentation and interactive sections live in a dedicated browser-safe site component with scoped global styles, keeping the index route focused on page metadata.
 - HeroFilm plays a CDN-hosted, pre-rendered looping photo-and-doodle film; caption and scene controls follow video time, and reduced-motion pauses autoplay.
+- FamilyStories owns the homepage testimonial cards and accessible reading dialogs; school photos are contextual imagery, not portraits of the quoted parents.
