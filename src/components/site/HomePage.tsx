@@ -6,6 +6,7 @@ import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
 import { HeroFilm } from "./HeroFilm";
 import { FamilyStories } from "./FamilyStories";
+import { useHomeMotion } from "@/hooks/use-home-motion";
 
 const programmes = [
   { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
@@ -51,13 +52,14 @@ function Action({ to, children, light = false }: { to: "/about" | "/academics" |
 }
 
 export function HomePage() {
+  const motionRef = useHomeMotion();
   const [programme, setProgramme] = useState(0);
   const [gallery, setGallery] = useState(0);
   const [community, setCommunity] = useState(0);
   const activeProgramme = programmes[programme];
   const activeGallery = galleries[gallery];
   if (!activeProgramme || !activeGallery) return null;
-  return <div className="hks-home">
+  return <div className="hks-home" ref={motionRef}>
     <HeroFilm />
 
     <div className="home-trust"><div className="home-marquee">{[0, 1].map(i => <div key={i} aria-hidden={i === 1}>{["CBSE curriculum", "Nursery to Grade 12", "Day & residential", "Hassan · Karnataka", "Learning since 2010"].map(text => <span key={text}>{text}<Sparkles size={18} /></span>)}</div>)}</div></div>
