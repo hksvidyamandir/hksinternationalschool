@@ -6,6 +6,8 @@ import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
 import { HeroFilm } from "./HeroFilm";
 import { FamilyStories } from "./FamilyStories";
+import { useHomeMotion } from "@/hooks/use-home-motion";
+import { ExperienceStories } from "./ExperienceStories";
 
 const programmes = [
   { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
@@ -51,13 +53,14 @@ function Action({ to, children, light = false }: { to: "/about" | "/academics" |
 }
 
 export function HomePage() {
+  const motionRef = useHomeMotion();
   const [programme, setProgramme] = useState(0);
   const [gallery, setGallery] = useState(0);
   const [community, setCommunity] = useState(0);
   const activeProgramme = programmes[programme];
   const activeGallery = galleries[gallery];
   if (!activeProgramme || !activeGallery) return null;
-  return <div className="hks-home">
+  return <div className="hks-home" ref={motionRef}>
     <HeroFilm />
 
     <div className="home-trust"><div className="home-marquee">{[0, 1].map(i => <div key={i} aria-hidden={i === 1}>{["CBSE curriculum", "Nursery to Grade 12", "Day & residential", "Hassan · Karnataka", "Learning since 2010"].map(text => <span key={text}>{text}<Sparkles size={18} /></span>)}</div>)}</div></div>
@@ -86,7 +89,7 @@ export function HomePage() {
 
     <FamilyStories />
 
-    <section className="home-stories"><div className="container-site"><Heading label="Our stories & experiences" title="Many ways to find your wings." /><div className="home-story-cards">{[{ image: img.acad3, title: "Curiosity in action", text: "A closer look at experiential learning.", to: "/experiential-learning" as const }, { image: img.campus4, title: "Confidence beyond the classroom", text: "Sport, teamwork and personal growth.", to: "/sports" as const }, { image: img.infra4, title: "A place to call home", text: "Discover the HKS residential programme.", to: "/boarding" as const }].map(p => <Link key={p.title} to={p.to}><img src={p.image} alt={p.title + " at HKS"} loading="lazy" /><div><ArrowUpRight /><h3>{p.title}</h3><p>{p.text}</p></div></Link>)}</div></div></section>
+    <ExperienceStories />
 
     <section className="home-section home-location"><div className="container-site"><div className="home-section-top"><Heading label="Our home in Hassan" title="A world of learning. Closer to home." /><p>NH 75, Kenchattahalli<br />Hassan, Karnataka</p></div><div className="home-location-grid"><div className="home-location-photo"><img src={img.campus2} alt="HKS International School campus, Hassan" loading="lazy" /><div><MapPin /><h3>HKS International School</h3><a href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight size={17} /></a></div></div><iframe title="HKS International School location map" src={SITE.mapsEmbed} loading="lazy" /></div></div></section>
 
