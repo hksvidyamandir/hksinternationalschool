@@ -36,7 +36,7 @@ export function useHomeMotion() {
       elements.forEach(element => {
         element.classList.add("home-motion");
         const siblings = element.parentElement ? Array.from(element.parentElement.children) : [];
-        element.dataset.motionStep = String(siblings.indexOf(element) % 4);
+        element.dataset['motionStep'] = String(siblings.indexOf(element) % 4);
         // Never hide content already in view on hydration or preference changes.
         if (element.getBoundingClientRect().top < window.innerHeight * .94) {
           element.classList.add("home-motion-visible");
