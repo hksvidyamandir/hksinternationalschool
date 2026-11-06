@@ -46,6 +46,22 @@ export function useHomeMotion() {
     };
     setup();
     preference.addEventListener("change", setup);
+    let frame = 0;
+    // Fast scrolling and anchor jumps may skip the observer's visible region.
+    const revealPassed = () => {
+      if (frame || preference.matches) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        elements.forEach(element => {
+          if (element.classList.contains("home-motion-visible")) return;
+          if (element.getBoundingClientRect().top < window.innerHeight * .94) {
+            element.classList.add("home-motion-visible");
+            observer?.unobserve(element);
+          }
+        });
+      });
+    };
+    window.addEventListener("scroll", revealPassed, { passive: true });
     // Keyboard navigation must never focus a still-hidden control.
     const revealFocus = (event: FocusEvent) => {
       if (!(event.target instanceof Element)) return;
@@ -56,6 +72,8 @@ export function useHomeMotion() {
       observer?.disconnect();
       preference.removeEventListener("change", setup);
       root.removeEventListener("focusin", revealFocus);
+      window.removeEventListener("scroll", revealPassed);
+      window.cancelAnimationFrame(frame);
     };
   }, []);
   return ref;
