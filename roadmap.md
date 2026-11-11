@@ -7,3 +7,4 @@
 - [x] Apply the supplied logo and palette across the site and verify the logo, browser icon and mobile layout.
 - [x] Improve colour balance, text contrast, reading sizes and mobile controls; verify navigation and phone layouts.- [x] Remove all Hassan mentions site-wide.
 - [x] Make the logo horizontal in header and footer.
+- [x] Refine phone and tablet layouts across the site; verify navigation, programme selection, story dialogs and contact form sizing.

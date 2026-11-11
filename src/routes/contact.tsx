@@ -23,11 +23,11 @@ function Contact() {
     <>
       <PageHero crumb="Contact" eyebrow="Get in touch" title="We'd love to welcome you" intro="Education for a better tomorrow — reach out, visit, or send us an enquiry." image={img.infra5} />
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div className="min-w-0 space-y-4">
             {cards.map((c) => {
-              const inner = (<><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cream text-primary">{c.i}</span><span><span className="block text-sm font-bold uppercase tracking-wider text-flame">{c.t}</span><span className="block text-navy font-semibold break-words">{c.v}</span></span></>);
-              return c.h ? <a key={c.t} href={c.h} target={c.h.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="flex gap-4 rounded-2xl border border-border bg-card p-5 hover:shadow-soft transition">{inner}</a> : <div key={c.t} className="flex gap-4 rounded-2xl border border-border bg-card p-5">{inner}</div>;
+              const inner = (<><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-cream text-primary">{c.i}</span><span className="min-w-0"><span className="block text-sm font-bold uppercase tracking-wider text-flame">{c.t}</span><span className="block text-navy font-semibold [overflow-wrap:anywhere]">{c.v}</span></span></>);
+              return c.h ? <a key={c.t} href={c.h} target={c.h.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 rounded-2xl border border-border bg-card p-5 hover:shadow-soft transition">{inner}</a> : <div key={c.t} className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 rounded-2xl border border-border bg-card p-5">{inner}</div>;
             })}
           </div>
           <EnquiryForm title="Send us a message" />

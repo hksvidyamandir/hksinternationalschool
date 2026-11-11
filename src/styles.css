@@ -1045,3 +1045,80 @@
 @media (max-width: 760px) { .final-card { padding: 44px 16px; } .final-actions { gap: 10px; } .final-btn { width: auto; flex: 1 1 0; min-width: 0; padding: 0 12px; font-size: 13px; white-space: normal; text-align: center; min-height: 50px; } .final-btn svg { display: none; } }
 .home-final > div > .final-card { display: block; margin-top: 0; }
 .home-final .final-card > p { margin-top: 16px; }
+
+/* Phone and tablet refinements; retain each section's established layout. */
+@media (max-width: 1199px) {
+  .curr-track { min-width: 0; }
+  .curr-card:not(.is-active) h3 { writing-mode: vertical-rl; rotate: 180deg; }
+}
+@media (max-width: 767px) {
+  section[id], [role="tabpanel"] { scroll-margin-top: 96px; }
+  .hks-home h2 { font-size: 30px; line-height: 1.2; overflow-wrap: break-word; }
+  .hks-home h3, .hks-home p { overflow-wrap: break-word; }
+  .home-hero-film .home-hero-content { min-height: max(480px, calc(88svh - 80px)); }
+  .home-hero-film .home-hero-top { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
+  .home-hero-top h1 { min-width: 0; }
+  .home-film-caption .home-hero-script { font-size: 32px; }
+  .home-hero-film .home-hero-bottom { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 8px; }
+  .home-hero-film .home-hero-bottom .home-action { grid-column: 1 / -1; grid-row: 1; }
+  .home-hero-film .home-scroll { font-size: 11px; gap: 6px; min-width: 0; }
+  .home-hero-film .home-slide-controls { gap: 4px; }
+  .home-hero-film .home-slide-controls > span { font-size: 10px; margin-right: 2px; }
+  .home-hero-film .home-slide-controls button { width: 44px; height: 44px; }
+  .hks-home .home-programme-orbits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 22px; padding-inline: 10px; margin-bottom: 52px; }
+  .hks-home .home-orbit { min-width: 0; padding: 20px 10px; }
+  .hks-home .home-orbit > span { font-size: 17px; line-height: 1.25; }
+  .hks-home .home-orbit small { font-size: 10px; line-height: 1.4; padding: 4px 7px; }
+  .hks-home .home-orbit.is-active { scale: 1.03; }
+  .home-programme-detail > img { aspect-ratio: 4 / 3; object-fit: cover; }
+  .home-programme-detail > div { padding: 24px 20px; min-width: 0; }
+  .home-action { max-width: 100%; height: auto; min-height: 48px; padding-block: 12px; white-space: normal; text-align: center; }
+  .home-action svg { flex-shrink: 0; margin-left: 6px; }
+  .curr-card:not(.is-active) h3 { writing-mode: horizontal-tb; rotate: none; }
+  .curr-card.is-active .curr-body { padding: 24px; }
+  .curr-dots button { position: relative; }
+  .curr-dots button::after { content: ""; position: absolute; inset: -17px -5px; }
+  .pil-head, .evc-copy, .exp-head > div { min-width: 0; }
+  .pur-section, .val-section, .evc-section, .win-section, .exp-section, .loc-section, .fam-section { padding-block: 56px; }
+  .val-card { gap: 14px; padding: 20px 16px; }
+  .val-icon { flex-shrink: 0; width: 48px; height: 48px; }
+  .val-card > div { min-width: 0; }
+  .evc-panel { padding: 28px 20px 64px; gap: 28px; }
+  .evc-copy h3 { font-size: 32px; }
+  .evc-date { letter-spacing: 0; }
+  .win-tile { min-width: 0; aspect-ratio: 1; }
+  .win-label { gap: 7px; font-size: 11px; letter-spacing: 0; padding-right: 10px; }
+  .win-label svg { display: none; }
+  .win-head p { letter-spacing: 0; line-height: 1.6; }
+  .qk-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .qk-tile { min-width: 0; letter-spacing: 0; }
+  .exp-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .exp-toggle { justify-self: start; }
+  .exp-toggle button { min-height: 44px; }
+  .exp-grid { grid-template-columns: minmax(0, 1fr); }
+  .exp-card { min-width: 0; }
+  .exp-title { font-size: 20px; letter-spacing: 0; line-height: 1.15; }
+  .exp-title strong { font-size: 30px; letter-spacing: 0; }
+  .fam-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+  .fam-foot small { min-width: 0; }
+  .fam-open { flex-shrink: 0; }
+  .fam-all { max-width: 100%; padding-inline: 20px; white-space: normal; letter-spacing: 0; }
+  .home-tour h2 { font-size: 34px; }
+  .home-tour p br { display: none; }
+  .home-final .final-card h2 { font-size: 30px; }
+  .home-final .final-card p { font-size: 14px; }
+  .final-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .final-btn { padding: 12px 8px; line-height: 1.45; font-size: 12px; }
+  .final-badge { max-width: 100%; font-size: 11px; letter-spacing: 0; padding-inline: 12px; }
+  .final-dot { flex-shrink: 0; }
+  .family-story-dialog { max-height: calc(100dvh - 32px); overflow-y: auto; }
+  footer a[aria-label="Chat on WhatsApp"] { width: 48px; height: 48px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 359px) {
+  .home-hero-film .home-slide-controls > span { display: none; }
+  .hks-home .home-orbit > span { font-size: 15px; }
+  .hks-home .home-orbit > em { width: 26px; height: 26px; top: 0; }
+  .home-beyond-grid { gap: 12px; }
+  .home-beyond-grid h3 { font-size: 15px; }
+  .home-beyond-grid a > div > span { display: none; }
+}
