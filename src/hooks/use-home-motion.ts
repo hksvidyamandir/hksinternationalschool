@@ -16,7 +16,7 @@ export function useHomeMotion() {
       ".home-beyond-grid > a", ".home-community-story", ".home-gallery-columns > figure",
       ".home-quicklinks a", ".family-story-card", ".home-story-cards > a",
       ".home-location-grid > *", ".home-tour > .container-site", ".home-final > .container-site",
-      ".experience-heading", ".experience-card",
+      ".experience-heading", ".curr-stage", ".experience-card",
     ].join(", ");
     const elements = Array.from(root.querySelectorAll<HTMLElement>(selectors));
     const setup = () => {
