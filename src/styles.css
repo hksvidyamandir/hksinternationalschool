@@ -975,3 +975,4 @@
 @media (max-width: 1024px) { .exp-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .exp-grid { grid-template-columns: 1fr; } .exp-card { aspect-ratio: 4/5; } }
 @media (prefers-reduced-motion: reduce) { .exp-card, .exp-doodle, .exp-play { animation: none; } .exp-card, .exp-card img { transition: none; } }
+.exp-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 390px)); justify-content: center; }
