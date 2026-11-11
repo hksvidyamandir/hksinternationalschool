@@ -12,22 +12,21 @@ const stories = [
 export function FamilyStories() {
   const [selected, setSelected] = useState<number | null>(null);
   const story = selected === null ? undefined : stories[selected];
-  return <section className="home-section home-family-stories" aria-labelledby="family-stories-heading">
+  return <section className="fam-section" aria-labelledby="family-stories-heading">
+    <img className="fam-bg" src={img.campus1} alt="" aria-hidden="true" loading="lazy" />
     <div className="container-site">
-      <div className="home-section-top">
-        <div className="home-heading"><span className="home-kicker">Hear from our families</span><h2 id="family-stories-heading">Experiences that speak<br />for themselves.</h2></div>
-        <span className="family-stories-label"><Heart size={16} /> Parent voices</span>
+      <div className="fam-head"><Quote className="fam-mark" aria-hidden="true" /><span className="home-kicker">Hear from our families</span><h2 id="family-stories-heading">Families <em>Speak</em></h2><p>Experiences that speak for themselves.</p></div>
+      <div className="fam-grid">
+        {stories.map((item, index) => <article key={item.name} className="fam-card" data-motion-step={index}>
+          <div className="fam-photo"><img src={item.image} alt="Students together at HKS International School" loading="lazy" /><span className="fam-quote"><Quote size={20} /></span></div>
+          <div className="fam-body">
+            <p className="fam-snippet">“{item.text.split(". ")[0]}.”</p>
+            <h3>{item.name}</h3>
+            <div className="fam-foot"><small><Heart size={14} /> {item.role}</small><Button variant="ghost" className="fam-open" onClick={() => setSelected(index)} aria-label={`Read ${item.name}’s parent story`}><ArrowUpRight /></Button></div>
+          </div>
+        </article>)}
       </div>
-      <div className="family-stories-grid">
-        {stories.map((item, index) => <Button key={item.name} variant="ghost" className="family-story-card" onClick={() => setSelected(index)} aria-label={`Read ${item.name}’s parent story`}>
-          <img src={item.image} alt="Students together at HKS International School" loading="lazy" />
-          <span className="family-story-shade" />
-          <span className="family-story-headline">{item.title}<strong>{item.emphasis}</strong></span>
-          <span className="family-story-doodles" aria-hidden="true"><Sparkles /><Heart /></span>
-          <span className="family-story-open"><Quote size={23} /></span>
-          <span className="family-story-person"><strong>{item.name}</strong><small>{item.role}</small><span>Read their story <ArrowUpRight size={16} /></span></span>
-        </Button>)}
-      </div>
+      <div className="fam-cta"><Button className="fam-all" onClick={() => setSelected(0)}><Sparkles size={16} /> Read all testimonials</Button></div>
     </div>
     <Dialog open={Boolean(story)} onOpenChange={open => { if (!open) setSelected(null); }}>
       <DialogContent className="family-story-dialog">
