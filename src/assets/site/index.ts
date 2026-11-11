@@ -16,7 +16,7 @@ import infra4A from "./infra4.asset.json";
 import infra5A from "./infra5.asset.json";
 import infra6A from "./infra6.asset.json";
 import logoA from "./vidyamandir-logo.png.asset.json";
-import logoFullA from "./vidyamandir-logo.png.asset.json";
+import logoFullA from "./logo-horizontal.png.asset.json";
 import middleA from "./middle.asset.json";
 import primaryA from "./primary.asset.json";
 import progCbseA from "./prog-cbse.asset.json";
