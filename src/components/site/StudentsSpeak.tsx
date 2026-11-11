@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { img } from "@/assets/site";
 
-const voices = [
+export const voices = [
   { name: "Ananya R.", grade: "Grade 10 student", image: img.campus2, text: "My teachers explain every concept until it really clicks. The labs and projects make science my favourite subject, and I feel ready for my board exams." },
   { name: "Rohan K.", grade: "Grade 8 student", image: img.campus4, text: "Sports practice every evening has made me fitter and more confident. I captained our team this year and learnt how to lead others." },
   { name: "Diya S.", grade: "Grade 12 student", image: img.progSenior, text: "The NEET foundation classes alongside regular CBSE studies saved me so much time. Mentors guide us patiently and track our progress closely." },

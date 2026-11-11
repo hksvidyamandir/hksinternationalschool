@@ -940,3 +940,38 @@
 .stu-prev { left: -22px; } .stu-next { right: -22px; }
 @media (max-width: 1024px) { .stu-track { grid-auto-columns: calc((100% - 28px) / 2); } }
 @media (max-width: 640px) { .stu-track { grid-auto-columns: 85%; } .stu-prev { left: -6px; } .stu-next { right: -6px; } }
+/* Experiences that speak (families) */
+.exp-section { padding: clamp(72px, 9vw, 120px) 0; background: var(--background); }
+.exp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.exp-head .home-kicker { color: var(--gold); }
+.exp-head h2 { font-size: clamp(30px, 4vw, 48px); color: var(--navy); margin-top: 8px; line-height: 1.1; }
+.exp-head h2 em { color: var(--teal, var(--accent)); }
+.exp-toggle { display: inline-flex; padding: 5px; border-radius: 999px; background: color-mix(in oklab, var(--navy) 7%, var(--background)); border: 1px solid color-mix(in oklab, var(--navy) 10%, transparent); }
+.exp-toggle button { padding: 10px 22px; border-radius: 999px; font-size: 14px; font-weight: 800; color: var(--navy); transition: background .3s, color .3s; }
+.exp-toggle button.is-active { background: var(--gold); color: var(--navy); box-shadow: 0 8px 18px -10px color-mix(in oklab, var(--gold) 90%, transparent); }
+.exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
+.exp-card { position: relative; display: block; aspect-ratio: 3/4; border-radius: 22px; overflow: hidden; isolation: isolate; text-align: left; color: var(--navy-foreground); cursor: pointer; box-shadow: 0 26px 50px -30px color-mix(in oklab, var(--navy) 80%, transparent); animation: exp-in .7s cubic-bezier(.2,.7,.2,1) both; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+@keyframes exp-in { from { opacity: 0; transform: translateY(26px); } }
+.exp-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.exp-shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, color-mix(in oklab, var(--ink, var(--navy)) 78%, transparent) 0%, color-mix(in oklab, var(--ink, var(--navy)) 30%, transparent) 45%, color-mix(in oklab, var(--ink, var(--navy)) 85%, transparent) 100%); }
+.exp-card:hover, .exp-card:focus-visible { transform: translateY(-8px); }
+.exp-card:hover img, .exp-card:focus-visible img { transform: scale(1.08); }
+.exp-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.exp-title { position: absolute; top: 26px; left: 20px; right: 20px; text-align: center; font-family: var(--font-body, inherit); font-weight: 800; text-transform: uppercase; font-size: clamp(20px, 2vw, 26px); line-height: 1; letter-spacing: .01em; }
+.exp-title strong { display: block; font-size: 1.75em; margin-top: 6px; color: var(--gold); letter-spacing: -.01em; }
+.exp-doodle { position: absolute; color: var(--navy-foreground); opacity: .9; }
+.exp-doodle svg { width: 30px; height: 30px; stroke-width: 1.5; }
+.exp-doodle-a { left: 14%; top: 46%; animation: exp-twinkle 3s ease-in-out infinite; }
+.exp-doodle-b { right: 14%; top: 52%; animation: exp-twinkle 3.6s ease-in-out infinite .8s; }
+@keyframes exp-twinkle { 50% { transform: scale(1.2) rotate(10deg); opacity: .5; } }
+.exp-play { position: absolute; left: 50%; top: 56%; translate: -50% -50%; width: 66px; height: 66px; display: grid; place-items: center; border-radius: 50%; background: var(--background); color: var(--gold); box-shadow: 0 0 0 0 color-mix(in oklab, var(--background) 60%, transparent); animation: exp-pulse 2.4s ease-out infinite; transition: transform .4s; }
+.exp-card:hover .exp-play { transform: scale(1.12); }
+@keyframes exp-pulse { 70% { box-shadow: 0 0 0 18px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+.exp-person { position: absolute; left: 20px; bottom: 20px; right: 70px; display: grid; gap: 2px; }
+.exp-person strong { font-size: 17px; }
+.exp-person small { font-size: 13px; color: color-mix(in oklab, var(--navy-foreground) 85%, transparent); }
+.exp-arrow { position: absolute; right: 18px; bottom: 18px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid color-mix(in oklab, var(--navy-foreground) 60%, transparent); transition: background .3s, color .3s, transform .4s; }
+.exp-card:hover .exp-arrow { background: var(--gold); color: var(--navy); border-color: var(--gold); transform: rotate(45deg); }
+@media (max-width: 1024px) { .exp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .exp-grid { grid-template-columns: 1fr; } .exp-card { aspect-ratio: 4/5; } }
+@media (prefers-reduced-motion: reduce) { .exp-card, .exp-doodle, .exp-play { animation: none; } .exp-card, .exp-card img { transition: none; } }
