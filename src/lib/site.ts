@@ -15,6 +15,14 @@ export const SITE = {
 };
 
 export type NavItem = { label: string; to: string; desc?: string };
+
+// The school's four learning verticals, shown above the main menu.
+export const VIDHYA: { label: string; dot: string }[] = [
+  { label: "Krishi Vidhya", dot: "bg-teal" },
+  { label: "Khel Vidhya", dot: "bg-gold" },
+  { label: "Anubhav Vidhya", dot: "bg-navy" },
+  { label: "Samskruti Vidhya", dot: "bg-foreground/40" },
+];
 export type NavGroup = { label: string; to: string; children?: NavItem[] };
 
 export const NAV: NavGroup[] = [
