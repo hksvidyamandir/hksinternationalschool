@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDown, Menu, Phone, Mail, X, MapPin } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
 import { img } from "@/assets/site";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -53,10 +54,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link to="/admissions" hash="enquire" className="hidden sm:inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-navy transition">Apply Now</Link>
-          <button className="lg:hidden rounded-md p-2 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
+          <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
+          <Button variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X /> : <Menu />}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -68,9 +69,9 @@ export function SiteHeader() {
               <div key={g.label} className="border-b border-border">
                 {g.children ? (
                   <>
-                    <button className="flex w-full items-center justify-between py-3 font-semibold" onClick={() => setExpanded(expanded === g.label ? null : g.label)}>
+                    <Button variant="ghost" className="flex h-auto min-h-12 w-full items-center justify-between px-0 py-3 font-semibold" aria-expanded={expanded === g.label} onClick={() => setExpanded(expanded === g.label ? null : g.label)}>
                       {g.label}<ChevronDown className={`h-4 w-4 transition ${expanded === g.label ? "rotate-180" : ""}`} />
-                    </button>
+                    </Button>
                     {expanded === g.label && (
                       <div className="pb-3 pl-3 space-y-1">
                         {g.children.map((c) => (
