@@ -8,4 +8,4 @@
 - [x] Improve colour balance, text contrast, reading sizes and mobile controls; verify navigation and phone layouts.- [x] Remove all Hassan mentions site-wide.
 - [x] Make the logo horizontal in header and footer.
 - [x] Refine phone and tablet layouts across the site; verify navigation, programme selection, story dialogs and contact form sizing.
-- [ ] Restore desktop presentation from 768px upward and verify mobile-only adjustments at 320–767px.
+- [x] Restore desktop presentation from 768px upward and verify mobile-only adjustments at 320–767px.
