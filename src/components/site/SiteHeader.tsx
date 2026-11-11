@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, Menu, Phone, Mail, X, MapPin } from "lucide-react";
-import { NAV, SITE } from "@/lib/site";
+import { NAV, SITE, VIDHYA } from "@/lib/site";
 import { img } from "@/assets/site";
 import { Button } from "@/components/ui/button";
 
@@ -35,10 +35,16 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">
-          <div className="flex items-center gap-5 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60">
+          <div className="flex flex-nowrap items-center gap-3 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60 xl:gap-5">
             <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli</span>
-            <span>CBSE · Nursery – Grade 12</span>
-            <span>Day & Residential</span>
+            {VIDHYA.map((v) => (
+              <span key={v.label} className="flex items-center gap-1.5 text-foreground/80">
+                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${v.dot}`} />
+                {v.label}
+              </span>
+            ))}
+            <span className="hidden xl:inline">CBSE · Nursery – Grade 12</span>
+            <span className="hidden xl:inline">Day & Residential</span>
             <span className="text-primary">Admissions Open 2026–27</span>
           </div>
         <nav aria-label="Main" className="flex items-center gap-0.5">
@@ -80,6 +86,15 @@ export function SiteHeader() {
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile" className="lg:hidden border-t border-border bg-card max-h-[calc(100dvh-5rem)] md:max-h-[75vh] overflow-y-auto overscroll-contain">
           <div className="container-site py-3">
+            <div className="flex flex-wrap items-center gap-1.5 pb-3">
+              <span className="flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground"><MapPin className="h-2.5 w-2.5 text-teal" />Kenchattahalli</span>
+              {VIDHYA.map((v) => (
+                <span key={v.label} className="flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                  <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${v.dot}`} />
+                  {v.label}
+                </span>
+              ))}
+            </div>
             <Link to="/" onClick={() => setOpen(false)} className="block py-3 font-semibold border-b border-border">Home</Link>
             {NAV.map((g) => (
               <div key={g.label} className="border-b border-border">
