@@ -28,10 +28,10 @@ const advantages = [
   { icon: Heart, title: "Care that counts", text: "Remedial and advanced support for different needs." },
 ];
 const pillars = [
-  { title: "Academic excellence", tag: "Think deeply", image: img.acad1, to: "/academics" as const },
-  { title: "Holistic development", tag: "Grow fully", image: img.campus4, to: "/sports" as const },
-  { title: "A caring community", tag: "Belong here", image: img.welcome, to: "/campus-life" as const },
-  { title: "Individual possibility", tag: "Become yourself", image: img.campus3, to: "/why-hks" as const },
+  { title: "Academic excellence", tag: "Think deeply", desc: "Concept-first CBSE learning, labs and mentoring that build sharp, curious minds.", image: img.acad1, to: "/academics" as const },
+  { title: "Holistic development", tag: "Grow fully", desc: "Sports, arts and leadership that shape confident, well-rounded children.", image: img.campus4, to: "/sports" as const },
+  { title: "A caring community", tag: "Belong here", desc: "Teachers, families and friends who know every child by name.", image: img.welcome, to: "/campus-life" as const },
+  { title: "Individual possibility", tag: "Become yourself", desc: "Personal attention that helps each learner find and follow their strengths.", image: img.campus3, to: "/why-hks" as const },
 ];
 const beyond = [
   { title: "Science & discovery", image: img.infra1, to: "/experiential-learning" as const },
@@ -75,7 +75,7 @@ export function HomePage() {
 
     <CurriculumShowcase />
 
-    <section className="home-section"><div className="container-site"><div className="home-section-top"><Heading label="The HKS pillars" title="A whole education. A whole person." /><p>Academic ambition, personal growth and a sense of belonging — the foundations beneath every HKS journey.</p></div><div className="home-pillar-grid">{pillars.map((p, i) => <Link key={p.title} to={p.to} className="home-pillar"><div><img src={p.image} alt={p.title + " at HKS"} loading="lazy" /><span>0{i + 1}<ArrowUpRight /></span></div><small>{p.tag}</small><h3>{p.title}</h3></Link>)}</div></div></section>
+    <section className="home-section pil-section"><div className="container-site"><div className="pil-head"><div><span className="home-kicker">Our purpose &amp; strengths</span><h2>The <em>HKS</em> Pillars</h2></div><p>At HKS, learning is grounded in <strong>Excellence, Growth and Community</strong>. These pillars shape an education that balances academic rigour with wellbeing, belonging and character.</p></div><div className="pil-grid">{pillars.map((p, i) => <Link key={p.title} to={p.to} className="pil-card" data-motion-step={i}><img src={p.image} alt={p.title + " at HKS"} loading="lazy" /><span className="pil-num">0{i + 1}</span><div className="pil-body"><small>{p.tag}</small><h3>{p.title}</h3><p>{p.desc}</p><span className="pil-more">Explore <ArrowUpRight /></span></div></Link>)}</div></div></section>
 
     <section className="home-purpose"><div className="container-site"><div className="home-purpose-title"><span className="home-kicker">Our purpose</span><h2>Dream it. Learn it.<br /><em>Achieve it.</em></h2></div><div className="home-purpose-statements"><article><span>01 / Our vision</span><p>To be a centre of excellence that nurtures globally competent, culturally rooted and compassionate citizens who lead with integrity.</p></article><article><span>02 / Our mission</span><p>To deliver accessible, holistic, high-quality education through concept-based learning, modern facilities and individual care for every learner.</p></article></div></div></section>
 
