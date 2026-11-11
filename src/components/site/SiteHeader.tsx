@@ -31,7 +31,7 @@ export function SiteHeader() {
 
       <div className="container-site flex h-20 lg:h-24 items-center justify-between gap-6">
         <Link to="/" aria-label="HKS International School home" className="shrink-0">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 sm:h-16 w-auto" width={421} height={290} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
         </Link>
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">

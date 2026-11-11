@@ -24,7 +24,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-muted text-foreground">
       <div className="container-site flex flex-wrap items-center justify-between gap-6 py-10">
         <Link to="/" aria-label="HKS International School home">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-16 w-auto" width={421} height={290} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 w-auto" width={449} height={165} />
         </Link>
         <div className="flex gap-2">
           <a href={SITE.phoneHref} aria-label="Call the school" className={social}><Phone className="h-4 w-4" /></a>

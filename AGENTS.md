@@ -11,7 +11,7 @@
 
 - Site nav and contact details live in src/lib/site.ts; every route builds head() via src/lib/seo.ts — keeps menu, footer and SEO consistent.
 - Scraped school photos are CDN asset pointers exposed through src/assets/site/index.ts — import `img` rather than raw files.
-- Both logo exports share the current uploaded CDN pointer; derive the local favicon from that logo, retaining exact artwork and transparency.
+- `img.logo` is the original stacked logo (favicon source); `img.logoFull` is a horizontal rearrangement of the same artwork pixels for header and footer.
 - Homepage presentation and interactive sections live in a dedicated browser-safe site component with scoped global styles, keeping the index route focused on page metadata.
 - HeroFilm plays a CDN-hosted, pre-rendered looping photo-and-doodle film; caption and scene controls follow video time, and reduced-motion pauses autoplay.
 - FamilyStories owns the homepage testimonial cards and accessible reading dialogs; school photos are contextual imagery, not portraits of the quoted parents.
