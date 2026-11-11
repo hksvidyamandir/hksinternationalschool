@@ -11,7 +11,7 @@ export function useHomeMotion() {
     const selectors = [
       ".home-heading", ".home-intro-heading", ".home-intro-grid > div",
       ".home-proof-grid > div", ".home-usp-grid > article", ".home-programme-orbits",
-      ".home-programme-detail", ".home-curriculum-grid > div", ".home-pillar", ".pil-head", ".pil-card", ".pur-head", ".pur-card", ".val-head", ".val-card", ".bey-head", ".bey-tile",
+      ".home-programme-detail", ".home-curriculum-grid > div", ".home-pillar", ".pil-head", ".pil-card", ".pur-head", ".pur-card", ".val-head", ".val-card", ".evc-head", ".evc-folders",
       ".home-purpose-title", ".home-purpose-statements > article", ".home-values-grid > div",
       ".home-beyond-grid > a", ".home-community-story", ".home-gallery-columns > figure",
       ".home-quicklinks a", ".family-story-card", ".home-story-cards > a",
