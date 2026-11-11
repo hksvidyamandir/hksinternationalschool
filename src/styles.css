@@ -635,3 +635,21 @@
 .hks-home .home-orbit.is-active::after, .hks-home .home-orbit:hover::after { opacity: 1; }
 @keyframes orbit-spin { to { rotate: 360deg; } }
 @media (prefers-reduced-motion: reduce) { .hks-home .home-orbit::after { animation: none; } }
+
+/* Programme bubbles: extra polish */
+.hks-home .home-programme-orbits { position: relative; }
+.hks-home .home-programme-orbits::before { content: ""; position: absolute; left: 6%; right: 6%; top: 50%; height: 2px; z-index: -1; background: repeating-linear-gradient(90deg, color-mix(in oklab, var(--teal) 60%, transparent) 0 10px, transparent 10px 20px); }
+.hks-home .home-orbit { --accent: var(--teal); box-shadow: 0 0 0 6px var(--background), 0 0 0 8px color-mix(in oklab, var(--accent) 45%, transparent), 0 30px 60px -22px color-mix(in oklab, var(--accent) 80%, transparent); transition: box-shadow .4s, scale .4s, background .3s, color .3s; }
+.hks-home .home-orbit:nth-child(1) { --accent: var(--gold); }
+.hks-home .home-orbit:nth-child(2) { --accent: var(--teal); }
+.hks-home .home-orbit:nth-child(3) { --accent: var(--primary); }
+.hks-home .home-orbit:nth-child(4) { --accent: var(--gold); }
+.hks-home .home-orbit::before { background: linear-gradient(160deg, color-mix(in oklab, var(--navy) 55%, transparent) 0%, color-mix(in oklab, var(--navy) 88%, transparent) 70%), radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--accent) 50%, transparent), transparent 60%); }
+.hks-home .home-orbit > em { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--accent); color: var(--background); letter-spacing: 0; font-size: 13px; position: absolute; top: 4%; right: 8%; box-shadow: 0 8px 18px -6px color-mix(in oklab, var(--accent) 90%, transparent); }
+.hks-home .home-orbit:nth-child(1) > em, .hks-home .home-orbit:nth-child(4) > em { color: var(--navy); }
+.hks-home .home-orbit > span { font-size: 25px; text-shadow: 0 2px 14px color-mix(in oklab, var(--navy) 60%, transparent); }
+.hks-home .home-orbit.is-active { scale: 1.08; box-shadow: 0 0 0 6px var(--background), 0 0 0 9px var(--gold), 0 36px 70px -20px color-mix(in oklab, var(--gold) 90%, transparent); }
+.hks-home .home-orbit.is-active > span { text-shadow: none; }
+.hks-home .home-orbit.is-active > em { background: var(--navy); color: var(--background); }
+@media (max-width: 767px) { .hks-home .home-programme-orbits::before { display: none; } .hks-home .home-orbit > span { font-size: 19px; } .hks-home .home-orbit > em { width: 30px; height: 30px; font-size: 11px; } }
+.hks-home .home-programme-orbits { margin-bottom: 96px; }
