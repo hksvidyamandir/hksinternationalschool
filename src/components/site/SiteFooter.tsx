@@ -22,8 +22,8 @@ export function SiteFooter() {
   const social = "flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-navy transition hover:border-primary hover:text-primary";
   return (
     <footer className="border-t border-border bg-muted text-foreground">
-      <div className="container-site grid grid-cols-1 items-center gap-6 py-10 sm:grid-cols-[minmax(0,1fr)_auto]">
-        <Link to="/" aria-label="HKS International School home" className="min-w-0">
+      <div className="container-site grid grid-cols-1 items-center gap-6 py-10 md:flex md:flex-wrap md:justify-between">
+        <Link to="/" aria-label="HKS International School home" className="min-w-0 md:min-w-auto">
           <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 w-auto" width={449} height={165} />
         </Link>
         <div className="flex shrink-0 gap-2">
@@ -52,7 +52,7 @@ export function SiteFooter() {
       </div>
       <div className="container-site flex flex-col gap-2 border-t border-border py-5 text-xs text-foreground/70 sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} HKS International School. All rights reserved.</p>
-        <p className="grid min-w-0 gap-2 sm:flex sm:flex-wrap sm:gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span className="hidden sm:inline">|</span><a href={`mailto:${SITE.email}`} className="min-w-0 break-all hover:text-primary">{SITE.email}</a></p>
+        <p className="grid min-w-0 gap-2 md:flex md:gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span className="hidden md:inline">|</span><a href={`mailto:${SITE.email}`} className="min-w-0 break-all md:break-normal hover:text-primary">{SITE.email}</a></p>
       </div>
       <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS International School, I would like to know more about admissions")}`} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
         className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft hover:scale-105 transition">

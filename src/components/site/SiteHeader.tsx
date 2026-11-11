@@ -11,7 +11,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
-      <div className="hidden xl:block bg-navy text-navy-foreground text-xs">
+      <div className="hidden md:block bg-navy text-navy-foreground text-xs">
         <div className="container-site flex h-9 items-center justify-between">
           <div className="flex items-center gap-5">
             <a href={SITE.phoneHref} className="flex items-center gap-1.5 hover:text-gold"><Phone className="h-3.5 w-3.5" />{SITE.phone}</a>
@@ -29,12 +29,12 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:flex sm:justify-between xl:h-24">
-        <Link to="/" aria-label="HKS International School home" className="min-w-0 shrink-0">
+      <div className="container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:flex md:justify-between md:gap-6 lg:h-24">
+        <Link to="/" aria-label="HKS International School home" className="min-w-0 shrink-0 md:min-w-auto">
           <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
         </Link>
 
-        <div className="hidden xl:flex min-w-0 flex-col items-end gap-1.5">
+        <div className="hidden lg:flex flex-col items-end gap-1.5">
           <div className="flex items-center gap-5 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60">
             <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli</span>
             <span>CBSE · Nursery – Grade 12</span>
@@ -69,16 +69,16 @@ export function SiteHeader() {
         </nav>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
-          <Button variant="ghost" size="icon" className="xl:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
+          <Button variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
             {open ? <X /> : <Menu />}
           </Button>
         </div>
       </div>
 
       {open && (
-        <nav id="mobile-navigation" aria-label="Mobile" className="xl:hidden border-t border-border bg-card max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain">
+        <nav id="mobile-navigation" aria-label="Mobile" className="lg:hidden border-t border-border bg-card max-h-[calc(100dvh-5rem)] md:max-h-[75vh] overflow-y-auto overscroll-contain">
           <div className="container-site py-3">
             <Link to="/" onClick={() => setOpen(false)} className="block py-3 font-semibold border-b border-border">Home</Link>
             {NAV.map((g) => (
@@ -91,7 +91,7 @@ export function SiteHeader() {
                     {expanded === g.label && (
                       <div className="pb-3 pl-3 space-y-1">
                         {g.children.map((c) => (
-                          <Link key={c.label} to={c.to} onClick={() => setOpen(false)} className="flex min-h-11 items-center py-2 text-sm text-muted-foreground hover:text-primary">{c.label}</Link>
+                          <Link key={c.label} to={c.to} onClick={() => setOpen(false)} className="flex min-h-11 items-center py-2 md:block md:min-h-0 md:py-1.5 text-sm text-muted-foreground hover:text-primary">{c.label}</Link>
                         ))}
                       </div>
                     )}

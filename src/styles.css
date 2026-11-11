@@ -1046,12 +1046,9 @@
 .home-final > div > .final-card { display: block; margin-top: 0; }
 .home-final .final-card > p { margin-top: 16px; }
 
-/* Phone and tablet refinements; retain each section's established layout. */
-@media (max-width: 1199px) {
-  .curr-track { min-width: 0; }
-  .curr-card:not(.is-active) h3 { writing-mode: vertical-rl; rotate: 180deg; }
-}
+/* Mobile-only refinements; preserve the established desktop presentation. */
 @media (max-width: 767px) {
+  .curr-track { min-width: 0; }
   section[id], [role="tabpanel"] { scroll-margin-top: 96px; }
   .hks-home h2 { font-size: 30px; line-height: 1.2; overflow-wrap: break-word; }
   .hks-home h3, .hks-home p { overflow-wrap: break-word; }
