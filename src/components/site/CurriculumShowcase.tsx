@@ -35,7 +35,7 @@ export function CurriculumShowcase() {
             <img src={c.image} alt={`${c.title} at HKS`} loading="lazy" />
             <div className="curr-body">
               <small>{c.tag}</small>
-              <h3>{c.title}</h3>
+              <h3>{(() => { const w = c.title.split(" "); const first = w[1] === "&" ? w.slice(0, 2).join(" ") : (w[0] ?? ""); const rest = c.title.slice(first.length).trim(); return <><span>{first}</span> <span>{rest}</span></>; })()}</h3>
               <p>{c.text}</p>
               <Link to={c.to} className="curr-cta" tabIndex={i === active ? 0 : -1}>Learn more <ArrowUpRight size={16} /></Link>
             </div>
