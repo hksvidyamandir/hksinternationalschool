@@ -928,3 +928,15 @@
 @media (max-width: 760px) { .fam-grid { grid-template-columns: 1fr; } .fam-mark { width: 80px; height: 80px; } }
 @media (prefers-reduced-motion: reduce) { .fam-card, .fam-photo img, .fam-open { transition: none; } }
 .fam-photo { aspect-ratio: auto; } .fam-photo img { display: block; aspect-ratio: 16/10; height: auto; }
+/* Students speak carousel */
+.stu-section::before { background: linear-gradient(180deg, color-mix(in oklab, var(--navy) 12%, var(--background)), color-mix(in oklab, var(--background) 90%, transparent)); }
+.stu-wrap { position: relative; margin-top: 52px; }
+.stu-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 56px) / 3); gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 10px 4px 40px; scrollbar-width: none; }
+.stu-track::-webkit-scrollbar { display: none; }
+.stu-card { scroll-snap-align: start; }
+.stu-nav { position: absolute; top: 40%; z-index: 2; width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; background: var(--navy); color: var(--navy-foreground); box-shadow: 0 14px 26px -12px color-mix(in oklab, var(--navy) 80%, transparent); transition: background .3s, transform .3s; }
+.stu-nav svg { width: 20px; height: 20px; }
+.stu-nav:hover { background: var(--gold); color: var(--navy); transform: scale(1.08); }
+.stu-prev { left: -22px; } .stu-next { right: -22px; }
+@media (max-width: 1024px) { .stu-track { grid-auto-columns: calc((100% - 28px) / 2); } }
+@media (max-width: 640px) { .stu-track { grid-auto-columns: 85%; } .stu-prev { left: -6px; } .stu-next { right: -6px; } }
