@@ -652,3 +652,4 @@
 .hks-home .home-orbit.is-active > span { text-shadow: none; }
 .hks-home .home-orbit.is-active > em { background: var(--navy); color: var(--background); }
 @media (max-width: 767px) { .hks-home .home-programme-orbits::before { display: none; } .hks-home .home-orbit > span { font-size: 19px; } .hks-home .home-orbit > em { width: 30px; height: 30px; font-size: 11px; } }
+.hks-home .home-programme-orbits { margin-bottom: 96px; }
