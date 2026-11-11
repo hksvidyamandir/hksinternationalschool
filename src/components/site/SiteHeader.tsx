@@ -39,7 +39,7 @@ export function SiteHeader() {
             <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli</span>
             {VIDHYA.map((v) => (
               <span key={v.label} className="flex items-center gap-1.5 text-foreground/80">
-                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${v.dot}`} />
+                <v.icon className={`h-3.5 w-3.5 shrink-0 ${v.tone}`} strokeWidth={2.25} />
                 {v.label}
               </span>
             ))}
@@ -90,7 +90,7 @@ export function SiteHeader() {
               <span className="flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground"><MapPin className="h-2.5 w-2.5 text-teal" />Kenchattahalli</span>
               {VIDHYA.map((v) => (
                 <span key={v.label} className="flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                  <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${v.dot}`} />
+                  <v.icon className={`h-3 w-3 shrink-0 ${v.tone}`} strokeWidth={2.25} />
                   {v.label}
                 </span>
               ))}
