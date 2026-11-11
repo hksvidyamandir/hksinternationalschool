@@ -346,7 +346,22 @@
 .home-tour h2 { font-size: 56px; margin-top: 20px; }
 .home-tour p { font-size: 14px; line-height: 1.9; margin-top: 24px; }
 .home-tour .home-action { margin-top: 30px; }
-.home-tour::after { content: ""; position: absolute; bottom: -1px; left: -5%; width: 110%; height: 34px; background: var(--gold); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.home-tour { overflow: hidden; }
+.home-tour > img { animation: tour-zoom 22s ease-in-out infinite alternate; }
+@keyframes tour-zoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+.home-tour::before { background: linear-gradient(180deg, color-mix(in oklab, var(--navy) 45%, transparent), color-mix(in oklab, var(--navy) 78%, transparent)); }
+.home-tour > div { padding-block: 120px 190px !important; }
+.home-tour h2 { text-shadow: 0 6px 30px color-mix(in oklab, var(--navy) 60%, transparent); }
+.home-tour .home-action { box-shadow: 0 14px 40px -12px var(--gold); transition: transform .3s ease; }
+.home-tour .home-action:hover { transform: translateY(-3px); }
+.tour-waves { position: absolute; bottom: -1px; left: 0; width: 200%; height: 140px; z-index: 0; pointer-events: none; }
+.tour-waves path { animation: tour-wave 14s ease-in-out infinite alternate; }
+.tour-waves .tw1 { fill: color-mix(in oklab, var(--teal) 45%, transparent); }
+.tour-waves .tw2 { fill: color-mix(in oklab, var(--gold) 55%, transparent); animation-duration: 10s; animation-direction: reverse; }
+.tour-waves .tw3 { fill: var(--background); animation-duration: 18s; }
+@keyframes tour-wave { from { transform: translateX(0); } to { transform: translateX(-360px); } }
+@media (max-width: 760px) { .home-tour > div { padding-block: 80px 130px !important; } .tour-waves { height: 90px; } }
+@media (prefers-reduced-motion: reduce) { .home-tour > img, .tour-waves path { animation: none; } }
 .home-final { background: var(--gold); color: var(--navy); text-align: center; padding-block: 72px; }
 .home-final h2 { font-size: 64px; margin-top: 18px; }
 .home-final > div > div { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 32px; }
