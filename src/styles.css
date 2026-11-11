@@ -617,3 +617,21 @@
   .adv-panel h3 { font-size: 15px; } .adv-panel p { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { .adv-panel, .adv-stage > img { transition: none; transform: none; opacity: 1; } }
+
+/* Programme bubbles: photo-filled rings */
+.hks-home .home-orbit { overflow: visible; isolation: isolate; background: var(--navy); color: var(--navy-foreground); border: 0; padding: 26px; justify-content: center; box-shadow: 0 24px 48px -24px color-mix(in oklab, var(--navy) 70%, transparent); }
+.hks-home .home-orbit > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; z-index: -2; filter: saturate(1.05); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.hks-home .home-orbit::before { content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1; background: radial-gradient(circle at 50% 60%, color-mix(in oklab, var(--navy) 72%, transparent), color-mix(in oklab, var(--navy) 92%, transparent)); transition: background .35s; }
+.hks-home .home-orbit::after { content: ""; position: absolute; inset: -9px; border-radius: 50%; border: 2px dashed color-mix(in oklab, var(--teal) 70%, transparent); opacity: 0; transition: opacity .35s; animation: orbit-spin 18s linear infinite; }
+.hks-home .home-orbit > em { font-style: normal; font-size: 12px; font-weight: 800; letter-spacing: .2em; color: var(--gold); margin-bottom: 8px; }
+.hks-home .home-orbit > span { color: inherit; }
+.hks-home .home-orbit small { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 999px; background: color-mix(in oklab, var(--background) 18%, transparent); font-weight: 600; }
+.hks-home .home-orbit:hover > img { transform: scale(1.08); }
+.hks-home .home-orbit.is-active, .hks-home .home-orbit:hover, .hks-home .home-orbit:nth-child(3):not(.is-active):not(:hover) { background: var(--navy); color: var(--navy-foreground); border: 0; }
+.hks-home .home-orbit.is-active::before { background: radial-gradient(circle at 50% 60%, color-mix(in oklab, var(--gold) 78%, transparent), color-mix(in oklab, var(--gold) 94%, transparent)); }
+.hks-home .home-orbit.is-active { color: var(--navy); }
+.hks-home .home-orbit.is-active > em { color: var(--navy); }
+.hks-home .home-orbit.is-active small { background: var(--navy); color: var(--navy-foreground); }
+.hks-home .home-orbit.is-active::after, .hks-home .home-orbit:hover::after { opacity: 1; }
+@keyframes orbit-spin { to { rotate: 360deg; } }
+@media (prefers-reduced-motion: reduce) { .hks-home .home-orbit::after { animation: none; } }
