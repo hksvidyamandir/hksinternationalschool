@@ -37,39 +37,42 @@
   --color-gold: var(--gold);
   --color-cream: var(--cream);
   --color-flame: var(--flame);
+  --color-teal: var(--teal);
   --color-ring-offset-background: var(--background);
 }
 
 :root {
   --radius: 0.75rem;
-  /* Palette taken from the HKS logo & website: royal blue, deep navy, gold wings, flame orange, cream */
-  --background: oklch(0.99 0.008 85);
-  --foreground: oklch(0.22 0.06 265);
+  /* Supplied palette: navy #303783, teal #18A7BF, orange #F9AB52,
+     charcoal #595959, off-white #F5F7FA. Legacy gold/cream names remain aliases. */
+  --background: oklch(0.975469 0.004534 258.324531);
+  --foreground: oklch(0.464002 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.06 265);
+  --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.06 265);
-  --primary: oklch(0.38 0.17 272); /* HKS royal blue */
-  --primary-foreground: oklch(0.99 0.008 85);
-  --navy: oklch(0.3 0.1 258); /* #063368 */
-  --navy-foreground: oklch(0.97 0.02 85);
-  --gold: oklch(0.83 0.16 85); /* wing gold */
-  --flame: oklch(0.72 0.18 55); /* flame orange */
-  --cream: oklch(0.95 0.045 85); /* #FEE9B9 */
-  --secondary: oklch(0.95 0.045 85);
-  --secondary-foreground: oklch(0.3 0.1 258);
-  --muted: oklch(0.965 0.012 85);
-  --muted-foreground: oklch(0.48 0.04 262);
-  --accent: oklch(0.83 0.16 85);
-  --accent-foreground: oklch(0.22 0.06 265);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.377088 0.126281 274.635487);
+  --primary-foreground: var(--background);
+  --navy: var(--primary);
+  --navy-foreground: var(--background);
+  --teal: oklch(0.670650 0.113571 213.152677);
+  --gold: oklch(0.800622 0.138448 66.949090);
+  --flame: var(--gold);
+  --cream: color-mix(in oklab, var(--gold) 14%, var(--background));
+  --secondary: color-mix(in oklab, var(--teal) 12%, var(--background));
+  --secondary-foreground: var(--navy);
+  --muted: var(--background);
+  --muted-foreground: var(--foreground);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.9 0.02 85);
-  --ring: oklch(0.38 0.17 272);
-  --gradient-hero: linear-gradient(180deg, oklch(0.2 0.08 260 / 0.25) 0%, oklch(0.2 0.08 260 / 0.85) 100%);
-  --gradient-flame: linear-gradient(90deg, var(--gold), var(--flame));
-  --shadow-soft: 0 20px 50px -24px oklch(0.3 0.1 258 / 0.35);
+  --border: color-mix(in oklab, var(--foreground) 18%, var(--background));
+  --input: var(--border);
+  --ring: var(--teal);
+  --gradient-hero: linear-gradient(180deg, color-mix(in oklab, var(--navy) 25%, transparent) 0%, color-mix(in oklab, var(--navy) 85%, transparent) 100%);
+  --gradient-flame: linear-gradient(90deg, var(--gold), var(--gold));
+  --shadow-soft: 0 20px 50px -24px color-mix(in oklab, var(--navy) 35%, transparent);
   --hero-doodle: oklch(1 0 0);
 }
 
@@ -188,7 +191,7 @@
 .home-proof-grid > div:nth-child(1) { background: var(--gold); color: var(--navy); }
 .home-proof-grid > div:nth-child(2) { background: var(--navy); color: var(--navy-foreground); }
 .home-proof-grid > div:nth-child(3) { background: var(--cream); color: var(--navy); }
-.home-proof-grid > div:nth-child(4) { background: var(--flame); color: var(--navy); }
+.home-proof-grid > div:nth-child(4) { background: var(--teal); color: var(--navy); }
 .home-proof-grid strong { font-family: var(--font-display); font-size: 48px; font-weight: 500; }
 .home-proof-grid h3 { font-family: var(--font-sans); font-size: 14px; font-weight: 700; margin-top: 14px; }
 .home-proof-grid p { font-size: 11px; line-height: 1.7; margin-top: 8px; }
@@ -234,14 +237,14 @@
 .home-pillar:nth-child(4) > div > span { background: var(--cream); }
 .home-pillar small { font-size: 10px; color: var(--muted-foreground); display: block; margin-top: 20px; text-transform: uppercase; }
 .home-pillar h3 { font-size: 22px; color: var(--navy); margin-top: 8px; }
-.home-purpose { background: var(--primary); color: var(--primary-foreground); padding-block: 76px; }
+.home-purpose { background: var(--teal); color: var(--navy); padding-block: 76px; }
 .home-purpose > div { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; }
-.home-purpose .home-kicker { color: var(--gold); }
+.home-purpose .home-kicker { color: var(--navy); }
 .home-purpose h2 { margin-top: 20px; }
-.home-purpose h2 em { color: var(--gold); }
+.home-purpose h2 em { color: var(--navy); }
 .home-purpose-statements { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
 .home-purpose-statements article { border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 35%, transparent); padding-top: 24px; }
-.home-purpose-statements span { font-size: 12px; font-weight: 700; color: var(--gold); }
+.home-purpose-statements span { font-size: 12px; font-weight: 700; color: var(--navy); }
 .home-purpose-statements p { font-size: 14px; line-height: 1.9; margin-top: 18px; }
 .home-values { padding-block: 76px; background: var(--cream); }
 .home-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; margin-top: 40px; }

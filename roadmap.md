@@ -4,3 +4,4 @@
 - [x] Verify homepage on desktop and mobile, navigation and existing tests.
 - [x] Animate programme circles and add homepage-wide scroll reveals; verify desktop, mobile and reduced-motion behavior.
 - [x] Recreate the newly attached homepage section reference.
+- [ ] Apply the supplied logo and palette across the site and verify the logo, browser icon and mobile layout.
