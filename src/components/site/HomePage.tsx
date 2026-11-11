@@ -6,6 +6,7 @@ import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
 import { HeroFilm } from "./HeroFilm";
 import { FamilyStories } from "./FamilyStories";
+import { StudentsSpeak } from "./StudentsSpeak";
 import { useHomeMotion } from "@/hooks/use-home-motion";
 import { ExperienceStories } from "./ExperienceStories";
 import { AdvantageStats } from "./AdvantageStats";
@@ -89,6 +90,7 @@ export function HomePage() {
 
     <nav className="qk-band" aria-label="Explore HKS"><div className="container-site qk-inner"><div className="qk-tiles">{([{ t: "Admissions", to: "/admissions", Icon: Users }, { t: "Curriculum", to: "/academics", Icon: BookOpen }, { t: "Campus Life", to: "/campus-life", Icon: Sparkles }, { t: "Residential Life", to: "/boarding", Icon: Heart }] as const).map(({ t, to, Icon }, i) => <Link key={t} to={to} className="qk-tile" data-motion-step={i}><span className="qk-icon"><Icon /></span><span>{t}</span></Link>)}</div><Link to="/admissions" className="qk-cta">Find out more <ArrowRight /></Link></div></nav>
 
+    <StudentsSpeak />
     <FamilyStories />
 
     <ExperienceStories />
