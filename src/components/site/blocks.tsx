@@ -80,7 +80,7 @@ export function Split({ image, alt, children, reverse }: { image: string; alt: s
   );
 }
 
-export function CtaBand({ title = "Give your child wings to succeed", text = "Admissions are open for 2026–27, from Nursery to Grade 12. Visit our Hassan campus or speak to our admissions team today." }: { title?: string; text?: string }) {
+export function CtaBand({ title = "Give your child wings to succeed", text = "Admissions are open for 2026–27, from Nursery to Grade 12. Visit our campus or speak to our admissions team today." }: { title?: string; text?: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
       <img src={img.infra3} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-20" />

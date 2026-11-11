@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/boarding")({
-  head: () => seo("Residential & Boarding School in Hassan", "Full boarding and HKS Flexi-Boarding (weekday residential) programmes with safe hostels, nutritious meals and supervised study at HKS International School, Hassan.", "/boarding"),
+  head: () => seo("Residential & Boarding School in Karnataka", "Full boarding and HKS Flexi-Boarding (weekday residential) programmes with safe hostels, nutritious meals and supervised study at HKS International School.", "/boarding"),
   component: Boarding,
 });
 

@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "School",
           name: "HKS International School",
-          alternateName: "HKS International Residential School, Hassan",
+          alternateName: "HKS International Residential School",
           slogan: "Strengthening Your Wings of Success",
           foundingDate: "2010",
           telephone: "+91-8277078474",
@@ -111,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           address: {
             "@type": "PostalAddress",
             streetAddress: "NH 75, Bengaluru - Mangaluru Highway, Kenchattahalli",
-            addressLocality: "Hassan",
+            addressLocality: "Kenchattahalli",
             addressRegion: "Karnataka",
             postalCode: "573201",
             addressCountry: "IN",

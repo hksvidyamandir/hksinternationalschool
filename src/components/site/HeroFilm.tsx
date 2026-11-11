@@ -7,7 +7,7 @@ import film from "@/assets/hks-doodle-film.mp4.asset.json";
 
 const scenes = [
   { word: "Beyond the classroom.", label: "Creativity. Confidence. Expression." },
-  { word: "Room to spread your wings.", label: "Rooted in Hassan. Ready for the world." },
+  { word: "Room to spread your wings.", label: "Rooted in Karnataka. Ready for the world." },
   { word: "Growing, together.", label: "One school. A world of possibility." },
 ];
 
@@ -46,7 +46,7 @@ export function HeroFilm() {
     <video ref={videoRef} className="home-hero-video" src={film.url} poster={img.infra5} autoPlay muted loop playsInline preload="auto" aria-label="HKS school life with animated white sketches" onTimeUpdate={e => setScene(Math.min(2, Math.floor(e.currentTarget.currentTime / 8)))} />
     <div className="home-hero-shade" />
     <div className="container-site home-hero-content">
-      <div className="home-hero-top"><h1>HKS International School</h1><span>Hassan · Since 2010</span></div>
+      <div className="home-hero-top"><h1>HKS International School</h1><span>Since 2010</span></div>
       <div className="home-film-caption" key={scene}><p className="home-kicker">{active.label}</p><p className="home-hero-script">{active.word}</p></div>
       <div className="home-hero-bottom"><a href="#welcome" className="home-scroll"><ArrowDown size={18} /> Discover HKS</a><Button asChild className="home-action"><Link to="/admissions">Admissions 2026–27<ArrowUpRight /></Link></Button><div className="home-slide-controls"><span>0{scene + 1} / 03</span><Button variant="ghost" size="icon" aria-label="Previous banner" onClick={() => moveScene(-1)}><ArrowLeft /></Button><Button variant="ghost" size="icon" aria-label={paused ? "Play banners" : "Pause banners"} onClick={toggle}>{paused ? <Play /> : <Pause />}</Button><Button variant="ghost" size="icon" aria-label="Next banner" onClick={() => moveScene(1)}><ArrowRight /></Button></div></div>
     </div>

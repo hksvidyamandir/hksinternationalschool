@@ -31,12 +31,12 @@ export function SiteHeader() {
 
       <div className="container-site flex h-20 lg:h-24 items-center justify-between gap-6">
         <Link to="/" aria-label="HKS International School home" className="shrink-0">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 sm:h-16 w-auto" width={421} height={290} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
         </Link>
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">
           <div className="flex items-center gap-5 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60">
-            <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli, Hassan</span>
+            <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli</span>
             <span>CBSE · Nursery – Grade 12</span>
             <span>Day & Residential</span>
             <span className="text-primary">Admissions Open 2026–27</span>
