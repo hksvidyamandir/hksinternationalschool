@@ -355,11 +355,11 @@
 .home-tour .home-action { box-shadow: 0 14px 40px -12px var(--gold); transition: transform .3s ease; }
 .home-tour .home-action:hover { transform: translateY(-3px); }
 .tour-waves { position: absolute; bottom: -1px; left: 0; width: 200%; height: 140px; z-index: 0; pointer-events: none; }
-.tour-waves path { animation: tour-wave 14s linear infinite; }
+.tour-waves path { animation: tour-wave 14s ease-in-out infinite alternate; }
 .tour-waves .tw1 { fill: color-mix(in oklab, var(--teal) 45%, transparent); }
 .tour-waves .tw2 { fill: color-mix(in oklab, var(--gold) 55%, transparent); animation-duration: 10s; animation-direction: reverse; }
 .tour-waves .tw3 { fill: var(--background); animation-duration: 18s; }
-@keyframes tour-wave { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+@keyframes tour-wave { from { transform: translateX(0); } to { transform: translateX(-360px); } }
 @media (max-width: 760px) { .home-tour > div { padding-block: 80px 130px !important; } .tour-waves { height: 90px; } }
 @media (prefers-reduced-motion: reduce) { .home-tour > img, .tour-waves path { animation: none; } }
 .home-final { background: var(--gold); color: var(--navy); text-align: center; padding-block: 72px; }
