@@ -740,3 +740,27 @@
 @media (hover: none) { .pil-body p, .pil-more { max-height: 140px; opacity: 1; transform: none; } }
 @media (max-width: 560px) { .pil-grid { grid-template-columns: 1fr; } .pil-card { aspect-ratio: 5/4; } }
 @media (prefers-reduced-motion: reduce) { .pil-card, .pil-card img, .pil-body p, .pil-more { transition: none; } }
+/* Our purpose */
+.pur-section { position: relative; overflow: hidden; isolation: isolate; padding: clamp(72px, 9vw, 120px) 0; background: radial-gradient(120% 140% at 50% 0%, var(--navy) 0%, var(--ink, var(--navy)) 100%); color: var(--navy-foreground); text-align: center; }
+.pur-orb { position: absolute; border-radius: 50%; z-index: -1; pointer-events: none; }
+.pur-orb-a { width: 420px; height: 420px; left: -140px; bottom: -200px; background: color-mix(in oklab, var(--navy-foreground) 7%, transparent); animation: pur-float 14s ease-in-out infinite; }
+.pur-orb-b { width: 520px; height: 520px; right: -200px; top: -160px; background: color-mix(in oklab, var(--teal, var(--accent)) 16%, transparent); animation: pur-float 18s ease-in-out infinite reverse; }
+.pur-arc { position: absolute; left: 12%; bottom: -60px; width: 160px; height: 260px; border-left: 2px solid color-mix(in oklab, var(--navy-foreground) 14%, transparent); border-radius: 50%; transform: rotate(20deg); z-index: -1; }
+@keyframes pur-float { 50% { transform: translate(24px, -20px) scale(1.05); } }
+.pur-head .home-kicker { color: var(--gold); }
+.pur-head h2 { font-size: clamp(30px, 4vw, 48px); color: var(--navy-foreground); margin-top: 12px; }
+.pur-head h2 em { color: var(--gold); }
+.pur-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 36px; align-items: stretch; margin-top: 56px; }
+.pur-card { position: relative; padding: 44px 40px; border-radius: 26px; background: color-mix(in oklab, var(--navy-foreground) 6%, transparent); border: 1px solid color-mix(in oklab, var(--navy-foreground) 14%, transparent); backdrop-filter: blur(6px); transition: transform .5s cubic-bezier(.2,.7,.2,1), background .4s, border-color .4s; }
+.pur-card:hover { transform: translateY(-8px); background: color-mix(in oklab, var(--navy-foreground) 10%, transparent); border-color: color-mix(in oklab, var(--gold) 60%, transparent); }
+.pur-icon { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--gold); color: var(--navy); box-shadow: 0 0 0 8px color-mix(in oklab, var(--gold) 18%, transparent); transition: transform .5s; }
+.pur-card:hover .pur-icon { transform: rotate(-12deg) scale(1.08); }
+.pur-card:nth-of-type(2) .pur-icon { background: var(--teal, var(--accent)); color: var(--ink, var(--navy)); box-shadow: 0 0 0 8px color-mix(in oklab, var(--teal, var(--accent)) 22%, transparent); }
+.pur-icon svg { width: 28px; height: 28px; }
+.pur-card h3 { margin-top: 24px; font-family: var(--font-body, inherit); font-size: clamp(26px, 3vw, 34px); font-weight: 800; letter-spacing: .02em; text-transform: uppercase; color: var(--navy-foreground); }
+.pur-card h3 em { font-style: normal; color: var(--gold); }
+.pur-card p { margin: 18px auto 0; max-width: 460px; font-size: 16.5px; line-height: 1.85; color: color-mix(in oklab, var(--navy-foreground) 90%, transparent); }
+.pur-divider { align-self: center; display: grid; place-items: center; width: 1px; height: 100%; min-height: 200px; background: linear-gradient(transparent, color-mix(in oklab, var(--navy-foreground) 30%, transparent), transparent); position: relative; }
+.pur-divider svg { position: absolute; width: 22px; height: 22px; color: var(--gold); background: var(--navy); padding: 4px; box-sizing: content-box; border-radius: 50%; }
+@media (max-width: 860px) { .pur-grid { grid-template-columns: 1fr; gap: 24px; } .pur-divider { width: 100%; height: 1px; min-height: 0; background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--navy-foreground) 30%, transparent), transparent); } .pur-card { padding: 34px 24px; } }
+@media (prefers-reduced-motion: reduce) { .pur-orb { animation: none; } .pur-card, .pur-icon { transition: none; } }
