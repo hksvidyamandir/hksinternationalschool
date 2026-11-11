@@ -23,7 +23,7 @@ export function SiteHeader() {
 
       <div className="container-site flex h-20 items-center justify-between gap-6">
         <Link to="/" aria-label="HKS International School home" className="shrink-0">
-          <img src={img.logoFull} alt="HKS International School Hassan logo" className="h-10 sm:h-12 w-auto" width={320} height={50} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 sm:h-16 w-auto" width={421} height={290} />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:flex items-center gap-1">
