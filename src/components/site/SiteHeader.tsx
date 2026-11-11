@@ -43,7 +43,33 @@ export function SiteHeader() {
           </div>
         <nav aria-label="Main" className="flex items-center gap-0.5">
           <Link to="/" className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeOptions={{ exact: true }} activeProps={{ className: "text-primary" }}>Home</Link>
-        <div className="flex items-center gap-2">
+          {NAV.map((g) =>
+            g.children ? (
+              <div key={g.label} className="group relative">
+                <Link to={g.to} className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-foreground hover:text-primary">
+                  {g.label}<ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
+                </Link>
+                <div className="invisible absolute right-0 top-full w-80 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="rounded-xl border border-border bg-card p-2 shadow-soft">
+                    <div className="h-1 rounded-full bg-flame mb-2" />
+                    {g.children.map((c) => (
+                      <Link key={c.label} to={c.to} className="block rounded-lg px-3 py-2.5 hover:bg-muted">
+                        <span className="block text-sm font-semibold text-navy">{c.label}</span>
+                        <span className="block text-xs text-muted-foreground">{c.desc}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={g.label} to={g.to} className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeProps={{ className: "text-primary" }}>{g.label}</Link>
+            ),
+          )}
+          <Link to="/admissions" hash="enquire" className="ml-2 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground hover:opacity-90">Apply Now</Link>
+        </nav>
+        </div>
+
+        <div className="flex items-center gap-2 lg:hidden">
           <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
           <Button variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
             {open ? <X /> : <Menu />}
