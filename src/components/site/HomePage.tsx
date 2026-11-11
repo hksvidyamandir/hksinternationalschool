@@ -9,6 +9,7 @@ import { FamilyStories } from "./FamilyStories";
 import { useHomeMotion } from "@/hooks/use-home-motion";
 import { ExperienceStories } from "./ExperienceStories";
 import { AdvantageStats } from "./AdvantageStats";
+import { CurriculumShowcase } from "./CurriculumShowcase";
 
 const programmes = [
   { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
@@ -72,7 +73,7 @@ export function HomePage() {
 
     <section className="home-section home-programmes"><div className="container-site"><Heading label="Our programmes" title="Every age. A new possibility." text="An education that grows with your child." /><div className="home-programme-orbits" role="tablist" aria-label="School programmes">{programmes.map((p, i) => <Button key={p.title} role="tab" aria-selected={programme === i} aria-controls="programme-detail" id={`programme-${i}`} variant="ghost" onClick={() => setProgramme(i)} className={`home-orbit ${programme === i ? "is-active" : ""}`}><img src={p.image} alt="" aria-hidden="true" loading="lazy" /><em>0{i + 1}</em><span>{p.title}</span><small>{p.grade}</small></Button>)}</div><div id="programme-detail" role="tabpanel" aria-labelledby={`programme-${programme}`} className="home-programme-detail"><img src={activeProgramme.image} alt={`${activeProgramme.title} students at HKS`} loading="lazy" /><div><span className="home-kicker">{activeProgramme.grade}</span><h3>{activeProgramme.title}</h3><p>{activeProgramme.text}</p><Action to="/academics">Explore the programme</Action></div></div></div></section>
 
-    <section className="home-curriculum"><div className="container-site home-curriculum-grid"><div><span className="home-kicker">The HKS curriculum</span><h2>Not just learning.<br /><em>Understanding.</em></h2><p>A concept-based CBSE education that connects what children learn with the world they live in.</p><Action to="/academics" light>Discover our curriculum</Action></div><div className="home-curriculum-list">{[["01", "Concepts come first", "A clear foundation in core subjects."], ["02", "Ideas become action", "Experiments, projects and hands-on discovery."], ["03", "Ambition finds direction", "NEET, JEE, Olympiads and career guidance."]].map(([n, t, d]) => <div key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div><ArrowUpRight /></div>)}</div></div></section>
+    <CurriculumShowcase />
 
     <section className="home-section"><div className="container-site"><div className="home-section-top"><Heading label="The HKS pillars" title="A whole education. A whole person." /><p>Academic ambition, personal growth and a sense of belonging — the foundations beneath every HKS journey.</p></div><div className="home-pillar-grid">{pillars.map((p, i) => <Link key={p.title} to={p.to} className="home-pillar"><div><img src={p.image} alt={p.title + " at HKS"} loading="lazy" /><span>0{i + 1}<ArrowUpRight /></span></div><small>{p.tag}</small><h3>{p.title}</h3></Link>)}</div></div></section>
 
