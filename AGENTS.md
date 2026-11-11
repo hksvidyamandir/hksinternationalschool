@@ -17,4 +17,4 @@
 - FamilyStories owns the homepage testimonial cards and accessible reading dialogs; school photos are contextual imagery, not portraits of the quoted parents.
 - Homepage motion is progressively enhanced through useHomeMotion and scoped CSS; keep content visible without JavaScript, preserve existing transforms, and bypass motion for reduced-motion preferences.
 - ExperienceStories owns staggered quote-and-photo story cards; distinguish actual parent quotes from school editorial stories and link each card to a relevant existing page.
-- Use minmax(0, 1fr) tracks and min-w-0 for mobile text beside fixed controls; show desktop navigation only at xl to keep tablet headers readable.
+- Scope mobile layout refinements to max-width: 767px and use minmax(0, 1fr) tracks for text beside fixed controls; preserve existing desktop breakpoints above that boundary.
