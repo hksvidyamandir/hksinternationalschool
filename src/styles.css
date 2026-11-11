@@ -927,3 +927,4 @@
 .fam-all:hover { background: var(--gold); color: var(--navy); }
 @media (max-width: 760px) { .fam-grid { grid-template-columns: 1fr; } .fam-mark { width: 80px; height: 80px; } }
 @media (prefers-reduced-motion: reduce) { .fam-card, .fam-photo img, .fam-open { transition: none; } }
+.fam-photo { aspect-ratio: auto; } .fam-photo img { display: block; aspect-ratio: 16/10; height: auto; }
