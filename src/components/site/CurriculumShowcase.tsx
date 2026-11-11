@@ -13,7 +13,7 @@ const cards = [
 ];
 
 export function CurriculumShowcase() {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const go = (d: number) => setActive(a => (a + d + cards.length) % cards.length);
   useEffect(() => {
