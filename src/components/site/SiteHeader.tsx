@@ -16,43 +16,33 @@ export function SiteHeader() {
           <div className="flex items-center gap-5">
             <a href={SITE.phoneHref} className="flex items-center gap-1.5 hover:text-gold"><Phone className="h-3.5 w-3.5" />{SITE.phone}</a>
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-1.5 hover:text-gold"><Mail className="h-3.5 w-3.5" />{SITE.email}</a>
-            <span className="hidden lg:flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" />Kenchattahalli, Hassan</span>
           </div>
-          <span className="font-semibold text-gold">Admissions Open 2026–27 · Nursery to Grade 12</span>
+          <div className="flex items-center font-bold">
+            <Link to="/admissions" hash="enquire" className="px-3 hover:text-gold">Enquire Now</Link>
+            <span className="opacity-50">|</span>
+            <Link to="/campus" className="px-3 hover:text-gold">Campus Tour</Link>
+            <span className="opacity-50">|</span>
+            <Link to="/admissions" className="px-3 hover:text-gold">Application Form</Link>
+            <span className="opacity-50">|</span>
+            <Link to="/contact" className="pl-3 hover:text-gold">Contact</Link>
+          </div>
         </div>
       </div>
 
-      <div className="container-site flex h-20 items-center justify-between gap-6">
+      <div className="container-site flex h-20 lg:h-24 items-center justify-between gap-6">
         <Link to="/" aria-label="HKS International School home" className="shrink-0">
           <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 sm:h-16 w-auto" width={421} height={290} />
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex flex-col items-end gap-1.5">
+          <div className="flex items-center gap-5 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60">
+            <span className="flex items-center gap-1.5"><MapPin className="h-3 w-3 text-teal" />Kenchattahalli, Hassan</span>
+            <span>CBSE · Nursery – Grade 12</span>
+            <span>Day & Residential</span>
+            <span className="text-primary">Admissions Open 2026–27</span>
+          </div>
+        <nav aria-label="Main" className="flex items-center gap-0.5">
           <Link to="/" className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeOptions={{ exact: true }} activeProps={{ className: "text-primary" }}>Home</Link>
-          {NAV.map((g) =>
-            g.children ? (
-              <div key={g.label} className="group relative">
-                <Link to={g.to} className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-foreground hover:text-primary">
-                  {g.label}<ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
-                </Link>
-                <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                  <div className="rounded-xl border border-border bg-card p-2 shadow-soft">
-                    <div className="h-1 rounded-full bg-flame mb-2" />
-                    {g.children.map((c) => (
-                      <Link key={c.label} to={c.to} className="block rounded-lg px-3 py-2.5 hover:bg-muted">
-                        <span className="block text-sm font-semibold text-navy">{c.label}</span>
-                        <span className="block text-xs text-muted-foreground">{c.desc}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link key={g.label} to={g.to} className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeProps={{ className: "text-primary" }}>{g.label}</Link>
-            ),
-          )}
-        </nav>
-
         <div className="flex items-center gap-2">
           <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
           <Button variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
