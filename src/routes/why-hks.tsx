@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/why-hks")({
-  head: () => seo("Why HKS is the Best School in Hassan", "Why families choose HKS International School: academic excellence, state-of-the-art infrastructure, safe residential campus, sports and holistic development in Hassan.", "/why-hks"),
+  head: () => seo("Why HKS is the Best School in Karnataka", "Why families choose HKS International School: academic excellence, state-of-the-art infrastructure, safe residential campus, sports and holistic development in.", "/why-hks"),
   component: Why,
 });
 
@@ -18,7 +18,7 @@ const reasons = [
 function Why() {
   return (
     <>
-      <PageHero crumb="Why HKS" eyebrow="Why choose us" title="Why HKS is recognised as the best school in Hassan" intro="Education is not just about marks — it is about shaping confident, responsible and future-ready leaders." image={img.campus3} />
+      <PageHero crumb="Why HKS" eyebrow="Why choose us" title="Why HKS is recognised as the best school in Karnataka" intro="Education is not just about marks — it is about shaping confident, responsible and future-ready leaders." image={img.campus3} />
       {reasons.map((r, i) => (
         <Section key={r.t} tone={i % 2 ? "muted" : "default"}>
           <Split image={r.i} alt={r.t} reverse={i % 2 === 1}>

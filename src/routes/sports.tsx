@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CheckList, CtaBand, PageHero, PillList, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/sports")({
-  head: () => seo("Sports & Physical Education", "Cricket, football, basketball, archery, horse riding, skating, chess, yoga and martial arts with professional coaching at HKS International School, Hassan.", "/sports"),
+  head: () => seo("Sports & Physical Education", "Cricket, football, basketball, archery, horse riding, skating, chess, yoga and martial arts with professional coaching at HKS International School.", "/sports"),
   component: Sports,
 });
 

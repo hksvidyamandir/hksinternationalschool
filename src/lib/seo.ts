@@ -1,5 +1,5 @@
 export function seo(title: string, description: string, path = "/") {
-  const full = `${title} | HKS International School Hassan`;
+  const full = `${title} | HKS International School`;
   return {
     meta: [
       { title: full },

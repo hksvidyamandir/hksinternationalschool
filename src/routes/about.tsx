@@ -5,12 +5,12 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
-  head: () => seo("About Us – Our Story, Vision & Values", "Learn about HKS International School, Hassan: our legacy since 2010, vision, mission, philosophy, core values and holistic CBSE education.", "/about"),
+  head: () => seo("About Us – Our Story, Vision & Values", "Learn about HKS International School: our legacy since 2010, vision, mission, philosophy, core values and holistic CBSE education.", "/about"),
   component: About,
 });
 
 const timeline = [
-  ["2010", "HKS International School founded in Kenchattahalli, Hassan with an English-medium CBSE vision."],
+  ["2010", "HKS International School founded in Kenchattahalli with an English-medium CBSE vision."],
   ["2014", "Residential programme launched, welcoming students from across Karnataka."],
   ["2018", "Middle & High School expansion with modern science and computer labs."],
   ["2022", "Senior Secondary (Grade 11–12) and integrated NEET/JEE foundation introduced."],
@@ -20,7 +20,7 @@ const timeline = [
 function About() {
   return (
     <>
-      <PageHero crumb="About" eyebrow="Our story" title="Strengthening your wings of success" intro="Since 2010 HKS International School has empowered learners across the Hassan district with consistent, accessible and holistic education." image={img.acad1} />
+      <PageHero crumb="About" eyebrow="Our story" title="Strengthening your wings of success" intro="Since 2010 HKS International School has empowered learners across the district with consistent, accessible and holistic education." image={img.acad1} />
       <Section>
         <Split image={img.acad4} alt="HKS International School academic block">
           <SectionHead eyebrow="Our legacy" title="A decade-plus of commitment to progress" />
@@ -65,7 +65,7 @@ function About() {
       <Section>
         <div className="grid gap-5 md:grid-cols-2">
           <Link to="/leadership" className="group rounded-3xl bg-navy p-8 text-navy-foreground"><h3 className="text-2xl font-semibold">Leadership messages</h3><p className="mt-2 text-navy-foreground/75">Hear from our Chairman and Principal.</p><span className="mt-4 inline-flex items-center gap-1 font-bold text-gold">Read <ArrowRight className="h-4 w-4" /></span></Link>
-          <Link to="/why-hks" className="group rounded-3xl bg-cream p-8"><h3 className="text-2xl font-semibold text-navy">Why choose HKS?</h3><p className="mt-2 text-muted-foreground">What makes us the best school in Hassan.</p><span className="mt-4 inline-flex items-center gap-1 font-bold text-primary">Discover <ArrowRight className="h-4 w-4" /></span></Link>
+          <Link to="/why-hks" className="group rounded-3xl bg-cream p-8"><h3 className="text-2xl font-semibold text-navy">Why choose HKS?</h3><p className="mt-2 text-muted-foreground">What makes us the best school in Karnataka.</p><span className="mt-4 inline-flex items-center gap-1 font-bold text-primary">Discover <ArrowRight className="h-4 w-4" /></span></Link>
         </div>
       </Section>
       <CtaBand />

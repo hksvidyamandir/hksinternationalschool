@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CtaBand, PageHero, PillList, Section, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/academics")({
-  head: () => seo("CBSE Curriculum – Nursery to Grade 12", "Explore the CBSE academic programme at HKS International School, Hassan: Early Years, Primary, Middle, High School and Senior Secondary with NEET/JEE foundation.", "/academics"),
+  head: () => seo("CBSE Curriculum – Nursery to Grade 12", "Explore the CBSE academic programme at HKS International School: Early Years, Primary, Middle, High School and Senior Secondary with NEET/JEE foundation.", "/academics"),
   component: Academics,
 });
 

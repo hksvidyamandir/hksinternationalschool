@@ -51,7 +51,7 @@ export function SiteFooter() {
         </p>
       </div>
       <div className="container-site flex flex-col gap-2 border-t border-border py-5 text-xs text-foreground/70 sm:flex-row sm:justify-between">
-        <p>© {new Date().getFullYear()} HKS International School, Hassan. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} HKS International School. All rights reserved.</p>
         <p className="flex gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span>|</span><a href={`mailto:${SITE.email}`} className="hover:text-primary">{SITE.email}</a></p>
       </div>
       <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS International School, I would like to know more about admissions")}`} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"

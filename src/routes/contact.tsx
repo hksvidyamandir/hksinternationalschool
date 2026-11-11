@@ -7,7 +7,7 @@ import { PageHero, Section } from "@/components/site/blocks";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
 export const Route = createFileRoute("/contact")({
-  head: () => seo("Contact Us – Visit Our Hassan Campus", "Contact HKS International School, NH 75, Kenchattahalli, Hassan. Call +91 82770 78474 or email hksinternationalschool417@gmail.com to book a campus tour.", "/contact"),
+  head: () => seo("Contact Us – Visit Our Campus", "Contact HKS International School, NH 75, Kenchattahalli. Call +91 82770 78474 or email hksinternationalschool417@gmail.com to book a campus tour.", "/contact"),
   component: Contact,
 });
 
@@ -17,7 +17,7 @@ function Contact() {
     { i: <Mail />, t: "Email us", v: SITE.email, h: `mailto:${SITE.email}` },
     { i: <MapPin />, t: "Our location", v: SITE.address, h: SITE.mapsUrl },
     { i: <Clock />, t: "Office hours", v: SITE.hours },
-    { i: <Bus />, t: "Transport", v: "School buses across Hassan city and nearby villages." },
+    { i: <Bus />, t: "Transport", v: "School buses across the city and nearby villages." },
   ];
   return (
     <>
@@ -32,7 +32,7 @@ function Contact() {
           </div>
           <EnquiryForm title="Send us a message" />
         </div>
-        <iframe title="Map to HKS International School, Hassan" src={SITE.mapsEmbed} loading="lazy" className="mt-12 h-[420px] w-full rounded-3xl border-0 shadow-soft" />
+        <iframe title="Map to HKS International School" src={SITE.mapsEmbed} loading="lazy" className="mt-12 h-[420px] w-full rounded-3xl border-0 shadow-soft" />
       </Section>
     </>
   );

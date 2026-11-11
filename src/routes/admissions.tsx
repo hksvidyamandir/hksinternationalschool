@@ -6,7 +6,7 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/admissions")({
-  head: () => seo("Admissions 2026–27 – Nursery to Grade 12", "Admissions open at HKS International School, Hassan for 2026–27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
+  head: () => seo("Admissions 2026–27 – Nursery to Grade 12", "Admissions open at HKS International School for 2026–27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
   component: Admissions,
 });
 
@@ -15,7 +15,7 @@ const ages = [["Nursery", "3+ years"], ["LKG", "4+ years"], ["UKG", "5+ years"],
 const faqs: [string, string][] = [
   ["When do admissions open?", "Admissions for 2026–27 are open now for Nursery to Grade 12, subject to seat availability."],
   ["Do you offer boarding?", "Yes — full boarding and HKS Flexi-Boarding (weekday residential) programmes."],
-  ["Is transport available?", "Yes, school buses cover Hassan city and surrounding areas."],
+  ["Is transport available?", "Yes, school buses cover the city and surrounding areas."],
   ["Are scholarships available?", "Merit-based and sibling concessions are available. Please contact the admissions office for details."],
 ];
 

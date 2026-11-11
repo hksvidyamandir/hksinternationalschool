@@ -6,10 +6,10 @@ export const SITE = {
   phoneHref: "tel:+918277078474",
   whatsapp: "https://wa.me/918277078474",
   email: "hksinternationalschool417@gmail.com",
-  address: "NH 75, Bengaluru – Mangaluru Highway, Kenchattahalli, Hassan – 573 201, Karnataka",
+  address: "NH 75, Bengaluru – Mangaluru Highway, Kenchattahalli – 573 201, Karnataka",
   mapsUrl: "https://maps.app.goo.gl/EmG9n465WQdnDxa26",
   mapsEmbed:
-    "https://www.google.com/maps?q=HKS+International+School+Kenchattahalli+Hassan&output=embed",
+    "https://www.google.com/maps?q=HKS+International+School+Kenchattahalli&output=embed",
   founded: 2010,
   hours: "Mon – Sat · 8:30 AM – 4:30 PM",
 };
@@ -24,7 +24,7 @@ export const NAV: NavGroup[] = [
     children: [
       { label: "Our Story", to: "/about", desc: "Legacy, vision, mission & values since 2010" },
       { label: "Leadership", to: "/leadership", desc: "Messages from the Chairman & Principal" },
-      { label: "Why HKS", to: "/why-hks", desc: "What makes us the best school in Hassan" },
+      { label: "Why HKS", to: "/why-hks", desc: "What makes us the best school in Karnataka" },
     ],
   },
   {
