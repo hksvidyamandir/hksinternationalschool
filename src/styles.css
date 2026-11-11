@@ -701,3 +701,6 @@
   .curr-card.is-active .curr-index { top: 14px; translate: none; font-size: 40px; }
 }
 @media (prefers-reduced-motion: reduce) { .curr-card, .curr-card > img, .curr-body p, .curr-cta { transition: none; } }
+.curr-card:not(.is-active) .curr-body p, .curr-card:not(.is-active) .curr-cta { display: none; }
+.curr-card:not(.is-active) h3 { font-size: 18px; overflow-wrap: anywhere; }
+@media (max-width: 767px) { .curr-card:not(.is-active) .curr-body { inset: 0; display: flex; align-items: center; padding: 0 20px; } .curr-card:not(.is-active) h3 { margin: 0 0 0 40px; } }
