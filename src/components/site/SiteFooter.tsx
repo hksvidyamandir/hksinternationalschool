@@ -1,47 +1,58 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
+import { img } from "@/assets/site";
+
+const COLS = [
+  { label: "Home", links: [
+    { label: "Why HKS", to: "/why-hks" },
+    { label: "Experiential Learning", to: "/experiential-learning" },
+    { label: "Competitive Exams", to: "/competitive-exams" },
+    { label: "Contact Us", to: "/contact" },
+  ] },
+  ...NAV.filter((g) => g.children).map((g) => ({ label: g.label, links: g.children!.map((c) => ({ label: c.label, to: c.to })) })),
+  { label: "Admissions", links: [
+    { label: "Admission Process", to: "/admissions" },
+    { label: "Schedule a Campus Visit", to: "/contact" },
+    { label: "Enquire Now", to: "/admissions" },
+  ] },
+];
 
 export function SiteFooter() {
+  const social = "flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-navy transition hover:border-primary hover:text-primary";
   return (
-    <footer className="bg-navy text-navy-foreground">
-      <div className="h-1 bg-flame" />
-      <div className="container-site grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-5">
-        <div className="lg:col-span-2">
-          <p className="font-display text-3xl font-semibold">HKS International School</p>
-          <p className="mt-1 text-gold italic">{SITE.tagline}</p>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-foreground">
-            A CBSE day & residential school in Hassan, Karnataka — nurturing confident, future-ready learners from Nursery to Grade 12 since {SITE.founded}.
-          </p>
-          <div className="mt-6 space-y-2 text-sm">
-            <a href={SITE.mapsUrl} target="_blank" rel="noreferrer" className="flex gap-2 hover:text-gold"><MapPin className="h-4 w-4 mt-0.5 shrink-0" />{SITE.address}</a>
-            <a href={SITE.phoneHref} className="flex gap-2 hover:text-gold"><Phone className="h-4 w-4" />{SITE.phone}</a>
-            <a href={`mailto:${SITE.email}`} className="flex gap-2 hover:text-gold"><Mail className="h-4 w-4" />{SITE.email}</a>
-            <p className="flex gap-2"><Clock className="h-4 w-4" />{SITE.hours}</p>
-          </div>
+    <footer className="border-t border-border bg-muted text-foreground">
+      <div className="container-site flex flex-wrap items-center justify-between gap-6 py-10">
+        <Link to="/" aria-label="HKS International School home">
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-16 w-auto" width={421} height={290} />
+        </Link>
+        <div className="flex gap-2">
+          <a href={SITE.phoneHref} aria-label="Call the school" className={social}><Phone className="h-4 w-4" /></a>
+          <a href={`mailto:${SITE.email}`} aria-label="Email the school" className={social}><Mail className="h-4 w-4" /></a>
+          <a href={SITE.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp" className={social}><MessageCircle className="h-4 w-4" /></a>
+          <a href={SITE.mapsUrl} target="_blank" rel="noreferrer" aria-label="Directions" className={social}><MapPin className="h-4 w-4" /></a>
         </div>
-        {NAV.filter((g) => g.children).map((g) => (
-          <div key={g.label}>
-            <p className="font-display text-lg font-semibold text-gold">{g.label}</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              {g.children?.map((c) => (
-                <li key={c.label}><Link to={c.to} className="text-navy-foreground hover:text-gold">{c.label}</Link></li>
-              ))}
-              {g.label === "About" && (
-                <>
-                  <li><Link to="/admissions" className="text-navy-foreground hover:text-gold">Admissions</Link></li>
-                  <li><Link to="/contact" className="text-navy-foreground hover:text-gold">Contact Us</Link></li>
-                </>
-              )}
-            </ul>
-          </div>
-        ))}
       </div>
-      <div className="border-t border-navy-foreground/10">
-        <div className="container-site flex flex-col gap-2 py-5 text-sm text-navy-foreground sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} HKS International School, Hassan. All rights reserved.</p>
-          <p>Best CBSE Residential School in Hassan, Karnataka</p>
+      <div className="container-site border-t border-border py-10">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          {COLS.map((c) => (
+            <div key={c.label}>
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-navy">{c.label}</p>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {c.links.map((l) => (
+                  <li key={l.label}><Link to={l.to} className="text-foreground/80 hover:text-primary">{l.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
+        <p className="mt-10 max-w-5xl text-sm leading-relaxed text-foreground/80">
+          <strong className="text-navy">HKS International School</strong> is a CBSE day & residential school on {SITE.address}. Founded in {SITE.founded}, HKS nurtures confident, future-ready learners from Nursery to Grade 12 — <strong className="text-navy">{SITE.tagline}</strong>.
+        </p>
+      </div>
+      <div className="container-site flex flex-col gap-2 border-t border-border py-5 text-xs text-foreground/70 sm:flex-row sm:justify-between">
+        <p>© {new Date().getFullYear()} HKS International School, Hassan. All rights reserved.</p>
+        <p className="flex gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span>|</span><a href={`mailto:${SITE.email}`} className="hover:text-primary">{SITE.email}</a></p>
       </div>
       <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS International School, I would like to know more about admissions")}`} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
         className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft hover:scale-105 transition">
