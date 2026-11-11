@@ -9,12 +9,12 @@ export function PageHero({ eyebrow, title, intro, image, crumb }: { eyebrow: str
       <img src={image} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
       <div className="absolute inset-0 -z-10 bg-hero-overlay" />
       <div className="container-site py-24 md:py-32 text-navy-foreground">
-        <nav aria-label="Breadcrumb" className="text-xs text-navy-foreground/75 mb-4">
+        <nav aria-label="Breadcrumb" className="text-sm text-navy-foreground mb-4">
           <Link to="/" className="hover:text-gold">Home</Link> <span className="mx-1">/</span> <span>{crumb}</span>
         </nav>
         <span className="eyebrow text-gold">{eyebrow}</span>
         <h1 className="mt-3 max-w-3xl text-4xl md:text-6xl font-semibold leading-[1.05]">{title}</h1>
-        <p className="mt-5 max-w-2xl text-lg text-navy-foreground/85">{intro}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-navy-foreground">{intro}</p>
       </div>
     </section>
   );

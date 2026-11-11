@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <p className="font-display text-3xl font-semibold">HKS International School</p>
           <p className="mt-1 text-gold italic">{SITE.tagline}</p>
-          <p className="mt-4 max-w-sm text-sm text-navy-foreground/75">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-foreground">
             A CBSE day & residential school in Hassan, Karnataka — nurturing confident, future-ready learners from Nursery to Grade 12 since {SITE.founded}.
           </p>
           <div className="mt-6 space-y-2 text-sm">
@@ -24,13 +24,13 @@ export function SiteFooter() {
           <div key={g.label}>
             <p className="font-display text-lg font-semibold text-gold">{g.label}</p>
             <ul className="mt-4 space-y-2 text-sm">
-              {g.children!.map((c) => (
-                <li key={c.label}><Link to={c.to} className="text-navy-foreground/80 hover:text-gold">{c.label}</Link></li>
+              {g.children?.map((c) => (
+                <li key={c.label}><Link to={c.to} className="text-navy-foreground hover:text-gold">{c.label}</Link></li>
               ))}
               {g.label === "About" && (
                 <>
-                  <li><Link to="/admissions" className="text-navy-foreground/80 hover:text-gold">Admissions</Link></li>
-                  <li><Link to="/contact" className="text-navy-foreground/80 hover:text-gold">Contact Us</Link></li>
+                  <li><Link to="/admissions" className="text-navy-foreground hover:text-gold">Admissions</Link></li>
+                  <li><Link to="/contact" className="text-navy-foreground hover:text-gold">Contact Us</Link></li>
                 </>
               )}
             </ul>
@@ -38,7 +38,7 @@ export function SiteFooter() {
         ))}
       </div>
       <div className="border-t border-navy-foreground/10">
-        <div className="container-site flex flex-col gap-2 py-5 text-xs text-navy-foreground/60 sm:flex-row sm:justify-between">
+        <div className="container-site flex flex-col gap-2 py-5 text-sm text-navy-foreground sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} HKS International School, Hassan. All rights reserved.</p>
           <p>Best CBSE Residential School in Hassan, Karnataka</p>
         </div>
