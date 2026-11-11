@@ -16,12 +16,14 @@ export const SITE = {
 
 export type NavItem = { label: string; to: string; desc?: string };
 
+import { Compass, Landmark, Sprout, Trophy } from "lucide-react";
+
 // The school's four learning verticals, shown above the main menu.
-export const VIDHYA: { label: string; dot: string }[] = [
-  { label: "Krishi Vidhya", dot: "bg-teal" },
-  { label: "Khel Vidhya", dot: "bg-gold" },
-  { label: "Anubhav Vidhya", dot: "bg-navy" },
-  { label: "Samskruti Vidhya", dot: "bg-foreground/40" },
+export const VIDHYA: { label: string; icon: typeof Sprout; tone: string }[] = [
+  { label: "Krishi Vidhya", icon: Sprout, tone: "text-teal" },
+  { label: "Khel Vidhya", icon: Trophy, tone: "text-gold" },
+  { label: "Anubhav Vidhya", icon: Compass, tone: "text-navy" },
+  { label: "Samskruti Vidhya", icon: Landmark, tone: "text-ink" },
 ];
 export type NavGroup = { label: string; to: string; children?: NavItem[] };
 
