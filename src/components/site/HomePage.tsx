@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, ArrowLeft, ArrowRight, BookOpen, Heart, Sparkles, Trophy, FlaskConical, Globe2, Users, ShieldCheck, Pause, Play, MapPin, Quote, Check, Target, Handshake, Lightbulb } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ArrowLeft, ArrowRight, BookOpen, Heart, Sparkles, Trophy, FlaskConical, Globe2, Users, ShieldCheck, Pause, Play, MapPin, Quote, Target, Handshake, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
@@ -15,7 +15,7 @@ import { AdvantageIcon, type AdvantageIconKind } from "./AdvantageIcon";
 import { ProgrammeSelector } from "./ProgrammeSelector";
 import { VisitChooser } from "./VisitChooser";
 import { LifeGallery } from "./LifeGallery";
-import gardeningImage from "@/assets/krishi-gardening.jpg";
+import { PillarsShowcase } from "./PillarsShowcase";
 const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
   { icon: "individual", title: "Personalized Attention", text: "Small Class Sizes" },
   { icon: "practical", title: "Practical Skills", text: "Real-World Application" },
@@ -25,12 +25,6 @@ const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
   { icon: "handsOn", title: "Hands-On Learning", text: "Practical Experience" },
   { icon: "support", title: "Individual Support", text: "Tailored Guidance" },
   { icon: "facilities", title: "Modern Facilities", text: "State-of-the-Art Infrastructure" },
-];
-const pillars = [
-  { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", heading: "Where Nature Becomes the Classroom", text: "Teaching students to care for the environment through meaningful experiences with nature.", points: ["Organic farming and school gardens", "Planting, sowing and harvesting", "Horticulture activities", "Sustainability and environmental awareness"], to: "/campus" as const },
-  { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", heading: "Where Every Move Builds Character", text: "Encouraging students to stay active, develop confidence and discover the joy of sports.", points: ["Indoor and outdoor sports", "Olympic-inspired sporting activities", "Yoga, dance and fitness", "Teamwork, discipline and sportsmanship"], to: "/sports" as const },
-  { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", heading: "Where Innovation Meets Imagination", text: "A space for young thinkers, creators and problem-solvers.", points: ["AI, robotics and coding", "STEM activities and hands-on experiments", "VR and AR learning experiences", "Maker activities and real-world projects"], to: "/experiential-learning" as const },
-  { title: "Samskruti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", heading: "Where Culture Creates Connections", text: "Helping students appreciate traditions, celebrate diversity and express themselves.", points: ["Festivals and cultural celebrations", "Annual events and student performances", "House activities and competitions", "Community participation and leadership opportunities"], to: "/campus-life" as const },
 ];
 const beyond = [
   { title: "Science & discovery", icon: FlaskConical, desc: "Labs and experiments that turn questions into discoveries.", image: img.infra1, to: "/experiential-learning" as const },
@@ -72,7 +66,7 @@ export function HomePage() {
 
     <CurriculumShowcase />
 
-    <section className="home-section pil-section pil-vidya"><div className="container-site"><div className="pil-head"><div><span className="home-kicker">The four pillars of learning at HKS</span><h2>The <em>HKS</em> Pillars</h2><h3 className="pil-subheading">Four Experiences. One Holistic Education.</h3></div><p>At HKS Vidyamandir, education extends beyond textbooks. Our four signature programmes give students opportunities to learn through innovation, movement, culture and nature.</p></div><div className="pil-grid">{pillars.map((p, i) => <article key={p.title} className="pil-card" data-motion-step={i}><img src={p.image} alt={p.alt} loading="lazy" /><span className="pil-num">0{i + 1}</span><div className="pil-body"><small>{p.title}</small><h3>{p.heading}</h3><p>{p.text}</p><ul>{p.points.map(point => <li key={point}><Check size={16} aria-hidden="true" /><span>{point}</span></li>)}</ul><Button asChild className="site-cta pil-action"><Link to={p.to}>Explore <ArrowUpRight size={16} /></Link></Button></div></article>)}</div></div></section>
+    <PillarsShowcase />
 
     <section className="val-section"><div className="container-site"><div className="val-head"><span className="home-kicker">What guides us</span><h2>Our <em>Offers</em></h2><p>Values for life, not just school — the habits of heart and mind every HKS learner carries forward.</p></div><div className="val-grid">{([[ShieldCheck, "Integrity", "We do what is right, even when no one is watching, and build trust through honesty in every word and action."], [Trophy, "Excellence", "We give our personal best in the classroom, on the field and on stage, and celebrate steady growth."], [Handshake, "Respect", "We value every individual — students, staff and families — and nurture relationships built on kindness."], [Lightbulb, "Curiosity", "We never stop at why. Questions, experiments and exploration keep learning joyful and alive."], [Heart, "Compassion", "We lead with empathy, care for one another and give back to the community around us."], [Target, "Discipline", "We grow through commitment, routine and responsibility, turning small efforts into big achievements."]] as const).map(([Icon, title, text], i) => <article key={title} className="val-card" data-motion-step={i % 2}><span className="val-icon"><Icon /></span><div><span className="val-num">0{i + 1}</span><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
 

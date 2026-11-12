@@ -844,6 +844,34 @@
   .pil-vidya .pil-body h3 { min-height: 0; }
   .pil-vidya .pil-body p { min-height: 0; }
 }
+/* Pillars share the curriculum accordion, with room for the existing activity lists. */
+.pillars-showcase { padding-block: 64px; }
+.pillars-showcase .curr-head h2 em { color: var(--gold); font-style: normal; }
+.pillars-showcase .curr-stage { margin-top: 32px; }
+.pillars-showcase .curr-track { height: 640px; }
+.pillars-showcase .curr-card.is-active { flex: 4; }
+.pillars-showcase .curr-card.is-active .curr-body { inset: 0; max-width: none; padding: 32px; }
+.pillars-showcase .curr-card.is-active::before { background: linear-gradient(90deg, color-mix(in oklab, var(--photo-black) 94%, transparent), color-mix(in oklab, var(--photo-black) 72%, transparent)); }
+.pillar-detail[hidden] { display: none; }
+.pillar-detail h4 { margin-top: 18px; font-size: 22px; line-height: 1.3; color: var(--gold); }
+.pillar-detail ul { display: grid; gap: 10px; border-top: 1px solid color-mix(in oklab, var(--navy-foreground) 25%, transparent); margin-top: 20px; padding-top: 20px; }
+.pillar-detail li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 10px; font-size: 14px; line-height: 1.5; }
+.pillar-detail li svg { color: var(--gold); margin-top: 3px; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pillars-showcase .curr-stage { gap: 10px; }
+  .pillars-showcase .curr-track { gap: 10px; }
+  .pillars-showcase .curr-card.is-active { flex: 6; }
+  .pillars-showcase .curr-card.is-active .curr-body { padding: 24px; }
+  .pillars-showcase .curr-card.is-active h3 { font-size: 30px; }
+}
+@media (max-width: 767px) {
+  .pillars-showcase { padding-block: 48px; }
+  .pillars-showcase .curr-track { height: auto; }
+  .pillars-showcase .curr-card.is-active { flex: none; height: 600px; }
+  .pillars-showcase .curr-card.is-active .curr-body { padding: 24px; justify-content: center; }
+  .pillars-showcase .curr-card.is-active h3 { font-size: 28px; }
+  .pillar-detail h4 { font-size: 20px; }
+}
 /* Our purpose */
 .pur-section { position: relative; overflow: hidden; isolation: isolate; padding: clamp(72px, 9vw, 120px) 0; background: radial-gradient(120% 140% at 50% 0%, var(--navy) 0%, var(--ink, var(--navy)) 100%); color: var(--navy-foreground); text-align: center; }
 .pur-orb { position: absolute; border-radius: 50%; z-index: -1; pointer-events: none; }
