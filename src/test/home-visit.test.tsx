@@ -20,7 +20,7 @@ globalThis.ResizeObserver = ObserverStub as unknown as typeof ResizeObserver;
 afterEach(cleanup);
 
 describe("Homepage visit choices", () => {
-  it.each(["Our Campus", "Schedule a campus visit"])("%s offers both requested visit paths", (name) => {
+  it.each(["Our Campus", "Schedule a campus visit", "Book a campus tour"])("%s offers both requested visit paths", (name) => {
     render(<HomePage />);
     fireEvent.click(screen.getByRole("button", { name }));
     const menu = within(screen.getByRole("dialog", { name: "Choose your visit" }));
