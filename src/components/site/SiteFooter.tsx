@@ -4,6 +4,7 @@ import { NAV, SITE } from "@/lib/site";
 import { img } from "@/assets/site";
 import { Button } from "@/components/ui/button";
 import { SchoolChat } from "@/components/site/SchoolChat";
+import { ScrollTop } from "@/components/site/ScrollTop";
 
 const COLS = [
   { label: "Home", links: [
@@ -71,7 +72,10 @@ export function SiteFooter() {
           </a>
         </Button>
       </div>
-      <SchoolChat />
+      <div className="fixed bottom-5 right-3 z-40 flex flex-col items-end gap-3 md:right-5">
+        <SchoolChat />
+        <ScrollTop />
+      </div>
     </footer>
   );
 }

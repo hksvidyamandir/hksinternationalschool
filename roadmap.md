@@ -35,3 +35,4 @@
 - [x] Create interactive quick-link tiles without photos, using bold colours, expressive icons and animated highlights; verify links, keyboard focus and phone layouts.
 
 - [x] Add shared virtual visit and campus tour choices to Our Campus and the final admissions visit button; verify both paths on desktop and mobile.
+- [x] Add a back-to-top button beneath the right-side chat icon; verify it appears on scroll and returns the page to the top on desktop and mobile.

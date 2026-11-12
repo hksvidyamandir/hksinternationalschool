@@ -1320,3 +1320,15 @@
   .programme-copy > * { animation: none; }
   .hks-home .programme-selector .home-orbit { transition: none; }
 }
+
+/* Floating back-to-top control (right column, beneath the school chat) */
+@keyframes scroll-top-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.92); }
+  to { opacity: 1; transform: none; }
+}
+.scroll-top {
+  animation: scroll-top-in 0.24s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top { animation: none; }
+}
