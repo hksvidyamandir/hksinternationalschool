@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { img } from "@/assets/site";
 import gardening from "@/assets/krishi-gardening.jpg";
+import farming from "@/assets/krishi-farming.jpg";
 import exams from "@/assets/learning-exam-preparation.jpg";
 import olympiad from "@/assets/learning-olympiad.jpg";
 import industry from "@/assets/learning-industry.jpg";
@@ -12,6 +13,7 @@ import { KrishiIcon, KhelIcon, AnubhavIcon, SamskrutiIcon } from "./VidyaIcons";
 const groups = [
   { id: "krishi", name: "Krishi Vidya", Icon: KrishiIcon, subtitle: "Nature becomes the classroom.", topics: [
     { title: "Experiential Learning", text: "Planting, gardening and hands-on experiences bring learning to life.", image: gardening, alt: "Illustrative photograph of planting a seedling", to: "/experiential-learning" as const },
+    { title: "Organic Farming & Gardening", text: "Sowing, caring for plants and harvesting connect learning with nature.", image: farming, alt: "Illustrative photograph of students harvesting vegetables with a teacher in a garden", to: "/experiential-learning" as const },
   ] },
   { id: "khel", name: "Khel Vidya", Icon: KhelIcon, subtitle: "Movement, wellbeing and team spirit.", topics: [
     { title: "Physical Education", text: "Sport, yoga and fitness develop confidence, discipline and teamwork.", image: img.acad3, alt: "HKS students exercising outdoors", to: "/sports" as const },

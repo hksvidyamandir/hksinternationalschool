@@ -27,5 +27,5 @@
 - CurriculumShowcase owns a manually controlled four-card accordion with the first card initially expanded and hover, focus and tap selection; no timer changes the user's selection.
 - Keep CurriculumShowcase concise; PillarsShowcase uses its accordion styling for detailed Vidya content, expands one card on hover, focus or tap, and restores the first after pointer exit unless focus is inside, keeping both learning sections visually consistent.
 - LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
-- BeyondClassroom groups the nine supplied topics into accessible Vidya tabs; generated activity photos are illustrative, and real school images remain sourced through the shared asset index.
+- BeyondClassroom groups supplied topics and additional activity imagery into accessible Vidya tabs; generated activity photos are illustrative, and real school images remain sourced through the shared asset index.
 - SchoolChat provides a right-side, session-only school FAQ chat using browser-safe school-chat replies and shared contact details; it never claims to be a live agent or invents fees.
