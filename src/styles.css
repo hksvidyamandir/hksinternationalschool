@@ -1059,6 +1059,24 @@
 @media (max-width: 600px) { .exp-grid { grid-template-columns: 1fr; } .exp-card { aspect-ratio: 4/5; } }
 @media (prefers-reduced-motion: reduce) { .exp-card, .exp-doodle, .exp-play { animation: none; } .exp-card, .exp-card img { transition: none; } }
 .exp-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 390px)); justify-content: center; }
+.family-accordion .exp-grid { display: flex; gap: 14px; height: 480px; }
+.hks-home .family-accordion .exp-card { flex: 1 1 0; min-width: 0; height: 100%; padding: 0; aspect-ratio: auto; border-radius: 8px; white-space: normal; background: var(--photo-black); color: var(--navy-foreground); animation: none; transform: none; transition: flex .55s cubic-bezier(.2,.7,.2,1); }
+.hks-home .family-accordion .exp-card.is-expanded { flex: 3.5 1 0; }
+.family-accordion .exp-title { font-family: var(--font-display); font-size: 24px; line-height: 1.15; letter-spacing: 0; text-transform: none; }
+.family-accordion .exp-title strong { font-size: 32px; letter-spacing: 0; }
+.family-accordion .exp-card :is(.exp-title, .exp-person, .exp-play, .exp-doodle, .exp-arrow) { opacity: 0; visibility: hidden; transition: opacity .2s; }
+.family-accordion .exp-card.is-expanded :is(.exp-title, .exp-person, .exp-play, .exp-doodle, .exp-arrow) { opacity: 1; visibility: visible; transition: opacity .3s .25s; }
+.exp-collapsed { position: absolute; bottom: 28px; left: 50%; writing-mode: vertical-rl; transform: translateX(-50%) rotate(180deg); font-family: var(--font-display); font-size: 22px; white-space: nowrap; }
+.is-expanded .exp-collapsed { opacity: 0; visibility: hidden; }
+.family-accordion .exp-person { right: 20px; bottom: 28px; }
+.family-accordion .exp-arrow { display: none; }
+@media (max-width: 767px) {
+  .family-accordion .exp-grid { flex-direction: column; height: auto; gap: 10px; }
+  .hks-home .family-accordion .exp-card { flex: none; width: 100%; height: 76px; transition: height .4s; }
+  .hks-home .family-accordion .exp-card.is-expanded { flex: none; height: 400px; }
+  .exp-collapsed { left: 22px; top: 50%; bottom: auto; writing-mode: horizontal-tb; transform: translateY(-50%); font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .hks-home .family-accordion .exp-card, .family-accordion .exp-card :is(.exp-title, .exp-person, .exp-play, .exp-doodle, .exp-arrow) { transition: none; } }
 /* Our home / location */
 .loc-section { position: relative; overflow: hidden; padding: clamp(64px, 8vw, 104px) 0; background: radial-gradient(100% 120% at 50% 0%, var(--navy), var(--ink, var(--navy))); color: var(--navy-foreground); }
 .loc-section::before { content: ""; position: absolute; left: -160px; top: -160px; width: 420px; height: 420px; border-radius: 50%; border: 2px dashed color-mix(in oklab, var(--gold) 35%, transparent); animation: val-spin 70s linear infinite; }

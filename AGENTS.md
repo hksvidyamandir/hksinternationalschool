@@ -14,7 +14,7 @@
 - `img.logo` is the original stacked logo (favicon source); `img.logoFull` is a horizontal rearrangement of the same artwork pixels for header and footer.
 - Homepage presentation and interactive sections live in a dedicated browser-safe site component with scoped global styles, keeping the index route focused on page metadata.
 - HeroFilm plays a CDN-hosted, pre-rendered looping photo-and-doodle film; caption and scene controls follow video time, and reduced-motion pauses autoplay.
-- FamilyStories owns the homepage testimonial cards and accessible reading dialogs; school photos are contextual imagery, not portraits of the quoted parents.
+- FamilyStories owns a five-card accordion and accessible reading dialogs; centre expansion is restored after pointer exit, touch selects before opening, and editorial school stories are distinguished from parent quotes because additional testimonials must not be invented. School photos are contextual imagery, not portraits of the quoted parents.
 - Homepage motion is progressively enhanced through useHomeMotion and scoped CSS; keep content visible without JavaScript, preserve existing transforms, and bypass motion for reduced-motion preferences.
 - ExperienceStories owns staggered quote-and-photo story cards; distinguish actual parent quotes from school editorial stories and link each card to a relevant existing page.
 - Scope mobile layout refinements to max-width: 767px and use minmax(0, 1fr) tracks for text beside fixed controls; preserve existing desktop breakpoints above that boundary.
