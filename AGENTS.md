@@ -22,3 +22,4 @@
 - AdvantageIcon owns the advantage section's decorative SVG artwork, keeping its icon set separate from navigation icons.
 - CTA colors use shared semantic tokens and the site-cta treatment; section-specific actions share that treatment so button states remain consistent without changing navigation controls.
 - ProgrammeSelector owns programme data and accessible controlled Tabs with matched detail panels; scoped selection styles keep every programme visibly connected to its content without changing other homepage sections.
+- Photo shading uses the shared neutral photo-black token (photo-shade utility); keep brand-colour section surfaces and interactive selection accents separate from image overlays.

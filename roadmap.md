@@ -18,3 +18,4 @@
 - [x] Unify all CTA buttons with darker orange defaults and theme-orange hover states; verify both states and mobile navigation.
 - [x] Connect programme selections clearly to their content and verify all four choices on desktop, mobile and keyboard.
 - [x] Apply theme orange to the top contact bar with consistent, readable link states.
+- [x] Audit all photo overlays, replace blue shading with neutral black and verify banners, card states and mobile layouts.
