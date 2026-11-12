@@ -1,4 +1,6 @@
 # Homepage redesign
+- [x] Restore distinct phone-blue and WhatsApp-green colors on the left floating icons without changing the right-side chat.
+- [x] Add a right-side school chat window while preserving left-side phone and WhatsApp icons; verify answers, links and mobile layout.
 - [x] Restore the compact curriculum section and move detailed Vidya content into the lower HKS Pillars; verify both on desktop and mobile.
 - [x] Turn the school-life photos into a click-to-expand gallery and verify photo browsing and closing on desktop and mobile.
 - [x] Add the supplied Vidya headings, descriptions and four points per card; keep sizing uniform and verify selection on desktop and mobile.

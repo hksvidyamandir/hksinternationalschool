@@ -27,3 +27,4 @@
 - CurriculumShowcase owns a manually controlled four-card accordion with the first card initially expanded and hover, focus and tap selection; no timer changes the user's selection.
 - Keep the curriculum accordion concise; the lower HKS Pillars section displays the detailed Vidya descriptions and activity lists so full information remains readable without hover.
 - LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
+- SchoolChat provides a right-side, session-only school FAQ chat using browser-safe school-chat replies and shared contact details; it never claims to be a live agent or invents fees.

@@ -44,6 +44,8 @@
   --color-cta-foreground: var(--cta-foreground);
   --color-cta-hover: var(--cta-hover);
   --color-cta-hover-foreground: var(--cta-hover-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-hover: var(--whatsapp-hover);
   --color-ring-offset-background: var(--background);
 }
 
@@ -70,6 +72,8 @@
   --cta-foreground: var(--card);
   --cta-hover: var(--gold);
   --cta-hover-foreground: var(--ink);
+  --whatsapp: #25D366;
+  --whatsapp-hover: #1EBE5D;
   --flame: var(--gold);
   --cream: color-mix(in oklab, var(--gold) 14%, var(--background));
   --secondary: color-mix(in oklab, var(--teal) 12%, var(--background));
