@@ -14,3 +14,4 @@
 
 - [x] Rename the school to HKS Vidyamandir throughout the site and remove the visible school name from the opening banner; verify all pages.
 - [x] Increase advantage photo space, apply a black fade, custom orange icons and charcoal subheadings; verify desktop and mobile.
+- [x] Align advantage cards flush with the photo top and replace the blue bottom glow with black; verify desktop and mobile.
