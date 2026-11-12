@@ -10,7 +10,6 @@ import { StudentsSpeak } from "./StudentsSpeak";
 import { useHomeMotion } from "@/hooks/use-home-motion";
 import { ExperienceStories } from "./ExperienceStories";
 import { AdvantageStats } from "./AdvantageStats";
-import { CurriculumShowcase } from "./CurriculumShowcase";
 import { AdvantageIcon, type AdvantageIconKind } from "./AdvantageIcon";
 import { ProgrammeSelector } from "./ProgrammeSelector";
 import { VisitChooser } from "./VisitChooser";
@@ -63,8 +62,6 @@ export function HomePage() {
     <section className="home-advantage"><div className="container-site"><Heading label="The HKS advantage" title="Space to dream. Support to soar." /><AdvantageStats /><div className="home-usp-grid">{advantages.map(({ icon, title, text }, i) => <article key={title} data-motion-step={i % 4}><span className="home-usp-icon"><AdvantageIcon kind={icon} /></span><h3>{title.split(" ").map(word => <span key={word}>{word}</span>)}</h3><p>{text}</p></article>)}</div></div></section>
 
     <ProgrammeSelector />
-
-    <CurriculumShowcase />
 
     <PillarsShowcase />
 
