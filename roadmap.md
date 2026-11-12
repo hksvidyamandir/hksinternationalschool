@@ -24,3 +24,5 @@
 - [x] Replace curriculum with the four approved Vidhya cards and contextual school photos; verify first-open, hover, keyboard and phone selection without auto-advance.
 - [x] Replace the Krishi Vidhya campus photo with a gardening image and verify it displays.
 - [x] Revert the Events & community section to the folder-tab design; verify tabs, peeking photo, badge and phone layout.
+- [x] Lightly refine Events & community tabs, photo framing and visual balance; verify both stories on desktop and mobile.
+- [x] Centre-align the A window into our world heading and supporting text; verify desktop and mobile.
