@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { img } from "@/assets/site";
 import { Button } from "@/components/ui/button";
 import gardeningImage from "@/assets/krishi-gardening.jpg";
 
 const cards = [
-  { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", text: "Discover nature, understand how food grows, and develop respect for the land.", to: "/campus" as const },
-  { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", text: "Build fitness, teamwork and confidence through sport and movement.", to: "/sports" as const },
-  { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", text: "Learn through hands-on experiences, exploration and real-world discovery.", to: "/experiential-learning" as const },
-  { title: "Samskruti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", text: "Explore culture, traditions and creative expression through art and performance.", to: "/campus-life" as const },
+  { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", heading: "Where Nature Becomes the Classroom", text: "Teaching students to care for the environment through meaningful experiences with nature.", points: ["Organic farming and school gardens", "Planting, sowing and harvesting", "Horticulture activities", "Sustainability and environmental awareness"], to: "/campus" as const },
+  { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", heading: "Where Every Move Builds Character", text: "Encouraging students to stay active, develop confidence and discover the joy of sports.", points: ["Indoor and outdoor sports", "Olympic-inspired sporting activities", "Yoga, dance and fitness", "Teamwork, discipline and sportsmanship"], to: "/sports" as const },
+  { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", heading: "Where Innovation Meets Imagination", text: "A space for young thinkers, creators and problem-solvers.", points: ["AI, robotics and coding", "STEM activities and hands-on experiments", "VR and AR learning experiences", "Maker activities and real-world projects"], to: "/experiential-learning" as const },
+  { title: "Samskriti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", heading: "Where Culture Creates Connections", text: "Helping students appreciate traditions, celebrate diversity and express themselves.", points: ["Festivals and cultural celebrations", "Annual events and student performances", "House activities and competitions", "Community participation and leadership opportunities"], to: "/campus-life" as const },
 ];
 
 export function CurriculumShowcase() {
@@ -30,7 +30,11 @@ export function CurriculumShowcase() {
             <Button type="button" variant="ghost" className="curr-select" aria-label={`Open ${c.title}`} aria-expanded={i === active} aria-controls={`curr-detail-${i}`} onFocus={() => setActive(i)} onClick={() => setActive(i)} />
             <div className="curr-body">
               <h3>{(() => { const w = c.title.split(" "); const first = w[1] === "&" ? w.slice(0, 2).join(" ") : (w[0] ?? ""); const rest = c.title.slice(first.length).trim(); return <><span>{first}</span> <span>{rest}</span></>; })()}</h3>
-              <p id={`curr-detail-${i}`} hidden={i !== active}>{c.text}</p>
+              <div id={`curr-detail-${i}`} className="curr-detail" hidden={i !== active}>
+                <h4>{c.heading}</h4>
+                <p>{c.text}</p>
+                <ul>{c.points.map(point => <li key={point}><Check size={16} aria-hidden="true" /><span>{point}</span></li>)}</ul>
+              </div>
               {i === active && <Button asChild className="curr-cta"><Link to={c.to}>Learn more <ArrowUpRight size={16} /></Link></Button>}
             </div>
             <span className="curr-index">0{i + 1}</span>

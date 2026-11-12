@@ -1,4 +1,5 @@
 # Homepage redesign
+- [x] Add the supplied Vidya headings, descriptions and four points per card; keep sizing uniform and verify selection on desktop and mobile.
 - [x] Recreate the referenced section sequence with HKS colours and real school imagery.
 - [x] Add working banner, programme, gallery and family-story interactions.
 - [x] Verify homepage on desktop and mobile, navigation and existing tests.
