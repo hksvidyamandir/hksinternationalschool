@@ -3,13 +3,12 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { img } from "@/assets/site";
 import { Button } from "@/components/ui/button";
-import gardeningImage from "@/assets/krishi-gardening.jpg";
 
 const cards = [
-  { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", text: "Discover nature, understand how food grows, and develop respect for the land.", to: "/campus" as const },
-  { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", text: "Build fitness, teamwork and confidence through sport and movement.", to: "/sports" as const },
-  { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", text: "Learn through hands-on experiences, exploration and real-world discovery.", to: "/experiential-learning" as const },
-  { title: "Samskruti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", text: "Explore culture, traditions and creative expression through art and performance.", to: "/campus-life" as const },
+  { title: "Early Years", grades: "Nursery to UKG", image: img.progMontessori, alt: "HKS early years students together", text: "Building foundational skills through play, exploration, communication and creative activities.", to: "/academics" as const },
+  { title: "Primary School", grades: "Grades 1–5", image: img.progElementary, alt: "HKS primary school students", text: "Developing strong fundamentals in language, mathematics, science and environmental awareness.", to: "/academics" as const },
+  { title: "Middle School", grades: "Grades 6–8", image: img.progCbse, alt: "HKS middle school students", text: "Encouraging independent thinking, conceptual understanding, practical learning and problem-solving.", to: "/academics" as const },
+  { title: "Senior School", grades: "Grades 9–12", image: img.progSenior, alt: "HKS senior school students", text: "Preparing students for higher education and future careers through subject knowledge, academic guidance and essential life skills.", to: "/academics" as const },
 ];
 
 export function CurriculumShowcase() {
@@ -29,6 +28,7 @@ export function CurriculumShowcase() {
             <img src={c.image} alt={c.alt} loading="lazy" />
             <Button type="button" variant="ghost" className="curr-select" aria-label={`Open ${c.title}`} aria-expanded={i === active} aria-controls={`curr-detail-${i}`} onFocus={() => setActive(i)} onClick={() => setActive(i)} />
             <div className="curr-body">
+              <small hidden={i !== active}>{c.grades}</small>
               <h3>{(() => { const w = c.title.split(" "); const first = w[1] === "&" ? w.slice(0, 2).join(" ") : (w[0] ?? ""); const rest = c.title.slice(first.length).trim(); return <><span>{first}</span> <span>{rest}</span></>; })()}</h3>
               <p id={`curr-detail-${i}`} hidden={i !== active}>{c.text}</p>
               {i === active && <Button asChild className="curr-cta"><Link to={c.to}>Learn more <ArrowUpRight size={16} /></Link></Button>}
