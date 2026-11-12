@@ -904,7 +904,7 @@
 .evc-tab.is-active { background: var(--navy); color: var(--navy-foreground); }
 .evc-tab:not(.is-active):hover { color: var(--navy); }
 .evc-tab:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.evc-panel { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px, 4vw, 56px); align-items: center; margin-top: 28px; padding: clamp(22px, 3vw, 34px); background: var(--card, var(--background)); border: 1px solid color-mix(in oklab, var(--navy) 10%, transparent); border-radius: 24px; box-shadow: 0 30px 60px -44px color-mix(in oklab, var(--navy) 60%, transparent); animation: evc-in .5s cubic-bezier(.2,.7,.2,1); }
+.evc-panel { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; margin-top: 28px; padding: clamp(22px, 3vw, 34px); background: var(--card, var(--background)); border: 1px solid color-mix(in oklab, var(--navy) 10%, transparent); border-radius: 24px; box-shadow: 0 30px 60px -44px color-mix(in oklab, var(--navy) 60%, transparent); animation: evc-in .5s cubic-bezier(.2,.7,.2,1); }
 @keyframes evc-in { from { opacity: 0; transform: translateY(14px); } }
 .evc-media { min-width: 0; }
 .evc-media > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
