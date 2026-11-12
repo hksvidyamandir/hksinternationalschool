@@ -9,6 +9,10 @@ const artwork = {
   belonging: <><path d="m4 14 12-9 12 9M8 13v14h16V13M12 19c0-3 4-3 4 0 0-3 4-3 4 0 0 3-4 5-4 5s-4-2-4-5Z" /></>,
   next: <><path d="M5 27h22M9 27v-6h6v6M15 27V16h6v11M21 27V11h6v16M5 15 18 4M12 4h6v6" /></>,
   care: <><path d="M16 14c-7-9-15 1 0 10 15-9 7-19 0-10ZM4 21v5l8 3h8l8-3v-5M8 24l4 2M24 24l-4 2" /></>,
+  practical: <><path d="M11 27v-5l-4-3 2-4V11a9 9 0 0 1 18 0c0 5-2 7-5 10v6M14 11a3 3 0 0 1 5-2 3 3 0 0 1 4 4 3 3 0 0 1-5 3 3 3 0 0 1-5-3M18 9v7M5 8l-2-1M6 4 5 2" /></>,
+  handsOn: <><path d="M9 4h14v24H9ZM13 10l2 2 4-5M13 17h6M13 22h3M5 8v20h18" /></>,
+  support: <><path d="M4 5h10c3 0 4 2 4 4v18c0-3-2-4-5-4H4ZM18 9c0-3 2-4 5-4h5v18h-5c-3 0-5 1-5 4M8 11h5M8 16h5" /><circle cx="23" cy="12" r="2" /><path d="M20 19a3 3 0 0 1 6 0" /></>,
+  facilities: <><path d="M5 27h22M8 27V8h16v19M12 8V4h8v4M12 13h2M18 13h2M12 18h2M18 18h2M14 27v-5h4v5" /></>,
 };
 
 export type AdvantageIconKind = keyof typeof artwork;
