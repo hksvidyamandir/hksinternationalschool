@@ -54,7 +54,7 @@ export function HeroFilm() {
         <VisitChooser>
           <Button type="button" variant="outline" className="home-visit"><CalendarPlus size={16} /> Schedule a campus visit <ChevronDown size={14} className="home-visit-caret" /></Button>
         </VisitChooser>
-        <Button asChild className="home-action"><Link to="/admissions">Admissions 2026–27<ArrowUpRight /></Link></Button>
+        <Button asChild className="home-action"><Link to="/admissions">Admissions 2026-27<ArrowUpRight /></Link></Button>
         <div className="home-slide-controls"><span>0{scene + 1} / 03</span><Button variant="ghost" size="icon" aria-label="Previous banner" onClick={() => moveScene(-1)}><ArrowLeft /></Button><Button variant="ghost" size="icon" aria-label={paused ? "Play banners" : "Pause banners"} onClick={toggle}>{paused ? <Play /> : <Pause />}</Button><Button variant="ghost" size="icon" aria-label="Next banner" onClick={() => moveScene(1)}><ArrowRight /></Button></div>
       </div>
     </div>

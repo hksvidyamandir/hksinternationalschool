@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 
 const cards = [
   { title: "Early Years", grades: "Nursery to UKG", image: img.progMontessori, alt: "HKS early years students together", text: "Building foundational skills through play, exploration, communication and creative activities.", to: "/academics" as const },
-  { title: "Primary School", grades: "Grades 1–5", image: img.progElementary, alt: "HKS primary school students", text: "Developing strong fundamentals in language, mathematics, science and environmental awareness.", to: "/academics" as const },
-  { title: "Middle School", grades: "Grades 6–8", image: img.progCbse, alt: "HKS middle school students", text: "Encouraging independent thinking, conceptual understanding, practical learning and problem-solving.", to: "/academics" as const },
-  { title: "Senior School", grades: "Grades 9–12", image: img.progSenior, alt: "HKS senior school students", text: "Preparing students for higher education and future careers through subject knowledge, academic guidance and essential life skills.", to: "/academics" as const },
+  { title: "Primary School", grades: "Grades 1-5", image: img.progElementary, alt: "HKS primary school students", text: "Developing strong fundamentals in language, mathematics, science and environmental awareness.", to: "/academics" as const },
+  { title: "Middle School", grades: "Grades 6-8", image: img.progCbse, alt: "HKS middle school students", text: "Encouraging independent thinking, conceptual understanding, practical learning and problem-solving.", to: "/academics" as const },
+  { title: "Senior School", grades: "Grades 9-12", image: img.progSenior, alt: "HKS senior school students", text: "Preparing students for higher education and future careers through subject knowledge, academic guidance and essential life skills.", to: "/academics" as const },
 ];
 
 export function CurriculumShowcase() {

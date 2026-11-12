@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 const photos = [
-  { label: "Early Years (Nursery – Grade 2)", src: img.progMontessori },
-  { label: "Primary School (Grades 3 – 5)", src: img.progElementary },
-  { label: "Middle & High (Grades 6 – 10)", src: img.progCbse },
-  { label: "Senior Secondary (Grades 11 – 12)", src: img.progSenior },
+  { label: "Early Years (Nursery - Grade 2)", src: img.progMontessori },
+  { label: "Primary School (Grades 3 - 5)", src: img.progElementary },
+  { label: "Middle & High (Grades 6 - 10)", src: img.progCbse },
+  { label: "Senior Secondary (Grades 11 - 12)", src: img.progSenior },
   { label: "Residential Life", src: img.infra4 },
   { label: "Science & Technology", src: img.infra1 },
   { label: "The Arts", src: img.campus3 },

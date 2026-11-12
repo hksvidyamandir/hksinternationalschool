@@ -18,7 +18,7 @@ const reasons = [
 function Why() {
   return (
     <>
-      <PageHero crumb="Why HKS" eyebrow="Why choose us" title="Why HKS is recognised as the best school in Karnataka" intro="Education is not just about marks — it is about shaping confident, responsible and future-ready leaders." image={img.campus3} />
+      <PageHero crumb="Why HKS" eyebrow="Why choose us" title="Why HKS is recognised as the best school in Karnataka" intro="Education is not just about marks - it is about shaping confident, responsible and future-ready leaders." image={img.campus3} />
       {reasons.map((r, i) => (
         <Section key={r.t} tone={i % 2 ? "muted" : "default"}>
           <Split image={r.i} alt={r.t} reverse={i % 2 === 1}>

@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CtaBand, PageHero, Section, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/campus")({
-  head: () => seo("Campus & Infrastructure Gallery", "Tour the HKS Vidyamandir campus — smart classrooms, laboratories, hostels, playgrounds and green spaces.", "/campus"),
+  head: () => seo("Campus & Infrastructure Gallery", "Tour the HKS Vidyamandir campus - smart classrooms, laboratories, hostels, playgrounds and green spaces.", "/campus"),
   component: Campus,
 });
 
@@ -13,7 +13,7 @@ const gallery = [img.infra1, img.infra2, img.infra3, img.infra4, img.infra5, img
 function Campus() {
   return (
     <>
-      <PageHero crumb="Campus" eyebrow="Our campus" title="Spaces designed to inspire" intro="A serene, green campus on the Bengaluru–Mangaluru highway with modern facilities for learning and living." image={img.infra3} />
+      <PageHero crumb="Campus" eyebrow="Our campus" title="Spaces designed to inspire" intro="A serene, green campus on the Bengaluru-Mangaluru highway with modern facilities for learning and living." image={img.infra3} />
       <Section>
         <SectionHead center eyebrow="Infrastructure" title="State-of-the-art facilities" />
         <CardGrid cols={4} items={[

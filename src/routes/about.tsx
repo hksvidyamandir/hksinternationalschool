@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/about")({
-  head: () => seo("About Us – Our Story, Vision & Values", "Learn about HKS Vidyamandir: our legacy since 2010, vision, mission, philosophy, core values and holistic CBSE education.", "/about"),
+  head: () => seo("About Us - Our Story, Vision & Values", "Learn about HKS Vidyamandir: our legacy since 2010, vision, mission, philosophy, core values and holistic CBSE education.", "/about"),
   component: About,
 });
 
@@ -13,7 +13,7 @@ const timeline = [
   ["2010", "HKS Vidyamandir founded in Kenchattahalli with an English-medium CBSE vision."],
   ["2014", "Residential programme launched, welcoming students from across Karnataka."],
   ["2018", "Middle & High School expansion with modern science and computer labs."],
-  ["2022", "Senior Secondary (Grade 11–12) and integrated NEET/JEE foundation introduced."],
+  ["2022", "Senior Secondary (Grade 11-12) and integrated NEET/JEE foundation introduced."],
   ["2026", "Experiential learning centres, VR/AR rooms and flexi-boarding for a new decade."],
 ];
 
@@ -24,7 +24,7 @@ function About() {
       <Section>
         <Split image={img.acad4} alt="HKS Vidyamandir academic block">
           <SectionHead eyebrow="Our legacy" title="A decade-plus of commitment to progress" />
-          <p className="mt-5 text-muted-foreground text-lg">Located in rural Karnataka on the Bengaluru–Mangaluru highway, HKS ensures uninterrupted learning with all-weather accessibility. Our comprehensive curriculum supports growth from early learning to senior secondary, nurturing future-ready students who carry strong values wherever they go.</p>
+          <p className="mt-5 text-muted-foreground text-lg">Located in rural Karnataka on the Bengaluru-Mangaluru highway, HKS ensures uninterrupted learning with all-weather accessibility. Our comprehensive curriculum supports growth from early learning to senior secondary, nurturing future-ready students who carry strong values wherever they go.</p>
           <p className="mt-4 text-muted-foreground">Our motto, <strong className="text-navy">"Strengthening Your Wings of Success"</strong>, reflects our promise: to give every child roots of discipline and knowledge, and wings of confidence and creativity.</p>
         </Split>
       </Section>
@@ -38,7 +38,7 @@ function About() {
         <SectionHead center eyebrow="What guides us" title="Our core values" />
         <CardGrid cols={3} items={[
           { title: "Integrity", text: "Honesty and responsibility in every action, inside and outside the classroom." },
-          { title: "Excellence", text: "High standards in academics, sport and the arts — always our personal best." },
+          { title: "Excellence", text: "High standards in academics, sport and the arts - always our personal best." },
           { title: "Respect", text: "Valuing every culture, opinion and individual in our diverse community." },
           { title: "Curiosity", text: "Asking questions, exploring ideas and loving the journey of learning." },
           { title: "Compassion", text: "Kindness towards people and care for the environment we share." },

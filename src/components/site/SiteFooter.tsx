@@ -50,7 +50,7 @@ export function SiteFooter() {
           ))}
         </div>
         <p className="mt-10 max-w-5xl text-sm leading-relaxed text-foreground/80">
-          <strong className="text-navy">HKS Vidyamandir</strong> is a CBSE day & residential school on {SITE.address}. Founded in {SITE.founded}, HKS nurtures confident, future-ready learners from Nursery to Grade 12 — <strong className="text-navy">{SITE.tagline}</strong>.
+          <strong className="text-navy">HKS Vidyamandir</strong> is a CBSE day & residential school on {SITE.address}. Founded in {SITE.founded}, HKS nurtures confident, future-ready learners from Nursery to Grade 12 - <strong className="text-navy">{SITE.tagline}</strong>.
         </p>
       </div>
       <div className="container-site flex flex-col gap-2 border-t border-border py-5 text-xs text-foreground/70 sm:flex-row sm:justify-between">

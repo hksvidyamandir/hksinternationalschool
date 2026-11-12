@@ -81,14 +81,14 @@ export function Split({ image, alt, children, reverse }: { image: string; alt: s
   );
 }
 
-export function CtaBand({ title = "Give your child wings to succeed", text = "Admissions are open for 2026–27, from Nursery to Grade 12. Visit our campus or speak to our admissions team today." }: { title?: string; text?: string }) {
+export function CtaBand({ title = "Give your child wings to succeed", text = "Admissions are open for 2026-27, from Nursery to Grade 12. Visit our campus or speak to our admissions team today." }: { title?: string; text?: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-photo-shade text-navy-foreground">
       <img src={img.infra3} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover" />
       <div className="absolute inset-0 -z-10 bg-photo-shade/75" aria-hidden="true" />
       <div className="container-site flex flex-col items-start gap-8 py-20 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <span className="eyebrow text-gold">Admissions 2026–27</span>
+          <span className="eyebrow text-gold">Admissions 2026-27</span>
           <h2 className="mt-3 text-3xl md:text-5xl font-semibold">{title}</h2>
           <p className="mt-4 text-navy-foreground/80">{text}</p>
         </div>

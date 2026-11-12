@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CtaBand, PageHero, Section, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/leadership")({
-  head: () => seo("Leadership – Chairman & Principal Messages", "Messages from the Chairman and Principal of HKS Vidyamandir, and an introduction to our academic leadership and faculty.", "/leadership"),
+  head: () => seo("Leadership - Chairman & Principal Messages", "Messages from the Chairman and Principal of HKS Vidyamandir, and an introduction to our academic leadership and faculty.", "/leadership"),
   component: Leadership,
 });
 

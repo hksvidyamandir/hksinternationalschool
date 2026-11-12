@@ -23,7 +23,7 @@ describe("School-life gallery", () => {
     render(<LifeGallery />);
     fireEvent.click(screen.getByRole("button", { name: "View Sports photo" }));
     fireEvent.click(screen.getByRole("button", { name: "Next gallery photo" }));
-    expect(within(screen.getByRole("dialog")).getByRole("img")).toHaveAttribute("alt", "Early Years (Nursery – Grade 2) at HKS");
+    expect(within(screen.getByRole("dialog")).getByRole("img")).toHaveAttribute("alt", "Early Years (Nursery - Grade 2) at HKS");
     fireEvent.keyDown(screen.getByRole("dialog"), { key: "ArrowLeft" });
     expect(within(screen.getByRole("dialog")).getByRole("img")).toHaveAttribute("alt", "Sports at HKS");
   });

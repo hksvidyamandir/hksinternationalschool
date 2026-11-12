@@ -11,11 +11,11 @@ export const Route = createFileRoute("/competitive-exams")({
 function Comp() {
   return (
     <>
-      <PageHero crumb="Competitive Exams" eyebrow="Competitive edge" title="Preparing champions, early and confidently" intro="Age-appropriate, integrated preparation for national and international examinations — within the school day." image={img.topper3} />
+      <PageHero crumb="Competitive Exams" eyebrow="Competitive edge" title="Preparing champions, early and confidently" intro="Age-appropriate, integrated preparation for national and international examinations - within the school day." image={img.topper3} />
       <Section>
         <Split image={img.topper2} alt="HKS students preparing for competitive exams">
           <SectionHead eyebrow="Integrated programme" title="NEET & JEE foundation from Grade 6" />
-          <p className="mt-4 text-muted-foreground">Progressive, concept-first preparation that grows with your child — no separate coaching needed.</p>
+          <p className="mt-4 text-muted-foreground">Progressive, concept-first preparation that grows with your child - no separate coaching needed.</p>
           <CheckList items={["Conceptual depth in Physics, Chemistry, Biology & Maths", "Mental ability, aptitude and logical reasoning", "Scholastic Aptitude Test (SAT) practice", "Regular mock tests and performance analytics", "Doubt-clearing sessions with subject experts"]} />
         </Split>
       </Section>

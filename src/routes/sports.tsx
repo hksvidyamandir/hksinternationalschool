@@ -11,7 +11,7 @@ export const Route = createFileRoute("/sports")({
 function Sports() {
   return (
     <>
-      <PageHero crumb="Sports" eyebrow="Sports & fitness" title="Strong bodies, sharp minds" intro="Sport is central to holistic development at HKS — with professional coaching, expansive grounds and inter-school competitions." image={img.campus4} />
+      <PageHero crumb="Sports" eyebrow="Sports & fitness" title="Strong bodies, sharp minds" intro="Sport is central to holistic development at HKS - with professional coaching, expansive grounds and inter-school competitions." image={img.campus4} />
       <Section>
         <Split image={img.infra6} alt="Sports grounds at HKS Vidyamandir">
           <SectionHead eyebrow="Why sport matters" title="Fitness, teamwork and character" />

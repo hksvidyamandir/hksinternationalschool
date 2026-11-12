@@ -6,15 +6,15 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/admissions")({
-  head: () => seo("Admissions 2026–27 – Nursery to Grade 12", "Admissions open at HKS Vidyamandir for 2026–27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
+  head: () => seo("Admissions 2026-27 - Nursery to Grade 12", "Admissions open at HKS Vidyamandir for 2026-27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
   component: Admissions,
 });
 
 const steps = [["Enquire", "Fill the enquiry form or call our admissions office."], ["Campus Visit", "Tour the campus and meet our team."], ["Application", "Submit the admission form with documents."], ["Interaction", "Age-appropriate interaction / assessment."], ["Confirmation", "Receive offer and complete fee payment."]];
 const ages = [["Nursery", "3+ years"], ["LKG", "4+ years"], ["UKG", "5+ years"], ["Grade 1", "6+ years"], ["Grade 2 onwards", "As per CBSE norms & previous class"]];
 const faqs: [string, string][] = [
-  ["When do admissions open?", "Admissions for 2026–27 are open now for Nursery to Grade 12, subject to seat availability."],
-  ["Do you offer boarding?", "Yes — full boarding and HKS Flexi-Boarding (weekday residential) programmes."],
+  ["When do admissions open?", "Admissions for 2026-27 are open now for Nursery to Grade 12, subject to seat availability."],
+  ["Do you offer boarding?", "Yes - full boarding and HKS Flexi-Boarding (weekday residential) programmes."],
   ["Is transport available?", "Yes, school buses cover the city and surrounding areas."],
   ["Are scholarships available?", "Merit-based and sibling concessions are available. Please contact the admissions office for details."],
 ];
@@ -22,7 +22,7 @@ const faqs: [string, string][] = [
 function Admissions() {
   return (
     <>
-      <PageHero crumb="Admissions" eyebrow="Admissions open 2026–27" title="Begin your child's HKS journey" intro="Nursery to Grade 12 · Day scholar, full boarding and flexi-boarding options." image={img.campus5} />
+      <PageHero crumb="Admissions" eyebrow="Admissions open 2026-27" title="Begin your child's HKS journey" intro="Nursery to Grade 12 · Day scholar, full boarding and flexi-boarding options." image={img.campus5} />
       <Section>
         <SectionHead center eyebrow="Admission journey" title="Five simple steps" />
         <ol className="mt-12 grid gap-4 md:grid-cols-5">

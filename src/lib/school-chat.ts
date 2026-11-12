@@ -12,7 +12,7 @@ export function schoolChatReply(question: string): string {
     return "HKS Vidyamandir offers day and residential schooling. Explore Residential Life below, or contact our team for current boarding details.";
   }
   if (/admission|apply|enrol/.test(text)) {
-    return "Admissions enquiries are open for 2026–27, from Nursery to Grade 12. Visit our Admissions page or speak with our team to discuss your child's application.";
+    return "Admissions enquiries are open for 2026-27, from Nursery to Grade 12. Visit our Admissions page or speak with our team to discuss your child's application.";
   }
   if (/grade|class|curricul|cbse|academic|nursery/.test(text)) {
     return "HKS Vidyamandir is a CBSE school offering Nursery to Grade 12: Early Years, Primary, Middle and Senior School. Explore Academics below for more information.";

@@ -3,7 +3,7 @@ import { img } from "@/assets/site";
 
 const stats = [
   { value: 2010, suffix: "", label: "Since", title: "Our journey began", text: "Over a decade of care, courage and purposeful learning." },
-  { value: 12, suffix: "", label: "Nursery –", title: "Every stage of growth", text: "From first steps to future pathways, under one roof." },
+  { value: 12, suffix: "", label: "Nursery -", title: "Every stage of growth", text: "From first steps to future pathways, under one roof." },
   { value: 100, suffix: "%", label: "CBSE", title: "A strong foundation", text: "Concept-based learning built on curiosity and application." },
   { value: 2, suffix: "", label: "Ways to belong", title: "Day + residential", text: "Two ways to join one caring, connected community." },
 ];

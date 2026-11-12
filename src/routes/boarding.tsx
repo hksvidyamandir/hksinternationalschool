@@ -13,12 +13,12 @@ const routine = [["6:00 AM", "Wake up, yoga & fitness"], ["7:30 AM", "Breakfast"
 function Boarding() {
   return (
     <>
-      <PageHero crumb="Residential Programme" eyebrow="Home away from home" title="A safe, caring residential campus" intro="Choose full boarding or HKS Flexi-Boarding — a weekday residential programme ideal for working parents." image={img.infra4} />
+      <PageHero crumb="Residential Programme" eyebrow="Home away from home" title="A safe, caring residential campus" intro="Choose full boarding or HKS Flexi-Boarding - a weekday residential programme ideal for working parents." image={img.infra4} />
       <Section>
         <Split image={img.infra1} alt="HKS boarding hostel">
           <SectionHead eyebrow="HKS Flexi-Boarding" title="Weekdays on campus, weekends at home" />
           <p className="mt-4 text-muted-foreground">Students stay on campus Monday to Friday, benefitting from structured routines and supervised study, and return home for weekends with family.</p>
-          <CheckList items={["Comfortable, secure accommodation", "Structured daily timetable", "Academic supervision and study hours", "Clear weekend departure and return guidelines", "Regular parent–school communication"]} />
+          <CheckList items={["Comfortable, secure accommodation", "Structured daily timetable", "Academic supervision and study hours", "Clear weekend departure and return guidelines", "Regular parent-school communication"]} />
         </Split>
       </Section>
       <Section tone="cream">

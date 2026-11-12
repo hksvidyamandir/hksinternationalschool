@@ -11,7 +11,7 @@ export const Route = createFileRoute("/campus-life")({
 function Life() {
   return (
     <>
-      <PageHero crumb="Campus Life" eyebrow="Student development" title="Growing leaders, inside and out" intro="Personality, leadership, creativity and emotional intelligence — nurtured every day." image={img.campus3} />
+      <PageHero crumb="Campus Life" eyebrow="Student development" title="Growing leaders, inside and out" intro="Personality, leadership, creativity and emotional intelligence - nurtured every day." image={img.campus3} />
       <Section>
         <SectionHead center eyebrow="Holistic development" title="Skills for life" />
         <CardGrid cols={4} items={[

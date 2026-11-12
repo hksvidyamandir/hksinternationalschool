@@ -6,12 +6,12 @@ export const SITE = {
   phoneHref: "tel:+918277078474",
   whatsapp: "https://wa.me/918277078474",
   email: "hksinternationalschool417@gmail.com",
-  address: "NH 75, Bengaluru – Mangaluru Highway, Kenchattahalli – 573 201, Karnataka",
+  address: "NH 75, Bengaluru - Mangaluru Highway, Kenchattahalli - 573 201, Karnataka",
   mapsUrl: "https://maps.app.goo.gl/EmG9n465WQdnDxa26",
   mapsEmbed:
     "https://www.google.com/maps?q=HKS+Vidyamandir+Kenchattahalli&output=embed",
   founded: 2010,
-  hours: "Mon – Sat · 8:30 AM – 4:30 PM",
+  hours: "Mon - Sat · 8:30 AM - 4:30 PM",
 };
 
 export type NavItem = { label: string; to: string; desc?: string };

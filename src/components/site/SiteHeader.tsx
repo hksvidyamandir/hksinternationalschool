@@ -57,9 +57,9 @@ export function SiteHeader() {
                 {v.label}
               </span>
             ))}
-            <span className="hidden whitespace-nowrap min-[1600px]:inline">CBSE · Nursery – Grade 12</span>
+            <span className="hidden whitespace-nowrap min-[1600px]:inline">CBSE · Nursery - Grade 12</span>
             <span className="hidden whitespace-nowrap min-[1600px]:inline">Day & Residential</span>
-            <span className="whitespace-nowrap font-medium text-foreground/80">Admissions Open 2026–27</span>
+            <span className="whitespace-nowrap font-medium text-foreground/80">Admissions Open 2026-27</span>
           </div>
         <nav aria-label="Main" className="flex items-center gap-0.5">
           <Link to="/" className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeOptions={{ exact: true }} activeProps={{ className: "text-primary" }}>Home</Link>
@@ -108,7 +108,7 @@ export function SiteHeader() {
                 </span>
               ))}
             </div>
-            <div className="hidden border-b border-border pb-3 text-xs font-medium text-foreground/80 max-[768px]:block">Admissions Open 2026–27</div>
+            <div className="hidden border-b border-border pb-3 text-xs font-medium text-foreground/80 max-[768px]:block">Admissions Open 2026-27</div>
             <Link to="/" onClick={closeMenu} className="block py-3 font-semibold border-b border-border">Home</Link>
             {NAV.map((g) => (
               <div key={g.label} className="border-b border-border">
