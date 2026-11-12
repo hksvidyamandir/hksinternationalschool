@@ -663,7 +663,11 @@
 .home-advantage .home-usp-grid article:hover .home-usp-icon { background: var(--gold); color: var(--ink); }
 .home-advantage .home-usp-grid svg { width: 38px; height: 38px; padding: 0; color: inherit; background: none; border: 0; border-radius: 0; }
 .home-advantage .home-usp-grid h3 { font-family: var(--font-display); font-size: 23px; font-weight: 500; line-height: 1.3; margin-top: 22px; }
-.home-advantage .home-usp-grid p { font-size: 15px; line-height: 1.6; margin-top: 10px; }
+.home-advantage .home-usp-grid h3 span { display: block; }
+.home-advantage .home-usp-grid p { font-size: 15px; line-height: 1.6; margin-top: 10px; min-height: 3.2em; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .home-advantage .home-usp-grid h3 { font-size: 17px; }
+}
 @media (max-width: 767px) {
   .home-advantage .home-usp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
   .home-advantage .home-usp-grid article { padding: 24px 10px; }
@@ -672,7 +676,7 @@
   .home-advantage .home-usp-grid article:nth-child(n+3) { border-top: 1px solid var(--border); }
   .home-usp-icon { width: 60px; height: 60px; }
   .home-advantage .home-usp-grid svg { width: 32px; height: 32px; }
-  .home-advantage .home-usp-grid h3 { font-size: 19px; margin-top: 18px; }
+  .home-advantage .home-usp-grid h3 { font-size: 17px; margin-top: 18px; }
   .home-advantage .home-usp-grid p { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { .home-advantage .home-usp-grid article, .home-usp-icon { transition: none; } }
