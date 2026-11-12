@@ -1,4 +1,5 @@
 # Homepage redesign
+- [x] Restore the compact curriculum section and move detailed Vidya content into the lower HKS Pillars; verify both on desktop and mobile.
 - [x] Turn the school-life photos into a click-to-expand gallery and verify photo browsing and closing on desktop and mobile.
 - [x] Add the supplied Vidya headings, descriptions and four points per card; keep sizing uniform and verify selection on desktop and mobile.
 - [x] Recreate the referenced section sequence with HKS colours and real school imagery.
