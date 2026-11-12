@@ -23,7 +23,7 @@
 - CTA colors use shared semantic tokens and the site-cta treatment; section-specific actions share that treatment so button states remain consistent without changing navigation controls.
 - ProgrammeSelector owns programme data and accessible controlled Tabs with matched detail panels; scoped selection styles keep every programme visibly connected to its content without changing other homepage sections.
 - Photo shading uses the shared neutral photo-black token (photo-shade utility); keep brand-colour section surfaces and interactive selection accents separate from image overlays.
-- VisitChooser shares virtual visit and campus tour choices across the hero, Our Campus and final admissions visit controls; validated /contact?visit= links carry the choice into the enquiry form and message.
+- VisitChooser shares virtual visit and campus tour choices; Our Campus uses its centered dialog variant while other triggers retain anchored popovers, and validated /contact?visit= links carry the choice into the enquiry form and message.
 - CurriculumShowcase owns a manually controlled four-card accordion with the first card initially expanded and hover, focus and tap selection; no timer changes the user's selection.
 - Keep CurriculumShowcase concise; PillarsShowcase uses its accordion styling for detailed Vidya content, expands one card on hover, focus or tap, and restores the first after pointer exit unless focus is inside, keeping both learning sections visually consistent.
 - LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
