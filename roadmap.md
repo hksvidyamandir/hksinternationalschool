@@ -13,3 +13,4 @@
 - [x] Refine the top menu with custom Vidhya icons, a quieter admissions label, a divider and a complete phone menu; verify navigation and screen sizes.
 
 - [x] Rename the school to HKS Vidyamandir throughout the site and remove the visible school name from the opening banner; verify all pages.
+- [x] Increase advantage photo space, apply a black fade, custom orange icons and charcoal subheadings; verify desktop and mobile.

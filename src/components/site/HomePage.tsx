@@ -11,6 +11,7 @@ import { useHomeMotion } from "@/hooks/use-home-motion";
 import { ExperienceStories } from "./ExperienceStories";
 import { AdvantageStats } from "./AdvantageStats";
 import { CurriculumShowcase } from "./CurriculumShowcase";
+import { AdvantageIcon, type AdvantageIconKind } from "./AdvantageIcon";
 
 const programmes = [
   { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
@@ -18,15 +19,15 @@ const programmes = [
   { title: "Middle & High", grade: "Grades 6 – 10", image: img.progCbse, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations." },
   { title: "Senior Secondary", grade: "Grades 11 – 12", image: img.progSenior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance." },
 ];
-const advantages = [
-  { icon: Users, title: "Seen as an individual", text: "Personal attention and support for each learner." },
-  { icon: Sparkles, title: "More than marks", text: "Academic growth, creativity and character, together." },
-  { icon: FlaskConical, title: "Learning by doing", text: "Science, STEM, robotics and real-world projects." },
-  { icon: Globe2, title: "A wider perspective", text: "Global exposure and international test preparation." },
-  { icon: BookOpen, title: "Understanding first", text: "Concept-based, application-oriented CBSE learning." },
-  { icon: ShieldCheck, title: "Room to thrive", text: "Classrooms, residential care and space to explore." },
-  { icon: Trophy, title: "Ready for the next step", text: "NEET, JEE and Olympiad foundations." },
-  { icon: Heart, title: "Care that counts", text: "Remedial and advanced support for different needs." },
+const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
+  { icon: "individual", title: "Seen as an individual", text: "Personal attention and support for each learner." },
+  { icon: "growth", title: "More than marks", text: "Academic growth, creativity and character, together." },
+  { icon: "discovery", title: "Learning by doing", text: "Science, STEM, robotics and real-world projects." },
+  { icon: "world", title: "A wider perspective", text: "Global exposure and international test preparation." },
+  { icon: "understanding", title: "Understanding first", text: "Concept-based, application-oriented CBSE learning." },
+  { icon: "belonging", title: "Room to thrive", text: "Classrooms, residential care and space to explore." },
+  { icon: "next", title: "Ready for the next step", text: "NEET, JEE and Olympiad foundations." },
+  { icon: "care", title: "Care that counts", text: "Remedial and advanced support for different needs." },
 ];
 const pillars = [
   { title: "Academic excellence", tag: "Think deeply", desc: "Concept-first CBSE learning, labs and mentoring that build sharp, curious minds.", image: img.acad1, to: "/academics" as const },
@@ -70,7 +71,7 @@ export function HomePage() {
 
     <section id="welcome" className="home-section home-intro"><div className="container-site"><div className="home-intro-heading"><span className="home-kicker">One school. A world of possibility.</span><h2>A childhood full of wonder.<br />A future <em>without limits.</em></h2></div><div className="home-intro-grid"><div className="home-intro-photo"><img src={img.welcome} alt="Students together at HKS Vidyamandir" loading="lazy" /><span className="home-photo-caption">Rooted in Karnataka. Ready for the world.</span></div><div className="home-intro-text"><span className="home-section-number">01 / THE HKS SPIRIT</span><h3>Strong roots.<br />Stronger wings.</h3><p>Since 2010, HKS Vidyamandir has brought together purposeful learning, individual care and the joy of growing up.</p><p>Our English-medium CBSE day and residential school in Karnataka nurtures curious minds from Nursery to Grade 12 — in the classroom and far beyond it.</p><Action to="/about">Meet HKS</Action></div></div></div></section>
 
-    <section className="home-advantage"><div className="container-site"><Heading label="The HKS advantage" title="Space to dream. Support to soar." /><AdvantageStats /><div className="home-usp-grid">{advantages.map(({ icon: Icon, title, text }) => <article key={title}><Icon size={24} /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="home-advantage"><div className="container-site"><Heading label="The HKS advantage" title="Space to dream. Support to soar." /><AdvantageStats /><div className="home-usp-grid">{advantages.map(({ icon, title, text }) => <article key={title}><AdvantageIcon kind={icon} /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
     <section className="home-section home-programmes"><div className="container-site"><Heading label="Our programmes" title="Every age. A new possibility." text="An education that grows with your child." /><div className="home-programme-orbits" role="tablist" aria-label="School programmes">{programmes.map((p, i) => <Button key={p.title} role="tab" aria-selected={programme === i} aria-controls="programme-detail" id={`programme-${i}`} variant="ghost" onClick={() => setProgramme(i)} className={`home-orbit ${programme === i ? "is-active" : ""}`}><img src={p.image} alt="" aria-hidden="true" loading="lazy" /><em>0{i + 1}</em><span>{p.title}</span><small>{p.grade}</small></Button>)}</div><div id="programme-detail" role="tabpanel" aria-labelledby={`programme-${programme}`} className="home-programme-detail"><img src={activeProgramme.image} alt={`${activeProgramme.title} students at HKS`} loading="lazy" /><div><span className="home-kicker">{activeProgramme.grade}</span><h3>{activeProgramme.title}</h3><p>{activeProgramme.text}</p><Action to="/academics">Explore the programme</Action></div></div></div></section>
 
