@@ -7,7 +7,7 @@ vi.mock("@tanstack/react-router", () => ({ Link: ({ children, to, ...props }: { 
 afterEach(cleanup);
 
 describe("Programme selection", () => {
-  const choices = ["Early Years", "Primary", "Middle & High", "Senior Secondary"];
+  const choices = ["Early Years", "Primary", "High School", "Senior Secondary"];
   const images = [img.progMontessori, img.progElementary, img.progCbse, img.progSenior];
   choices.forEach((name, index) => {
     it(`shows only the linked detail and matching photo for ${name}`, () => {
