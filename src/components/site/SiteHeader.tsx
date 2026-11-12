@@ -26,7 +26,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
-      <div className="hidden md:block bg-navy text-navy-foreground text-xs">
+      <div className="site-topbar hidden md:block bg-gold text-ink text-xs">
         <div className="container-site flex h-9 items-center justify-between">
           <div className="flex items-center gap-5">
             <a href={SITE.phoneHref} className="flex items-center gap-1.5 hover:text-gold"><Phone className="h-3.5 w-3.5" />{SITE.phone}</a>

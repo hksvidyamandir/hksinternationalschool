@@ -21,3 +21,4 @@
 - VidhyaIcons provides browser-safe decorative SVG icons through the shared Vidhya data so desktop and mobile labels use the same artwork.
 - AdvantageIcon owns the advantage section's decorative SVG artwork, keeping its icon set separate from navigation icons.
 - CTA colors use shared semantic tokens and the site-cta treatment; section-specific actions share that treatment so button states remain consistent without changing navigation controls.
+- ProgrammeSelector owns programme data and accessible controlled Tabs with matched detail panels; scoped selection styles keep every programme visibly connected to its content without changing other homepage sections.

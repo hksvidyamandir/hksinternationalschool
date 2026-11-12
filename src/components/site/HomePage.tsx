@@ -12,13 +12,7 @@ import { ExperienceStories } from "./ExperienceStories";
 import { AdvantageStats } from "./AdvantageStats";
 import { CurriculumShowcase } from "./CurriculumShowcase";
 import { AdvantageIcon, type AdvantageIconKind } from "./AdvantageIcon";
-
-const programmes = [
-  { title: "Early Years", grade: "Nursery – Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
-  { title: "Primary", grade: "Grades 3 – 5", image: img.progElementary, text: "Curiosity becomes confidence through literacy, numeracy, collaborative projects and hands-on discovery." },
-  { title: "Middle & High", grade: "Grades 6 – 10", image: img.progCbse, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations." },
-  { title: "Senior Secondary", grade: "Grades 11 – 12", image: img.progSenior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance." },
-];
+import { ProgrammeSelector } from "./ProgrammeSelector";
 const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
   { icon: "individual", title: "Seen as an individual", text: "Personal attention and support for each learner." },
   { icon: "growth", title: "More than marks", text: "Academic growth, creativity and character, together." },
@@ -58,12 +52,10 @@ function Action({ to, children, light = false }: { to: "/about" | "/academics" |
 
 export function HomePage() {
   const motionRef = useHomeMotion();
-  const [programme, setProgramme] = useState(0);
   const [gallery, setGallery] = useState(0);
   const [community, setCommunity] = useState(0);
-  const activeProgramme = programmes[programme];
   const activeGallery = galleries[gallery];
-  if (!activeProgramme || !activeGallery) return null;
+  if (!activeGallery) return null;
   return <div className="hks-home" ref={motionRef}>
     <HeroFilm />
 
@@ -73,7 +65,7 @@ export function HomePage() {
 
     <section className="home-advantage"><div className="container-site"><Heading label="The HKS advantage" title="Space to dream. Support to soar." /><AdvantageStats /><div className="home-usp-grid">{advantages.map(({ icon, title, text }) => <article key={title}><AdvantageIcon kind={icon} /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
-    <section className="home-section home-programmes"><div className="container-site"><Heading label="Our programmes" title="Every age. A new possibility." text="An education that grows with your child." /><div className="home-programme-orbits" role="tablist" aria-label="School programmes">{programmes.map((p, i) => <Button key={p.title} role="tab" aria-selected={programme === i} aria-controls="programme-detail" id={`programme-${i}`} variant="ghost" onClick={() => setProgramme(i)} className={`home-orbit ${programme === i ? "is-active" : ""}`}><img src={p.image} alt="" aria-hidden="true" loading="lazy" /><em>0{i + 1}</em><span>{p.title}</span><small>{p.grade}</small></Button>)}</div><div id="programme-detail" role="tabpanel" aria-labelledby={`programme-${programme}`} className="home-programme-detail"><img src={activeProgramme.image} alt={`${activeProgramme.title} students at HKS`} loading="lazy" /><div><span className="home-kicker">{activeProgramme.grade}</span><h3>{activeProgramme.title}</h3><p>{activeProgramme.text}</p><Action to="/academics">Explore the programme</Action></div></div></div></section>
+    <ProgrammeSelector />
 
     <CurriculumShowcase />
 

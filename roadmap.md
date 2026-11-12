@@ -16,5 +16,5 @@
 - [x] Increase advantage photo space, apply a black fade, custom orange icons and charcoal subheadings; verify desktop and mobile.
 - [x] Align advantage cards flush with the photo top and replace the blue bottom glow with black; verify desktop and mobile.
 - [x] Unify all CTA buttons with darker orange defaults and theme-orange hover states; verify both states and mobile navigation.
-- [ ] Connect programme selections clearly to their content and verify all four choices on desktop, mobile and keyboard.
-- [ ] Apply theme orange to the top contact bar with consistent, readable link states.
+- [x] Connect programme selections clearly to their content and verify all four choices on desktop, mobile and keyboard.
+- [x] Apply theme orange to the top contact bar with consistent, readable link states.
