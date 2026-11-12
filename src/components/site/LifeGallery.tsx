@@ -22,7 +22,7 @@ export function LifeGallery() {
   const openedIndex = useRef(0);
   const photo = selected === null ? undefined : photos[selected];
   const move = (direction: number) => setSelected(index => index === null ? null : (index + direction + photos.length) % photos.length);
-  return <section className="win-section">
+  return <section className="win-section life-collage">
     <div className="container-site">
       <div className="win-head"><span className="home-kicker">A window into our world</span><h2>Experience life, <em>the HKS way.</em></h2><p>Individual excellence, collective progress</p></div>
       <div className="win-grid">{photos.map((item, index) => <Button
