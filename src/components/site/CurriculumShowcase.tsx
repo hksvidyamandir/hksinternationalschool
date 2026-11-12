@@ -9,7 +9,7 @@ const cards = [
   { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", heading: "Where Nature Becomes the Classroom", text: "Teaching students to care for the environment through meaningful experiences with nature.", points: ["Organic farming and school gardens", "Planting, sowing and harvesting", "Horticulture activities", "Sustainability and environmental awareness"], to: "/campus" as const },
   { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", heading: "Where Every Move Builds Character", text: "Encouraging students to stay active, develop confidence and discover the joy of sports.", points: ["Indoor and outdoor sports", "Olympic-inspired sporting activities", "Yoga, dance and fitness", "Teamwork, discipline and sportsmanship"], to: "/sports" as const },
   { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", heading: "Where Innovation Meets Imagination", text: "A space for young thinkers, creators and problem-solvers.", points: ["AI, robotics and coding", "STEM activities and hands-on experiments", "VR and AR learning experiences", "Maker activities and real-world projects"], to: "/experiential-learning" as const },
-  { title: "Samskriti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", heading: "Where Culture Creates Connections", text: "Helping students appreciate traditions, celebrate diversity and express themselves.", points: ["Festivals and cultural celebrations", "Annual events and student performances", "House activities and competitions", "Community participation and leadership opportunities"], to: "/campus-life" as const },
+  { title: "Samskruti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", heading: "Where Culture Creates Connections", text: "Helping students appreciate traditions, celebrate diversity and express themselves.", points: ["Festivals and cultural celebrations", "Annual events and student performances", "House activities and competitions", "Community participation and leadership opportunities"], to: "/campus-life" as const },
 ];
 
 export function CurriculumShowcase() {
@@ -18,9 +18,9 @@ export function CurriculumShowcase() {
   return <section className="curr-section">
     <div className="container-site">
       <div className="curr-head home-heading">
-        <span className="home-kicker">The HKS <b>curriculum</b></span>
-        <h2>Our approach to learning</h2>
-        <p>A carefully designed learning journey that supports students at every stage of development.</p>
+        <span className="home-kicker">The Four Pillars of <b>Learning at HKS</b></span>
+        <h2>Four Experiences. One Holistic Education.</h2>
+        <p>At HKS Vidyamandir, education extends beyond textbooks. Our four signature programmes give students opportunities to learn through innovation, movement, culture and nature.</p>
       </div>
       <div className="curr-stage">
         <Button type="button" variant="ghost" size="icon" className="curr-nav" aria-label="Previous curriculum card" onClick={() => go(-1)}><ArrowLeft /></Button>

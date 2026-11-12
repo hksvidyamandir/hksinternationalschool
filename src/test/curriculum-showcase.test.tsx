@@ -16,7 +16,7 @@ describe("Vidya curriculum selection", () => {
     expect(controls[0]).toHaveAttribute("aria-expanded", "true");
     expect(controls.filter(c => c.getAttribute("aria-expanded") === "true")).toHaveLength(1);
   });
-  ["Khel Vidya", "Anubhav Vidya", "Samskriti Vidya"].forEach(name => {
+  ["Khel Vidya", "Anubhav Vidya", "Samskruti Vidya"].forEach(name => {
     it(`opens ${name} on hover, keyboard focus and tap`, () => {
       render(<CurriculumShowcase />);
       const control = screen.getByRole("button", { name: `Open ${name}` });
