@@ -28,3 +28,5 @@
 - [x] Centre-align the A window into our world heading and supporting text; verify desktop and mobile.
 - [x] Redesign the four quick links with a brighter, balanced layout and clear icon links; verify destinations and phone layout.
 - [x] Create interactive quick-link tiles without photos, using bold colours, expressive icons and animated highlights; verify links, keyboard focus and phone layouts.
+
+- [x] Add shared virtual visit and campus tour choices to Our Campus and the final admissions visit button; verify both paths on desktop and mobile.
