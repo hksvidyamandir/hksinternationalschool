@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
 import { img } from "@/assets/site";
+import { Button } from "@/components/ui/button";
 
 const COLS = [
   { label: "Home", links: [
@@ -54,10 +55,21 @@ export function SiteFooter() {
         <p>© {new Date().getFullYear()} HKS Vidyamandir. All rights reserved.</p>
         <p className="grid min-w-0 gap-2 md:flex md:gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span className="hidden md:inline">|</span><a href={`mailto:${SITE.email}`} className="min-w-0 break-all md:break-normal hover:text-primary">{SITE.email}</a></p>
       </div>
-      <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS Vidyamandir, I would like to know more about admissions")}`} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-        className="site-cta fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-cta text-cta-foreground shadow-soft hover:scale-105 transition">
-        <MessageCircle className="h-6 w-6" />
-      </a>
+      <div aria-label="Contact the school" className="fixed bottom-5 left-3 z-40 flex flex-col gap-3 md:left-5">
+        <Button asChild size="icon" className="h-12 w-12 rounded-full shadow-soft md:h-14 md:w-14 [&_svg]:size-6">
+          <a href={SITE.phoneHref} aria-label="Call HKS Vidyamandir" title="Call HKS Vidyamandir">
+            <Phone aria-hidden="true" />
+          </a>
+        </Button>
+        <Button asChild size="icon" className="h-12 w-12 rounded-full shadow-soft md:h-14 md:w-14 [&_svg]:size-6">
+          <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS Vidyamandir, I would like to know more about admissions")}`} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.6-4.6A9 9 0 1 1 21 11.5Z" />
+              <path d="m8.2 7.3 1.7 2.5-1.1 1.1a8.5 8.5 0 0 0 4.3 4.3l1.1-1.1 2.5 1.7c-.3 1.2-1.2 1.8-2.3 1.6-4.1-.8-7.5-4.2-8.3-8.3-.2-1.1.4-2 1.6-2.3Z" />
+            </svg>
+          </a>
+        </Button>
+      </div>
     </footer>
   );
 }
