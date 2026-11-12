@@ -26,3 +26,4 @@
 - [x] Revert the Events & community section to the folder-tab design; verify tabs, peeking photo, badge and phone layout.
 - [x] Lightly refine Events & community tabs, photo framing and visual balance; verify both stories on desktop and mobile.
 - [x] Centre-align the A window into our world heading and supporting text; verify desktop and mobile.
+- [x] Redesign the four quick links with a brighter, balanced layout and clear icon links; verify destinations and phone layout.
