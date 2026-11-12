@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CheckList, CtaBand, PageHero, PillList, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/competitive-exams")({
-  head: () => seo("NEET & JEE Foundation, Olympiads & SAT Prep", "Integrated NEET and JEE foundation from Grade 6, Olympiad preparation from Grade 4, and SAT, ACT, TOEFL and IELTS coaching at HKS International School.", "/competitive-exams"),
+  head: () => seo("NEET & JEE Foundation, Olympiads & SAT Prep", "Integrated NEET and JEE foundation from Grade 6, Olympiad preparation from Grade 4, and SAT, ACT, TOEFL and IELTS coaching at HKS Vidyamandir.", "/competitive-exams"),
   component: Comp,
 });
 

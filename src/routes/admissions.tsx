@@ -6,7 +6,7 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/admissions")({
-  head: () => seo("Admissions 2026–27 – Nursery to Grade 12", "Admissions open at HKS International School for 2026–27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
+  head: () => seo("Admissions 2026–27 – Nursery to Grade 12", "Admissions open at HKS Vidyamandir for 2026–27. Admission process, age criteria, documents required, scholarships and enquiry form.", "/admissions"),
   component: Admissions,
 });
 

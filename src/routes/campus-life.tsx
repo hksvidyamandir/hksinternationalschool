@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CtaBand, PageHero, PillList, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/campus-life")({
-  head: () => seo("Campus Life & Student Development", "Clubs, leadership council, public speaking, arts, theatre, community service and life skills at HKS International School.", "/campus-life"),
+  head: () => seo("Campus Life & Student Development", "Clubs, leadership council, public speaking, arts, theatre, community service and life skills at HKS Vidyamandir.", "/campus-life"),
   component: Life,
 });
 

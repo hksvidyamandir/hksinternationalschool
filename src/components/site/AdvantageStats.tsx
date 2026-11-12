@@ -28,7 +28,7 @@ export function AdvantageStats() {
     o.observe(el); return () => o.disconnect();
   }, []);
   return <div ref={ref} className={`adv-stage ${seen ? "is-in" : ""}`}>
-    <img src={img.campus4} alt="Students at HKS International School" loading="lazy" />
+    <img src={img.campus4} alt="Students at HKS Vidyamandir" loading="lazy" />
     <div className="adv-panels">{stats.map((s, i) => <article key={s.title} className={`adv-panel adv-panel-${i}`} style={{ ["--i" as string]: i }}>
       <small>{s.label}</small>
       <strong><Count to={s.value} run={seen} />{s.suffix}</strong>

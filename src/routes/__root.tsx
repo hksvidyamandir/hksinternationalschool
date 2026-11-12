@@ -80,9 +80,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "HKS International School" },
+      { name: "author", content: "HKS Vidyamandir" },
       { name: "theme-color", content: "#303783" },
-      { property: "og:site_name", content: "HKS International School" },
+      { property: "og:site_name", content: "HKS Vidyamandir" },
       { property: "og:locale", content: "en_IN" },
     ],
     links: [
@@ -101,8 +101,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "School",
-          name: "HKS International School",
-          alternateName: "HKS International Residential School",
+          name: "HKS Vidyamandir",
+          alternateName: "HKS Vidyamandir",
           slogan: "Strengthening Your Wings of Success",
           foundingDate: "2010",
           telephone: "+91-8277078474",

@@ -8,7 +8,7 @@ export function EnquiryForm({ title = "Admission enquiry" }: { title?: string })
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const msg = `Hello HKS International School, I'd like to enquire about admission.\nParent: ${f.get("parent")}\nStudent: ${f.get("student")}\nGrade: ${f.get("grade")}\nBoarding: ${f.get("boarding")}\nPhone: ${f.get("phone")}\n${f.get("message") || ""}`;
+    const msg = `Hello HKS Vidyamandir, I'd like to enquire about admission.\nParent: ${f.get("parent")}\nStudent: ${f.get("student")}\nGrade: ${f.get("grade")}\nBoarding: ${f.get("boarding")}\nPhone: ${f.get("phone")}\n${f.get("message") || ""}`;
     window.open(`${SITE.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
     setSent(true);
   }

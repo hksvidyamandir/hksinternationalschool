@@ -11,3 +11,5 @@
 - [x] Restore desktop presentation from 768px upward and verify mobile-only adjustments at 320–767px.
 - [x] Add Kenchattahalli plus Krishi, Khel, Anubhav and Samskruti Vidhya above the main menu; verify desktop strip and mobile menu chips.
 - [x] Refine the top menu with custom Vidhya icons, a quieter admissions label, a divider and a complete phone menu; verify navigation and screen sizes.
+
+- [x] Rename the school to HKS Vidyamandir throughout the site and remove the visible school name from the opening banner; verify all pages.

@@ -45,7 +45,7 @@ export function SiteHeader() {
       </div>
 
       <div className="container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:flex md:justify-between md:gap-6 lg:h-24">
-        <Link to="/" aria-label="HKS International School home" className="min-w-0 shrink-0 md:min-w-auto">
+        <Link to="/" aria-label="HKS Vidyamandir home" className="min-w-0 shrink-0 md:min-w-auto">
           <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
         </Link>
 

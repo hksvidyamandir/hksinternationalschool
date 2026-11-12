@@ -5,12 +5,12 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CtaBand, PageHero, Section, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/leadership")({
-  head: () => seo("Leadership – Chairman & Principal Messages", "Messages from the Chairman and Principal of HKS International School, and an introduction to our academic leadership and faculty.", "/leadership"),
+  head: () => seo("Leadership – Chairman & Principal Messages", "Messages from the Chairman and Principal of HKS Vidyamandir, and an introduction to our academic leadership and faculty.", "/leadership"),
   component: Leadership,
 });
 
 const messages = [
-  { role: "Message from the Chairman", body: "When we founded HKS International School in 2010, our dream was simple: to bring world-class, values-driven education to the children of rural Karnataka. Today, that dream lives in every classroom, laboratory and playground on our campus. We remain committed to giving every child the roots of strong character and the wings to pursue their highest ambitions." },
+  { role: "Message from the Chairman", body: "When we founded HKS Vidyamandir in 2010, our dream was simple: to bring world-class, values-driven education to the children of rural Karnataka. Today, that dream lives in every classroom, laboratory and playground on our campus. We remain committed to giving every child the roots of strong character and the wings to pursue their highest ambitions." },
   { role: "Principal's Message", body: "At HKS, we see each child as unique. Our dedicated teachers combine the rigour of the CBSE curriculum with experiential learning, ensuring students understand concepts deeply and apply them confidently. Together with parents, we nurture disciplined, curious and compassionate young people who are ready for the world." },
 ];
 

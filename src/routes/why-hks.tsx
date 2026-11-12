@@ -4,7 +4,7 @@ import { seo } from "@/lib/seo";
 import { CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/why-hks")({
-  head: () => seo("Why HKS is the Best School in Karnataka", "Why families choose HKS International School: academic excellence, state-of-the-art infrastructure, safe residential campus, sports and holistic development in.", "/why-hks"),
+  head: () => seo("Why HKS is the Best School in Karnataka", "Why families choose HKS Vidyamandir: academic excellence, state-of-the-art infrastructure, safe residential campus, sports and holistic development in.", "/why-hks"),
   component: Why,
 });
 

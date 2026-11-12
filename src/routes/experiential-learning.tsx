@@ -5,7 +5,7 @@ import { seo } from "@/lib/seo";
 import { CardGrid, CheckList, CtaBand, PageHero, Section, SectionHead, Split } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/experiential-learning")({
-  head: () => seo("Experiential Learning & Laboratories", "VR and AR rooms, astronomy zone, robotics, AI, STEM and science laboratories at HKS International School — learning beyond textbooks.", "/experiential-learning"),
+  head: () => seo("Experiential Learning & Laboratories", "VR and AR rooms, astronomy zone, robotics, AI, STEM and science laboratories at HKS Vidyamandir — learning beyond textbooks.", "/experiential-learning"),
   component: Exp,
 });
 

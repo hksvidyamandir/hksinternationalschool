@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "HKS International School",
+  name: "HKS Vidyamandir",
   short: "HKS",
   tagline: "Strengthening Your Wings of Success",
   phone: "+91 82770 78474",
@@ -9,7 +9,7 @@ export const SITE = {
   address: "NH 75, Bengaluru – Mangaluru Highway, Kenchattahalli – 573 201, Karnataka",
   mapsUrl: "https://maps.app.goo.gl/EmG9n465WQdnDxa26",
   mapsEmbed:
-    "https://www.google.com/maps?q=HKS+International+School+Kenchattahalli&output=embed",
+    "https://www.google.com/maps?q=HKS+Vidyamandir+Kenchattahalli&output=embed",
   founded: 2010,
   hours: "Mon – Sat · 8:30 AM – 4:30 PM",
 };
