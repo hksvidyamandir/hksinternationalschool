@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarPlus, ChevronDown, MapPin, Pause, Play, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { img } from "@/assets/site";
 import film from "@/assets/hks-doodle-film.mp4.asset.json";
 
@@ -11,11 +12,17 @@ const scenes = [
   { word: "Growing, together.", label: "One school. A world of possibility." },
 ];
 
+const visitOptions = [
+  { visit: "virtual" as const, icon: Video, title: "Schedule a virtual visit", note: "Guided online tour, from home" },
+  { visit: "tour" as const, icon: MapPin, title: "Campus tour", note: "Walk the campus with us" },
+];
+
 export function HeroFilm() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [scene, setScene] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [visitOpen, setVisitOpen] = useState(false);
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const apply = () => {
@@ -49,7 +56,23 @@ export function HeroFilm() {
       <h1 className="sr-only">HKS Vidyamandir</h1>
       <div className="home-hero-top"><span>Since 2010</span></div>
       <div className="home-film-caption" key={scene}><p className="home-kicker">{active.label}</p><p className="home-hero-script">{active.word}</p></div>
-      <div className="home-hero-bottom"><a href="#welcome" className="home-scroll"><ArrowDown size={18} /> Discover HKS</a><Button asChild className="home-action"><Link to="/admissions">Admissions 2026–27<ArrowUpRight /></Link></Button><div className="home-slide-controls"><span>0{scene + 1} / 03</span><Button variant="ghost" size="icon" aria-label="Previous banner" onClick={() => moveScene(-1)}><ArrowLeft /></Button><Button variant="ghost" size="icon" aria-label={paused ? "Play banners" : "Pause banners"} onClick={toggle}>{paused ? <Play /> : <Pause />}</Button><Button variant="ghost" size="icon" aria-label="Next banner" onClick={() => moveScene(1)}><ArrowRight /></Button></div></div>
+      <div className="home-hero-bottom">
+        <Popover open={visitOpen} onOpenChange={setVisitOpen}>
+          <PopoverTrigger asChild>
+            <Button type="button" variant="outline" className="home-visit"><CalendarPlus size={16} /> Schedule a campus visit <ChevronDown size={14} className="home-visit-caret" /></Button>
+          </PopoverTrigger>
+          <PopoverContent side="top" align="start" className="home-visit-panel">
+            <p>How would you like to visit?</p>
+            {visitOptions.map(({ visit, icon: Icon, title, note }) => <Link key={visit} to="/contact" search={{ visit }} className="home-visit-option" onClick={() => setVisitOpen(false)}>
+              <span className="home-visit-icon"><Icon size={18} /></span>
+              <span className="home-visit-copy"><strong>{title}</strong><small>{note}</small></span>
+              <ArrowUpRight size={16} className="home-visit-arrow" />
+            </Link>)}
+          </PopoverContent>
+        </Popover>
+        <Button asChild className="home-action"><Link to="/admissions">Admissions 2026–27<ArrowUpRight /></Link></Button>
+        <div className="home-slide-controls"><span>0{scene + 1} / 03</span><Button variant="ghost" size="icon" aria-label="Previous banner" onClick={() => moveScene(-1)}><ArrowLeft /></Button><Button variant="ghost" size="icon" aria-label={paused ? "Play banners" : "Pause banners"} onClick={toggle}>{paused ? <Play /> : <Pause />}</Button><Button variant="ghost" size="icon" aria-label="Next banner" onClick={() => moveScene(1)}><ArrowRight /></Button></div>
+      </div>
     </div>
   </section>;
 }

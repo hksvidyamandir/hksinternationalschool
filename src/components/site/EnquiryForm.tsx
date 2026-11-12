@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const grades = ["Nursery", "LKG", "UKG", ...Array.from({ length: 12 }, (_, i) => `Grade ${i + 1}`)];
 
-export function EnquiryForm({ title = "Admission enquiry" }: { title?: string }) {
+const visitLabels = { virtual: "Virtual visit (online)", tour: "Campus tour (on campus)" } as const;
+
+export function EnquiryForm({ title = "Admission enquiry", visit }: { title?: string; visit?: keyof typeof visitLabels | undefined }) {
   const [sent, setSent] = useState(false);
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const msg = `Hello HKS Vidyamandir, I'd like to enquire about admission.\nParent: ${f.get("parent")}\nStudent: ${f.get("student")}\nGrade: ${f.get("grade")}\nBoarding: ${f.get("boarding")}\nPhone: ${f.get("phone")}\n${f.get("message") || ""}`;
+    const msg = `Hello HKS Vidyamandir, I'd like to enquire about admission.\nParent: ${f.get("parent")}\nStudent: ${f.get("student")}\nGrade: ${f.get("grade")}\nBoarding: ${f.get("boarding")}\nPhone: ${f.get("phone")}${visit ? `\nVisit requested: ${visitLabels[visit]}` : ""}\n${f.get("message") || ""}`;
     window.open(`${SITE.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank");
     setSent(true);
   }
