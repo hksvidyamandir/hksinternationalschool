@@ -180,7 +180,7 @@
 .home-hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 28px; }
 .home-hero-actions .home-action { background: var(--gold); color: var(--navy); }
 .home-hero-bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid color-mix(in oklab, var(--navy-foreground) 30%, transparent); padding-top: 16px; }
-.home-visit { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding-inline: 20px; border-radius: 6px; border: 1px solid color-mix(in oklab, var(--navy-foreground) 45%, transparent); background: color-mix(in oklab, var(--photo-black) 32%, transparent); color: var(--navy-foreground); font-size: 12px; font-weight: 700; line-height: 1; backdrop-filter: blur(2px); }
+.home-visit { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding-inline: 20px; border-radius: 6px; border: 1px solid var(--navy); background: var(--navy); color: var(--navy-foreground); font-size: 12px; font-weight: 700; line-height: 1; transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease; }
 .home-visit:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 .home-visit:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .home-visit[data-state="open"] { background: var(--gold); border-color: var(--gold); color: var(--navy); }
