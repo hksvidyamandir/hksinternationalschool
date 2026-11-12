@@ -734,6 +734,11 @@
 .curr-track { flex: 1; display: flex; gap: 14px; height: 460px; }
 .curr-card { position: relative; flex: 1; min-width: 0; border-radius: 20px; overflow: hidden; cursor: pointer; isolation: isolate; transition: flex 700ms cubic-bezier(.2,.8,.2,1), box-shadow .4s; box-shadow: 0 20px 40px -26px color-mix(in oklab, var(--photo-black) 70%, transparent); }
 .curr-card.is-active { flex: 3.2; box-shadow: 0 34px 60px -24px color-mix(in oklab, var(--photo-black) 75%, transparent); }
+.curr-select { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; border-radius: inherit; padding: 0; background: transparent; }
+.curr-select:hover { background: transparent; }
+.curr-select:focus-visible { outline: 3px solid var(--gold); outline-offset: -5px; }
+.curr-body { pointer-events: none; }
+.curr-body .curr-cta { position: relative; z-index: 2; pointer-events: auto; white-space: nowrap; }
 .curr-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
 .curr-card.is-active > img { transform: scale(1.06); }
 .curr-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, color-mix(in oklab, var(--photo-black) 20%, transparent) 0%, color-mix(in oklab, var(--photo-black) 88%, transparent) 100%); transition: background .5s; }
@@ -755,7 +760,7 @@
 .curr-nav { flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--card); color: var(--navy); box-shadow: var(--shadow-soft); transition: background .2s, color .2s, scale .2s; }
 .curr-nav:hover { background: var(--navy); color: var(--navy-foreground); scale: 1.06; }
 .curr-dots { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
-.curr-dots button { width: 10px; height: 10px; border-radius: 999px; background: color-mix(in oklab, var(--navy) 25%, transparent); transition: width .4s, background .4s; }
+.curr-dots button { width: 10px; height: 10px; padding: 0; border-radius: 999px; background: color-mix(in oklab, var(--navy) 25%, transparent); transition: width .4s, background .4s; }
 .curr-dots button.is-active { width: 34px; background: var(--gold); }
 @media (max-width: 1023px) { .curr-card:not(.is-active) h3 { writing-mode: vertical-rl; rotate: 180deg; font-size: 18px; } }
 @media (max-width: 767px) {
@@ -775,7 +780,7 @@
 .curr-card:not(.is-active) .curr-body p, .curr-card:not(.is-active) .curr-cta { display: none; }
 .curr-card:not(.is-active) h3 { font-size: 18px; overflow-wrap: anywhere; }
 @media (max-width: 767px) { .curr-card:not(.is-active) .curr-body { inset: 0; display: flex; align-items: center; padding: 0 20px; } .curr-card:not(.is-active) h3 { margin: 0 0 0 40px; } }
-.curr-card.is-active .curr-body p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.curr-card.is-active .curr-body p { display: block; overflow: visible; }
 .curr-card:not(.is-active) h3 { font-size: 17px; line-height: 1.25; overflow-wrap: normal; word-break: normal; min-height: 2.5em; }
 .curr-card:not(.is-active) h3 span { display: block; white-space: nowrap; }
 /* HKS Pillars */

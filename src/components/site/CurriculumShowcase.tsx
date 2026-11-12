@@ -1,27 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { img } from "@/assets/site";
+import { Button } from "@/components/ui/button";
 
 const cards = [
-  { title: "Early Years", tag: "Nursery – Grade 2", image: img.progMontessori, text: "Play, stories and exploration build a joyful foundation for lifelong learning.", to: "/academics" as const },
-  { title: "Primary School", tag: "Grades 3 – 5", image: img.progElementary, text: "Concept-first literacy and numeracy with hands-on projects that grow confidence.", to: "/academics" as const },
-  { title: "Middle & High", tag: "Grades 6 – 10", image: img.progCbse, text: "A rigorous CBSE programme with coding, labs and real-world application.", to: "/academics" as const },
-  { title: "Senior Secondary", tag: "Grades 11 – 12", image: img.progSenior, text: "Science and Commerce streams with focused career guidance.", to: "/academics" as const },
-  { title: "Competitive Exams", tag: "NEET · JEE · Olympiads", image: img.acad1, text: "Integrated foundation coaching that turns ambition into direction.", to: "/competitive-exams" as const },
-  { title: "Learning by Doing", tag: "Experiential learning", image: img.infra1, text: "Science, STEM and robotics that bring every concept to life.", to: "/experiential-learning" as const },
+  { title: "Krishi Vidhya", image: img.infra2, alt: "Gardens at the HKS Vidyamandir campus", text: "Discover nature, understand how food grows, and develop respect for the land.", to: "/campus" as const },
+  { title: "Khel Vidhya", image: img.acad3, alt: "HKS students exercising together outdoors", text: "Build fitness, teamwork and confidence through sport and movement.", to: "/sports" as const },
+  { title: "Anubhav Vidhya", image: img.high, alt: "Students learning in an HKS classroom", text: "Learn through hands-on experiences, exploration and real-world discovery.", to: "/experiential-learning" as const },
+  { title: "Samskruti Vidhya", image: img.campus5, alt: "HKS students in a cultural performance", text: "Explore culture, traditions and creative expression through art and performance.", to: "/campus-life" as const },
 ];
 
 export function CurriculumShowcase() {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const go = (d: number) => setActive(a => (a + d + cards.length) % cards.length);
-  useEffect(() => {
-    if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = window.setInterval(() => go(1), 5000);
-    return () => window.clearInterval(t);
-  }, [paused]);
-  return <section className="curr-section" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+  return <section className="curr-section">
     <div className="container-site">
       <div className="curr-head home-heading">
         <span className="home-kicker">The HKS <b>curriculum</b></span>
@@ -29,22 +22,22 @@ export function CurriculumShowcase() {
         <p>A carefully designed learning journey that supports students at every stage of development.</p>
       </div>
       <div className="curr-stage">
-        <button type="button" className="curr-nav" aria-label="Previous" onClick={() => go(-1)}><ArrowLeft /></button>
+        <Button type="button" variant="ghost" size="icon" className="curr-nav" aria-label="Previous curriculum card" onClick={() => go(-1)}><ArrowLeft /></Button>
         <div className="curr-track">
-          {cards.map((c, i) => <article key={c.title} className={`curr-card ${i === active ? "is-active" : ""}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}>
-            <img src={c.image} alt={`${c.title} at HKS`} loading="lazy" />
+          {cards.map((c, i) => <article key={c.title} className={`curr-card ${i === active ? "is-active" : ""}`} onMouseEnter={() => setActive(i)}>
+            <img src={c.image} alt={c.alt} loading="lazy" />
+            <Button type="button" variant="ghost" className="curr-select" aria-label={`Open ${c.title}`} aria-expanded={i === active} aria-controls={`curr-detail-${i}`} onFocus={() => setActive(i)} onClick={() => setActive(i)} />
             <div className="curr-body">
-              <small>{c.tag}</small>
               <h3>{(() => { const w = c.title.split(" "); const first = w[1] === "&" ? w.slice(0, 2).join(" ") : (w[0] ?? ""); const rest = c.title.slice(first.length).trim(); return <><span>{first}</span> <span>{rest}</span></>; })()}</h3>
-              <p>{c.text}</p>
-              <Link to={c.to} className="curr-cta" tabIndex={i === active ? 0 : -1}>Learn more <ArrowUpRight size={16} /></Link>
+              <p id={`curr-detail-${i}`} hidden={i !== active}>{c.text}</p>
+              {i === active && <Button asChild className="curr-cta"><Link to={c.to}>Learn more <ArrowUpRight size={16} /></Link></Button>}
             </div>
             <span className="curr-index">0{i + 1}</span>
           </article>)}
         </div>
-        <button type="button" className="curr-nav" aria-label="Next" onClick={() => go(1)}><ArrowRight /></button>
+        <Button type="button" variant="ghost" size="icon" className="curr-nav" aria-label="Next curriculum card" onClick={() => go(1)}><ArrowRight /></Button>
       </div>
-      <div className="curr-dots">{cards.map((c, i) => <button key={c.title} type="button" aria-label={`Show ${c.title}`} className={i === active ? "is-active" : ""} onClick={() => setActive(i)} />)}</div>
+      <div className="curr-dots">{cards.map((c, i) => <Button key={c.title} type="button" variant="ghost" size="icon" aria-label={`Show ${c.title}`} aria-pressed={i === active} className={i === active ? "is-active" : ""} onClick={() => setActive(i)} />)}</div>
     </div>
   </section>;
 }
