@@ -16,14 +16,14 @@ export const SITE = {
 
 export type NavItem = { label: string; to: string; desc?: string };
 
-import { AnubhavIcon, KhelIcon, KrishiIcon, SamskrutiIcon } from "@/components/site/VidhyaIcons";
+import { AnubhavIcon, KhelIcon, KrishiIcon, SamskrutiIcon } from "@/components/site/VidyaIcons";
 
 // The school's four learning verticals, shown above the main menu.
-export const VIDHYA: { label: string; icon: typeof KrishiIcon; tone: string }[] = [
-  { label: "Krishi Vidhya", icon: KrishiIcon, tone: "text-teal" },
-  { label: "Khel Vidhya", icon: KhelIcon, tone: "text-gold" },
-  { label: "Anubhav Vidhya", icon: AnubhavIcon, tone: "text-navy" },
-  { label: "Samskruti Vidhya", icon: SamskrutiIcon, tone: "text-ink" },
+export const VIDYA: { label: string; icon: typeof KrishiIcon; tone: string }[] = [
+  { label: "Krishi Vidya", icon: KrishiIcon, tone: "text-teal" },
+  { label: "Khel Vidya", icon: KhelIcon, tone: "text-gold" },
+  { label: "Anubhav Vidya", icon: AnubhavIcon, tone: "text-navy" },
+  { label: "Samskruti Vidya", icon: SamskrutiIcon, tone: "text-ink" },
 ];
 export type NavGroup = { label: string; to: string; children?: NavItem[] };
 

@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import gardeningImage from "@/assets/krishi-gardening.jpg";
 
 const cards = [
-  { title: "Krishi Vidhya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", text: "Discover nature, understand how food grows, and develop respect for the land.", to: "/campus" as const },
-  { title: "Khel Vidhya", image: img.acad3, alt: "HKS students exercising together outdoors", text: "Build fitness, teamwork and confidence through sport and movement.", to: "/sports" as const },
-  { title: "Anubhav Vidhya", image: img.high, alt: "Students learning in an HKS classroom", text: "Learn through hands-on experiences, exploration and real-world discovery.", to: "/experiential-learning" as const },
-  { title: "Samskruti Vidhya", image: img.campus5, alt: "HKS students in a cultural performance", text: "Explore culture, traditions and creative expression through art and performance.", to: "/campus-life" as const },
+  { title: "Krishi Vidya", image: gardeningImage, alt: "Illustrative gardening image of hands planting a vegetable seedling", text: "Discover nature, understand how food grows, and develop respect for the land.", to: "/campus" as const },
+  { title: "Khel Vidya", image: img.acad3, alt: "HKS students exercising together outdoors", text: "Build fitness, teamwork and confidence through sport and movement.", to: "/sports" as const },
+  { title: "Anubhav Vidya", image: img.high, alt: "Students learning in an HKS classroom", text: "Learn through hands-on experiences, exploration and real-world discovery.", to: "/experiential-learning" as const },
+  { title: "Samskruti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", text: "Explore culture, traditions and creative expression through art and performance.", to: "/campus-life" as const },
 ];
 
 export function CurriculumShowcase() {

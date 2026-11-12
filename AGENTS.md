@@ -18,7 +18,7 @@
 - Homepage motion is progressively enhanced through useHomeMotion and scoped CSS; keep content visible without JavaScript, preserve existing transforms, and bypass motion for reduced-motion preferences.
 - ExperienceStories owns staggered quote-and-photo story cards; distinguish actual parent quotes from school editorial stories and link each card to a relevant existing page.
 - Scope mobile layout refinements to max-width: 767px and use minmax(0, 1fr) tracks for text beside fixed controls; preserve existing desktop breakpoints above that boundary.
-- VidhyaIcons provides browser-safe decorative SVG icons through the shared Vidhya data so desktop and mobile labels use the same artwork.
+- VidyaIcons provides browser-safe decorative SVG icons through the shared Vidya data so desktop and mobile labels use the same artwork.
 - AdvantageIcon owns the advantage section's decorative SVG artwork, keeping its icon set separate from navigation icons.
 - CTA colors use shared semantic tokens and the site-cta treatment; section-specific actions share that treatment so button states remain consistent without changing navigation controls.
 - ProgrammeSelector owns programme data and accessible controlled Tabs with matched detail panels; scoped selection styles keep every programme visibly connected to its content without changing other homepage sections.

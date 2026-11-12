@@ -9,8 +9,8 @@
 - [x] Make the logo horizontal in header and footer.
 - [x] Refine phone and tablet layouts across the site; verify navigation, programme selection, story dialogs and contact form sizing.
 - [x] Restore desktop presentation from 768px upward and verify mobile-only adjustments at 320–767px.
-- [x] Add Kenchattahalli plus Krishi, Khel, Anubhav and Samskruti Vidhya above the main menu; verify desktop strip and mobile menu chips.
-- [x] Refine the top menu with custom Vidhya icons, a quieter admissions label, a divider and a complete phone menu; verify navigation and screen sizes.
+- [x] Add Kenchattahalli plus Krishi, Khel, Anubhav and Samskruti Vidya above the main menu; verify desktop strip and mobile menu chips.
+- [x] Refine the top menu with custom Vidya icons, a quieter admissions label, a divider and a complete phone menu; verify navigation and screen sizes.
 
 - [x] Rename the school to HKS Vidyamandir throughout the site and remove the visible school name from the opening banner; verify all pages.
 - [x] Increase advantage photo space, apply a black fade, custom orange icons and charcoal subheadings; verify desktop and mobile.
@@ -21,8 +21,8 @@
 - [x] Audit all photo overlays, replace blue shading with neutral black and verify banners, card states and mobile layouts.
 - [x] Replace the hero "Discover HKS" link with a Schedule a campus visit button offering virtual visit and campus tour options; verify both paths on desktop and mobile.
 - [x] Apply the supplied eight advantages and reference grid beneath the advantage photo; verify desktop and mobile.
-- [x] Replace curriculum with the four approved Vidhya cards and contextual school photos; verify first-open, hover, keyboard and phone selection without auto-advance.
-- [x] Replace the Krishi Vidhya campus photo with a gardening image and verify it displays.
+- [x] Replace curriculum with the four approved Vidya cards and contextual school photos; verify first-open, hover, keyboard and phone selection without auto-advance.
+- [x] Replace the Krishi Vidya campus photo with a gardening image and verify it displays.
 - [x] Revert the Events & community section to the folder-tab design; verify tabs, peeking photo, badge and phone layout.
 - [x] Lightly refine Events & community tabs, photo framing and visual balance; verify both stories on desktop and mobile.
 - [x] Centre-align the A window into our world heading and supporting text; verify desktop and mobile.

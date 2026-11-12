@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Phone, Mail, X } from "lucide-react";
-import { NAV, SITE, VIDHYA } from "@/lib/site";
+import { NAV, SITE, VIDYA } from "@/lib/site";
 import { img } from "@/assets/site";
 import { Button } from "@/components/ui/button";
 
@@ -51,7 +51,7 @@ export function SiteHeader() {
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">
           <div className="flex w-full flex-nowrap items-center justify-end gap-3 border-b border-border pb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60 xl:gap-5">
-            {VIDHYA.map((v) => (
+            {VIDYA.map((v) => (
               <span key={v.label} className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-foreground/80">
                 <v.icon className={`h-5 w-5 shrink-0 ${v.tone}`} />
                 {v.label}
@@ -101,7 +101,7 @@ export function SiteHeader() {
         <nav id="mobile-navigation" aria-label="Mobile" className="lg:hidden border-t border-border bg-card max-h-[calc(100dvh-5rem)] md:max-h-[75vh] overflow-y-auto overscroll-contain">
           <div className="container-site py-3">
             <div className="flex flex-wrap items-center gap-1.5 pb-3 max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-2">
-              {VIDHYA.map((v) => (
+              {VIDYA.map((v) => (
                 <span key={v.label} className="flex min-w-0 items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground max-[768px]:min-h-11 max-[768px]:rounded-md max-[768px]:px-2 max-[768px]:text-[11px] max-[768px]:tracking-normal">
                   <v.icon className={`h-5 w-5 shrink-0 ${v.tone}`} />
                   {v.label}

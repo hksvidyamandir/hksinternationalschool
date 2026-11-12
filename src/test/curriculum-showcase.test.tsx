@@ -5,7 +5,7 @@ import { CurriculumShowcase } from "@/components/site/CurriculumShowcase";
 vi.mock("@tanstack/react-router", () => ({ Link: ({ children, to, ...props }: { children: React.ReactNode; to: string }) => <a href={to} {...props}>{children}</a> }));
 afterEach(() => { cleanup(); vi.useRealTimers(); });
 
-describe("Vidhya curriculum selection", () => {
+describe("Vidya curriculum selection", () => {
   it("starts with only the first of four cards expanded and does not auto-advance", () => {
     vi.useFakeTimers();
     render(<CurriculumShowcase />);
@@ -16,15 +16,15 @@ describe("Vidhya curriculum selection", () => {
     expect(controls[0]).toHaveAttribute("aria-expanded", "true");
     expect(controls.filter(c => c.getAttribute("aria-expanded") === "true")).toHaveLength(1);
   });
-  ["Khel Vidhya", "Anubhav Vidhya", "Samskruti Vidhya"].forEach(name => {
+  ["Khel Vidya", "Anubhav Vidya", "Samskruti Vidya"].forEach(name => {
     it(`opens ${name} on hover, keyboard focus and tap`, () => {
       render(<CurriculumShowcase />);
       const control = screen.getByRole("button", { name: `Open ${name}` });
       for (const select of [() => fireEvent.mouseEnter(control.closest("article") as HTMLElement), () => fireEvent.focus(control), () => fireEvent.click(control)]) {
-        fireEvent.click(screen.getByRole("button", { name: "Open Krishi Vidhya" }));
+        fireEvent.click(screen.getByRole("button", { name: "Open Krishi Vidya" }));
         select();
         expect(control).toHaveAttribute("aria-expanded", "true");
-        expect(screen.getByRole("button", { name: "Open Krishi Vidhya" })).toHaveAttribute("aria-expanded", "false");
+        expect(screen.getByRole("button", { name: "Open Krishi Vidya" })).toHaveAttribute("aria-expanded", "false");
       }
     });
   });
