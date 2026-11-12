@@ -425,6 +425,13 @@
 .experience-photo > span { position: absolute; top: 14px; left: 14px; background: var(--card); color: var(--navy); font-size: 9px; text-transform: uppercase; padding: 6px 10px; border-radius: 4px; font-weight: 700; }
 .experience-card:hover .experience-photo img { transform: scale(1.05); }
 .experience-card:hover .experience-arrow { translate: 3px -3px; }
+.experience-video-card { height: auto; width: 100%; padding: 0; white-space: normal; text-align: left; font: inherit; }
+.experience-video-card .experience-quote > svg:first-child { width: 36px; height: 36px; }
+.experience-play { position: absolute; inset: 0; display: grid; place-items: center; }
+.experience-play svg { width: 56px; height: 56px; padding: 16px; border-radius: 50%; background: var(--gold); color: var(--navy); fill: currentColor; }
+.experience-video-dialog[data-state] { inset: 0; width: 100vw; max-width: none; height: 100dvh; transform: none; translate: none; border: 0; border-radius: 0; padding: 0; gap: 0; background: var(--photo-black); color: var(--card); animation: none; display: flex; align-items: center; justify-content: center; }
+.experience-video-dialog video { width: 100%; height: 100%; object-fit: contain; }
+.experience-video-dialog > button { top: max(16px, env(safe-area-inset-top)); right: max(16px, env(safe-area-inset-right)); width: 44px; height: 44px; display: grid; place-items: center; background: var(--photo-black); color: var(--card); opacity: 1; border: 1px solid var(--card); border-radius: 50%; }
 @media (max-width: 1023px) { .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } .experience-card:nth-child(4) { margin-top: 40px; } }
 @media (max-width: 767px) { .experience-grid { gap: 12px; } .experience-heading { padding-bottom: 50px; } .experience-seal { width: 90px; height: 90px; margin-bottom: -90px; } .experience-quote { padding: 18px 14px 36px; min-height: 300px; } .experience-quote h3 { font-size: 20px; } .experience-quote p { font-size: 11px; } .experience-photo img { aspect-ratio: 3/4; } .experience-photo > span { left: 8px; top: 8px; padding: 5px 6px; font-size: 8px; } }
 @media (prefers-reduced-motion: reduce) { .experience-card, .experience-photo img, .experience-arrow, .experience-seal { transition: none; } }
