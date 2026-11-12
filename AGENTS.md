@@ -25,3 +25,4 @@
 - Photo shading uses the shared neutral photo-black token (photo-shade utility); keep brand-colour section surfaces and interactive selection accents separate from image overlays.
 - VisitChooser shares virtual visit and campus tour choices across the hero, Our Campus and final admissions visit controls; validated /contact?visit= links carry the choice into the enquiry form and message.
 - CurriculumShowcase owns a manually controlled four-card accordion with the first card initially expanded and hover, focus and tap selection; no timer changes the user's selection.
+- LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
