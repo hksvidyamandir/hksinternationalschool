@@ -22,3 +22,4 @@
 - [x] Replace the hero "Discover HKS" link with a Schedule a campus visit button offering virtual visit and campus tour options; verify both paths on desktop and mobile.
 - [x] Apply the supplied eight advantages and reference grid beneath the advantage photo; verify desktop and mobile.
 - [x] Replace curriculum with the four approved Vidhya cards and contextual school photos; verify first-open, hover, keyboard and phone selection without auto-advance.
+- [x] Replace the Krishi Vidhya campus photo with a gardening image and verify it displays.
