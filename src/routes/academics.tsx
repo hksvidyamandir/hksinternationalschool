@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { img } from "@/assets/site";
 import { seo } from "@/lib/seo";
+import { Button } from "@/components/ui/button";
 import { CardGrid, CtaBand, PageHero, PillList, Section, SectionHead } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/academics")({
@@ -56,8 +57,8 @@ function Academics() {
           { title: "Brain Memory Mapping", text: "Techniques to improve recall, focus and study skills." },
         ]} />
         <div className="mt-12 flex flex-wrap justify-center gap-3">
-          <Link to="/experiential-learning" className="rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground">Experiential Learning & Labs</Link>
-          <Link to="/competitive-exams" className="rounded-full border border-border px-6 py-3 font-bold text-navy">Competitive Exams & Olympiads</Link>
+          <Button asChild className="h-auto rounded-full px-6 py-3 font-bold"><Link to="/experiential-learning">Experiential Learning & Labs</Link></Button>
+          <Button asChild className="h-auto rounded-full px-6 py-3 font-bold"><Link to="/competitive-exams">Competitive Exams & Olympiads</Link></Button>
         </div>
       </Section>
       <CtaBand />

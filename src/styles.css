@@ -39,6 +39,10 @@
   --color-flame: var(--flame);
   --color-teal: var(--teal);
   --color-ink: var(--ink);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-hover-foreground: var(--cta-hover-foreground);
   --color-ring-offset-background: var(--background);
 }
 
@@ -61,6 +65,10 @@
   --accent-ink: color-mix(in oklab, var(--gold) 45%, var(--ink));
   --surface-teal: color-mix(in oklab, var(--teal) 10%, var(--card));
   --gold: oklch(0.800622 0.138448 66.949090);
+  --cta: oklch(0.58 0.14 55);
+  --cta-foreground: var(--card);
+  --cta-hover: var(--gold);
+  --cta-hover-foreground: var(--ink);
   --flame: var(--gold);
   --cream: color-mix(in oklab, var(--gold) 14%, var(--background));
   --secondary: color-mix(in oklab, var(--teal) 12%, var(--background));
@@ -1123,4 +1131,18 @@
   .home-beyond-grid { gap: 12px; }
   .home-beyond-grid h3 { font-size: 15px; }
   .home-beyond-grid a > div > span { display: none; }
+}
+
+/* Shared action colors override section-specific treatments without changing layout. */
+:root :is(.site-cta, .home-action, .curr-cta, .qk-cta, .final-btn),
+:root .hks-home :is(.home-action, .curr-cta, .qk-cta, .final-btn) {
+  background: var(--cta);
+  color: var(--cta-foreground);
+  border-color: var(--cta);
+}
+:root :is(.site-cta, .home-action, .curr-cta, .qk-cta, .final-btn):hover,
+:root .hks-home :is(.home-action, .curr-cta, .qk-cta, .final-btn):hover {
+  background: var(--cta-hover);
+  color: var(--cta-hover-foreground);
+  border-color: var(--cta-hover);
 }

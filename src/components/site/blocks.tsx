@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ArrowRight, Check } from "lucide-react";
 import { img } from "@/assets/site";
+import { Button } from "@/components/ui/button";
 
 export function PageHero({ eyebrow, title, intro, image, crumb }: { eyebrow: string; title: string; intro: string; image: string; crumb: string }) {
   return (
@@ -91,8 +92,8 @@ export function CtaBand({ title = "Give your child wings to succeed", text = "Ad
           <p className="mt-4 text-navy-foreground/80">{text}</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <Link to="/admissions" hash="enquire" className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 font-bold text-navy hover:bg-cream transition">Apply Now <ArrowRight className="h-4 w-4" /></Link>
-          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-navy-foreground/40 px-7 py-3.5 font-bold hover:bg-navy-foreground/10 transition">Book a Campus Tour</Link>
+          <Button asChild className="h-auto rounded-full px-7 py-3.5 font-bold"><Link to="/admissions" hash="enquire">Apply Now <ArrowRight className="h-4 w-4" /></Link></Button>
+          <Button asChild className="h-auto rounded-full px-7 py-3.5 font-bold"><Link to="/contact">Book a Campus Tour</Link></Button>
         </div>
       </div>
     </section>

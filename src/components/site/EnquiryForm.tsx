@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { SITE } from "@/lib/site";
+import { Button } from "@/components/ui/button";
 
 const grades = ["Nursery", "LKG", "UKG", ...Array.from({ length: 12 }, (_, i) => `Grade ${i + 1}`)];
 
@@ -25,7 +26,7 @@ export function EnquiryForm({ title = "Admission enquiry" }: { title?: string })
       </div>
       <select name="boarding" className={field} defaultValue="Day scholar"><option>Day scholar</option><option>Full boarding</option><option>Flexi-boarding (weekdays)</option></select>
       <textarea name="message" rows={3} maxLength={500} placeholder="Message (optional)" className={field} />
-      <button className="w-full rounded-full bg-primary py-3.5 font-bold text-primary-foreground hover:bg-navy transition">Send Enquiry</button>
+      <Button type="submit" className="h-auto w-full rounded-full py-3.5 font-bold">Send Enquiry</Button>
       {sent && <p className="text-sm text-primary font-semibold">Thank you! WhatsApp has opened with your enquiry.</p>}
     </form>
   );

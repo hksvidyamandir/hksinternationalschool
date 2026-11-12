@@ -55,7 +55,7 @@ export function SiteFooter() {
         <p className="grid min-w-0 gap-2 md:flex md:gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span className="hidden md:inline">|</span><a href={`mailto:${SITE.email}`} className="min-w-0 break-all md:break-normal hover:text-primary">{SITE.email}</a></p>
       </div>
       <a href={`${SITE.whatsapp}?text=${encodeURIComponent("Hello HKS Vidyamandir, I would like to know more about admissions")}`} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft hover:scale-105 transition">
+        className="site-cta fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-cta text-cta-foreground shadow-soft hover:scale-105 transition">
         <MessageCircle className="h-6 w-6" />
       </a>
     </footer>
