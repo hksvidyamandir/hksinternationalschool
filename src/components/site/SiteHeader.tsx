@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Phone, Mail, X } from "lucide-react";
 import { NAV, SITE, VIDHYA } from "@/lib/site";
 import { img } from "@/assets/site";
@@ -8,6 +8,21 @@ import { Button } from "@/components/ui/button";
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const closeMenu = () => { setOpen(false); setExpanded(null); };
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        setExpanded(null);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
@@ -35,16 +50,16 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">
-          <div className="flex flex-nowrap items-center gap-3 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60 xl:gap-5">
+          <div className="flex w-full flex-nowrap items-center justify-end gap-3 border-b border-border pb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-foreground/60 xl:gap-5">
             {VIDHYA.map((v) => (
-              <span key={v.label} className="flex items-center gap-1.5 text-foreground/80">
-                <v.icon className={`h-3.5 w-3.5 shrink-0 ${v.tone}`} strokeWidth={2.25} />
+              <span key={v.label} className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-foreground/80">
+                <v.icon className={`h-5 w-5 shrink-0 ${v.tone}`} />
                 {v.label}
               </span>
             ))}
-            <span className="hidden xl:inline">CBSE · Nursery – Grade 12</span>
-            <span className="hidden xl:inline">Day & Residential</span>
-            <span className="text-primary">Admissions Open 2026–27</span>
+            <span className="hidden whitespace-nowrap min-[1600px]:inline">CBSE · Nursery – Grade 12</span>
+            <span className="hidden whitespace-nowrap min-[1600px]:inline">Day & Residential</span>
+            <span className="whitespace-nowrap font-medium text-foreground/80">Admissions Open 2026–27</span>
           </div>
         <nav aria-label="Main" className="flex items-center gap-0.5">
           <Link to="/" className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeOptions={{ exact: true }} activeProps={{ className: "text-primary" }}>Home</Link>
@@ -70,13 +85,13 @@ export function SiteHeader() {
               <Link key={g.label} to={g.to} className="px-3 py-2 text-sm font-semibold text-foreground hover:text-primary" activeProps={{ className: "text-primary" }}>{g.label}</Link>
             ),
           )}
-          <Link to="/admissions" hash="enquire" className="ml-2 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground hover:opacity-90">Apply Now</Link>
+          <Button asChild className="ml-2 rounded-full px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
         </nav>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
-          <Button variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
+          <Button ref={toggleRef} variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => { setOpen(!open); setExpanded(null); }} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
             {open ? <X /> : <Menu />}
           </Button>
         </div>
@@ -85,15 +100,16 @@ export function SiteHeader() {
       {open && (
         <nav id="mobile-navigation" aria-label="Mobile" className="lg:hidden border-t border-border bg-card max-h-[calc(100dvh-5rem)] md:max-h-[75vh] overflow-y-auto overscroll-contain">
           <div className="container-site py-3">
-            <div className="flex flex-wrap items-center gap-1.5 pb-3">
+            <div className="flex flex-wrap items-center gap-1.5 pb-3 max-[768px]:grid max-[768px]:grid-cols-2 max-[768px]:gap-2">
               {VIDHYA.map((v) => (
-                <span key={v.label} className="flex items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                  <v.icon className={`h-3 w-3 shrink-0 ${v.tone}`} strokeWidth={2.25} />
+                <span key={v.label} className="flex min-w-0 items-center gap-1.5 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground max-[768px]:min-h-11 max-[768px]:rounded-md max-[768px]:px-2 max-[768px]:text-[11px] max-[768px]:tracking-normal">
+                  <v.icon className={`h-5 w-5 shrink-0 ${v.tone}`} />
                   {v.label}
                 </span>
               ))}
             </div>
-            <Link to="/" onClick={() => setOpen(false)} className="block py-3 font-semibold border-b border-border">Home</Link>
+            <div className="hidden border-b border-border pb-3 text-xs font-medium text-foreground/80 max-[768px]:block">Admissions Open 2026–27</div>
+            <Link to="/" onClick={closeMenu} className="block py-3 font-semibold border-b border-border">Home</Link>
             {NAV.map((g) => (
               <div key={g.label} className="border-b border-border">
                 {g.children ? (
@@ -104,17 +120,29 @@ export function SiteHeader() {
                     {expanded === g.label && (
                       <div className="pb-3 pl-3 space-y-1">
                         {g.children.map((c) => (
-                          <Link key={c.label} to={c.to} onClick={() => setOpen(false)} className="flex min-h-11 items-center py-2 md:block md:min-h-0 md:py-1.5 text-sm text-muted-foreground hover:text-primary">{c.label}</Link>
+                          <Link key={c.label} to={c.to} onClick={closeMenu} className="flex min-h-11 items-center py-2 md:block md:min-h-0 md:py-1.5 text-sm text-muted-foreground hover:text-primary">{c.label}</Link>
                         ))}
                       </div>
                     )}
                   </>
                 ) : (
-                  <Link to={g.to} onClick={() => setOpen(false)} className="block py-3 font-semibold">{g.label}</Link>
+                  <Link to={g.to} onClick={closeMenu} className="block py-3 font-semibold">{g.label}</Link>
                 )}
               </div>
             ))}
-            <Link to="/admissions" onClick={() => setOpen(false)} className="mt-4 block rounded-full bg-primary py-3 text-center font-bold text-primary-foreground">Apply Now</Link>
+            <Button asChild className="mt-4 min-h-11 w-full rounded-full font-bold"><Link to="/admissions" onClick={closeMenu}>Apply Now</Link></Button>
+            <div className="hidden border-t border-border mt-4 pt-3 max-[768px]:block">
+              <div className="grid grid-cols-2 gap-x-3 text-sm font-semibold">
+                <Link to="/admissions" hash="enquire" onClick={closeMenu} className="flex min-h-11 items-center">Enquire Now</Link>
+                <Link to="/campus" onClick={closeMenu} className="flex min-h-11 items-center">Campus Tour</Link>
+                <Link to="/admissions" onClick={closeMenu} className="flex min-h-11 items-center">Application Form</Link>
+                <Link to="/contact" onClick={closeMenu} className="flex min-h-11 items-center">Contact</Link>
+              </div>
+              <div className="mt-2 border-t border-border pt-2">
+                <a href={SITE.phoneHref} className="flex min-h-11 items-center gap-2 text-sm text-navy"><Phone className="h-4 w-4 shrink-0" />{SITE.phone}</a>
+                <a href={`mailto:${SITE.email}`} className="grid min-h-11 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 text-xs text-navy"><Mail className="h-4 w-4 shrink-0" /><span className="min-w-0 break-all">{SITE.email}</span></a>
+              </div>
+            </div>
           </div>
         </nav>
       )}

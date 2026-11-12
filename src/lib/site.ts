@@ -16,14 +16,14 @@ export const SITE = {
 
 export type NavItem = { label: string; to: string; desc?: string };
 
-import { Compass, Landmark, Sprout, Trophy } from "lucide-react";
+import { AnubhavIcon, KhelIcon, KrishiIcon, SamskrutiIcon } from "@/components/site/VidhyaIcons";
 
 // The school's four learning verticals, shown above the main menu.
-export const VIDHYA: { label: string; icon: typeof Sprout; tone: string }[] = [
-  { label: "Krishi Vidhya", icon: Sprout, tone: "text-teal" },
-  { label: "Khel Vidhya", icon: Trophy, tone: "text-gold" },
-  { label: "Anubhav Vidhya", icon: Compass, tone: "text-navy" },
-  { label: "Samskruti Vidhya", icon: Landmark, tone: "text-ink" },
+export const VIDHYA: { label: string; icon: typeof KrishiIcon; tone: string }[] = [
+  { label: "Krishi Vidhya", icon: KrishiIcon, tone: "text-teal" },
+  { label: "Khel Vidhya", icon: KhelIcon, tone: "text-gold" },
+  { label: "Anubhav Vidhya", icon: AnubhavIcon, tone: "text-navy" },
+  { label: "Samskruti Vidhya", icon: SamskrutiIcon, tone: "text-ink" },
 ];
 export type NavGroup = { label: string; to: string; children?: NavItem[] };
 
