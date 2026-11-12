@@ -1212,13 +1212,13 @@
 @media (prefers-reduced-motion: reduce) { .loc-section::before { animation: none; } .loc-card, .loc-frame img { transition: none; } }
 
 /* Admissions final CTA */
-.home-final { background: var(--background) !important; color: var(--navy-foreground) !important; padding-block: 40px 90px !important; }
-.final-card { position: relative; overflow: hidden; isolation: isolate; border-radius: 28px; padding: 64px 32px; text-align: center; background: linear-gradient(120deg, var(--navy), color-mix(in oklab, var(--navy) 70%, var(--teal))); box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--navy) 70%, transparent); }
+.home-final { background: var(--navy) !important; color: var(--navy-foreground) !important; padding-block: 76px 84px !important; border-top: 1px solid color-mix(in oklab, var(--navy-foreground) 20%, transparent); }
+.final-card { position: relative; text-align: center; background: transparent; border-radius: 0; box-shadow: none; }
 .final-orb { position: absolute; border-radius: 50%; z-index: -1; filter: blur(4px); animation: final-float 9s ease-in-out infinite alternate; }
 .final-orb.a { width: 280px; height: 280px; left: -80px; top: -110px; background: color-mix(in oklab, var(--gold) 35%, transparent); }
 .final-orb.b { width: 220px; height: 220px; right: -60px; bottom: -90px; background: color-mix(in oklab, var(--teal) 45%, transparent); animation-delay: -4s; }
 @keyframes final-float { to { transform: translate(30px, 20px) scale(1.08); } }
-.final-badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: color-mix(in oklab, var(--navy-foreground) 12%, transparent); color: var(--gold); }
+.final-badge { display: inline-flex; align-items: center; gap: 10px; padding: 0 0 16px; border-bottom: 1px solid var(--gold); border-radius: 0; font-size: 13px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; background: transparent; color: var(--gold); }
 .final-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: final-pulse 1.8s ease-out infinite; }
 @keyframes final-pulse { 0% { box-shadow: 0 0 0 0 var(--gold); } 100% { box-shadow: 0 0 0 10px transparent; } }
 .home-final .final-card h2 { font-size: 48px; margin-top: 20px; color: var(--navy-foreground); }
@@ -1235,14 +1235,16 @@
 @media (max-width: 760px) { .final-card { padding: 48px 20px; border-radius: 20px; } .home-final .final-card h2 { font-size: 32px; } .final-btn { width: 100%; justify-content: center; } }
 @media (prefers-reduced-motion: reduce) { .final-orb, .final-dot { animation: none; } }
 
-.final-card { padding: 56px 40px 52px; }
-.home-final .final-card h2 { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.15; }
-.home-final .final-card p { font-size: clamp(14px, 1.2vw, 16px); }
+.final-card { padding: 0 40px; }
+.home-final .final-card h2 { font-size: 56px; line-height: 1.15; margin-top: 28px; }
+.home-final .final-card p { font-size: 16px; opacity: 1; }
 .final-actions { flex-wrap: nowrap; margin-top: 36px; }
-.final-btn { white-space: nowrap; flex: 0 0 auto; }
+.final-btn { white-space: nowrap; flex: 0 0 auto; border-radius: 6px; }
 @media (max-width: 760px) { .final-card { padding: 44px 16px; } .final-actions { gap: 10px; } .final-btn { width: auto; flex: 1 1 0; min-width: 0; padding: 0 12px; font-size: 13px; white-space: normal; text-align: center; min-height: 50px; } .final-btn svg { display: none; } }
 .home-final > div > .final-card { display: block; margin-top: 0; }
 .home-final .final-card > p { margin-top: 16px; }
+.home-final .final-actions { padding-top: 28px; border-top: 1px solid color-mix(in oklab, var(--navy-foreground) 20%, transparent); width: fit-content; max-width: 100%; margin-inline: auto; }
+@media (max-width: 767px) { .home-final { padding-block: 52px 60px !important; } .home-final .final-card { padding: 0; border-radius: 0; } .home-final .final-card h2 { font-size: 34px; } .home-final .final-actions { width: 100%; grid-template-columns: minmax(0, 1fr); } .home-final .final-btn { width: 100%; font-size: 14px; } }
 
 /* Mobile-only refinements; preserve the established desktop presentation. */
 @media (max-width: 767px) {
