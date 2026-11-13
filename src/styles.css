@@ -1489,16 +1489,16 @@
   animation: scroll-top-in 0.24s ease-out both;
 }
 /* Recognition band: warm gold strip, heading left, logos right */
-.recognition-strip { background: var(--gold); padding: 26px 0; border-bottom: 1px solid color-mix(in oklab, var(--navy) 16%, transparent); }
+.recognition-strip { background: var(--card); padding: 30px 0; border-bottom: 1px solid var(--home-line); }
 .recognition-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .recognition-heading { text-align: left; flex: none; }
-.recognition-heading .home-kicker { color: color-mix(in oklab, var(--navy) 62%, var(--gold)); }
+.recognition-heading .home-kicker { color: var(--primary); }
 .recognition-heading h2 { font-size: 26px; color: var(--navy); margin: 6px 0 0; }
 .recognition-logos { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 14px; list-style: none; margin: 0; padding: 0; }
 .recognition-logos li { min-width: 0; }
-.recognition-image { height: 58px; display: grid; place-items: center; background: var(--card); border-radius: 8px; padding: 0 14px; transition: transform 240ms ease; }
+.recognition-image { height: 58px; display: grid; place-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0 14px; box-shadow: 0 2px 10px color-mix(in oklab, var(--navy) 8%, transparent); transition: transform 240ms ease, border-color 240ms ease; }
 .recognition-image img { width: 88px; height: 42px; object-fit: contain; }
-.recognition-logos li:hover .recognition-image { transform: translateY(-3px); }
+.recognition-logos li:hover .recognition-image { transform: translateY(-3px); border-color: color-mix(in oklab, var(--gold) 70%, var(--border)); }
 @media (max-width: 1023px) {
   .recognition-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
   .recognition-logos { justify-content: flex-start; }
