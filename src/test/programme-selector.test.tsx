@@ -29,4 +29,33 @@ describe("Programme selection", () => {
       expect(screen.getAllByRole("tab").filter(item => item.getAttribute("aria-selected") === "true")).toHaveLength(1);
     });
   });
+
+  it("shows the four Early Years pointers on the text side", () => {
+    render(<ProgrammeSelector />);
+    const tab = screen.getByRole("tab", { name: /Early Years/ });
+    fireEvent.click(tab);
+    const panel = screen.getByRole("tabpanel");
+    const items = Array.from(panel.querySelectorAll(".programme-points li"));
+    expect(items).toHaveLength(4);
+    expect(items.map(item => item.querySelector("h4")?.textContent)).toEqual([
+      "Play-Based Learning",
+      "Inquiry-Led Exploration",
+      "Montessori Learning Experiences",
+      "Whole-Child Development",
+    ]);
+    expect(items[0]?.querySelector("p")?.textContent).toContain("Purposeful play strengthens language");
+    expect(items[3]?.querySelector("p")?.textContent).toContain("physical, emotional, social and creative growth");
+  });
+
+  it("does not show Early Years pointers on the other stages", () => {
+    render(<ProgrammeSelector />);
+    for (const name of ["Primary", "High School", "Senior Secondary"]) {
+      const tab = screen.getByRole("tab", { name: new RegExp(name) });
+      fireEvent.mouseDown(tab, { button: 0, ctrlKey: false });
+      fireEvent.click(tab);
+      const panel = screen.getByRole("tabpanel");
+      expect(panel.querySelector(".programme-points")).toBeNull();
+      expect(within(panel).queryByText("Play-Based Learning")).toBeNull();
+    }
+  });
 });
