@@ -4,12 +4,14 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { img } from "@/assets/site";
+import { programmePhotos } from "@/lib/programme-photos";
+import { ProgrammeCarousel } from "@/components/site/ProgrammeCarousel";
 
 const programmes = [
-  { title: "Early Years", grade: "Nursery - Grade 2", image: img.progMontessori, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
-  { title: "Primary", grade: "Grades 3 - 5", image: img.progElementary, text: "Curiosity becomes confidence through literacy, numeracy, collaborative projects and hands-on discovery." },
-  { title: "High School", grade: "Grades 6 - 10", image: img.progCbse, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations." },
-  { title: "Senior Secondary", grade: "Grades 11 - 12", image: img.progSenior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance." },
+  { title: "Early Years", grade: "Nursery - Grade 2", image: img.progMontessori, photos: programmePhotos.early, text: "Small discoveries. A strong beginning. Play, stories and exploration build the foundations for a lifelong love of learning." },
+  { title: "Primary", grade: "Grades 3 - 5", image: img.progElementary, photos: programmePhotos.primary, text: "Curiosity becomes confidence through literacy, numeracy, collaborative projects and hands-on discovery." },
+  { title: "High School", grade: "Grades 6 - 10", image: img.progCbse, photos: programmePhotos.high, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations." },
+  { title: "Senior Secondary", grade: "Grades 11 - 12", image: img.progSenior, photos: programmePhotos.senior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance." },
 ];
 
 export function ProgrammeSelector() {
@@ -48,7 +50,7 @@ export function ProgrammeSelector() {
           <div className="programme-panels" ref={detailRef}>
             {programmes.map((programme, index) => (
               <TabsContent key={programme.title} value={String(index)} className="home-programme-detail">
-                <img src={programme.image} alt={`${programme.title} students at HKS`} loading="lazy" />
+                <ProgrammeCarousel title={programme.title} photos={programme.photos} />
                 <div className="programme-copy">
                   <div className="programme-detail-label"><span aria-hidden="true">0{index + 1}</span><span className="home-kicker">{programme.grade}</span></div>
                   <h3>{programme.title}</h3><p>{programme.text}</p>

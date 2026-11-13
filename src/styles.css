@@ -1386,6 +1386,20 @@
 .programme-choice.is-selected .programme-selected-mark { visibility: visible; }
 .programme-selected-mark svg { width: 16px; height: 16px; }
 .programme-panels { border-top: 3px solid var(--gold); }
+.hks-home .home-programme-detail > .programme-carousel { display: block; padding: 0; min-width: 0; position: relative; align-self: stretch; background: var(--card); }
+.programme-photo-track { margin-left: 0; }
+.programme-photo-slide { padding-left: 0; }
+.programme-photo-slide img { display: block; width: 100%; height: 310px; object-fit: cover; }
+.programme-photo-caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px 0; min-height: 40px; color: var(--navy); font-size: 13px; font-weight: 700; }
+.programme-photo-caption small { flex-shrink: 0; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }
+.programme-photo-controls { display: flex; justify-content: space-between; align-items: center; padding: 4px 12px 10px; gap: 8px; }
+.programme-photo-controls > button { color: var(--navy); border: 1px solid var(--border); border-radius: 50%; width: 36px; height: 36px; }
+.programme-photo-controls button:hover { background: var(--gold); color: var(--ink); }
+.programme-photo-dots { display: flex; align-items: center; }
+.programme-photo-dots button { width: 28px; height: 32px; padding: 0; border-radius: 0; }
+.programme-photo-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--border); }
+.programme-photo-dots button[aria-current="true"] span { width: 18px; border-radius: 4px; background: var(--navy); }
+@media (max-width: 767px) { .programme-photo-slide img { height: auto; aspect-ratio: 3 / 2; } .programme-photo-caption { padding-inline: 16px; } }
 .hks-home .programme-selector .home-programme-detail { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 380px; margin-top: 0; border-radius: 0 0 8px 8px; background: var(--muted); }
 .hks-home .programme-selector .home-programme-detail[data-state="inactive"] { display: none; }
 .hks-home .programme-selector .home-programme-detail > img { width: 100%; height: 380px; max-height: none; aspect-ratio: auto; }
