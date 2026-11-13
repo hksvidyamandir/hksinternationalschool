@@ -222,6 +222,9 @@
 .home-section-number { display: block; font-size: 10px; color: var(--muted-foreground); }
 .home-intro-text h3 { font-size: 40px; line-height: 1.2; color: var(--navy); margin-top: 26px; }
 .home-intro-text p { margin-top: 20px; line-height: 1.8; color: var(--muted-foreground); font-size: 14px; }
+.home-intro-activities { display: grid; gap: 18px; margin-top: 24px; }
+.home-intro-activities h4 { color: var(--navy); font-size: 20px; line-height: 1.4; }
+.home-intro-activities p { margin-top: 6px; }
 .home-intro-text .home-action { margin-top: 28px; }
 .home-advantage { padding-block: 80px; background: var(--muted); }
 .home-proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 44px; }
