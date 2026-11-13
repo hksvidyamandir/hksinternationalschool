@@ -16,12 +16,12 @@ import high3 from "@/assets/programme-high-3.jpg";
 import high4 from "@/assets/programme-high-4.jpg";
 import high5 from "@/assets/programme-high-5.jpg";
 import high6 from "@/assets/programme-high-6.jpg";
-import senior1 from "@/assets/programme-senior-formal-1.jpg";
-import senior2 from "@/assets/programme-senior-formal-2.jpg";
-import senior3 from "@/assets/programme-senior-formal-3.jpg";
-import senior4 from "@/assets/programme-senior-formal-4.jpg";
-import senior5 from "@/assets/programme-senior-formal-5.jpg";
-import senior6 from "@/assets/programme-senior-formal-6.jpg";
+import senior1 from "@/assets/programme-senior-inclusive-1.jpg";
+import senior2 from "@/assets/programme-senior-inclusive-2.jpg";
+import senior3 from "@/assets/programme-senior-inclusive-3.jpg";
+import senior4 from "@/assets/programme-senior-inclusive-4.jpg";
+import senior5 from "@/assets/programme-senior-inclusive-5.jpg";
+import senior6 from "@/assets/programme-senior-inclusive-6.jpg";
 
 export type ProgrammePhoto = { src: string; caption: string };
 

@@ -9,3 +9,4 @@
 - [x] Add accessible six-image carousels and verify all stages on desktop and mobile.
 - [x] Redesign programme pointers, align photos with their content, and refresh slideshow navigation; verify desktop and mobile.
 - [x] Change Senior Secondary students to formal attire in all six photos and verify the slideshow.
+- [x] Include girls alongside boys in all six Senior Secondary photos, retaining formal attire and verifying slideshow display.
