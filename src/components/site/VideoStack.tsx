@@ -17,6 +17,7 @@ export function VideoStack() {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
   const n = videos.length;
+  const cur = open !== null ? videos[open] : undefined;
   const go = (d: number) => setActive(a => (a + d + n) % n);
   return <section className="vstack-section" aria-labelledby="vstack-title">
     <div className="container-site">
@@ -43,9 +44,9 @@ export function VideoStack() {
     </div>
     <Dialog open={open !== null} onOpenChange={o => { if (!o) setOpen(null); }}>
       <DialogContent className="experience-video-dialog translate-x-0 translate-y-0">
-        <DialogTitle className="sr-only">{open !== null ? videos[open].title : "HKS film"}</DialogTitle>
+        <DialogTitle className="sr-only">{cur?.title ?? "HKS film"}</DialogTitle>
         <DialogDescription className="sr-only">School film.</DialogDescription>
-        {open !== null && <video src={videos[open].src} autoPlay controls playsInline aria-label={videos[open].title} />}
+        {cur && <video src={cur.src} autoPlay controls playsInline aria-label={cur.title} />}
       </DialogContent>
     </Dialog>
   </section>;
