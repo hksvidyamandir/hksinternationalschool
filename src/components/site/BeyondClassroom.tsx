@@ -18,7 +18,7 @@ import samskruti2 from "@/assets/vidya-samskruti-2.jpg";
 import samskruti3 from "@/assets/vidya-samskruti-3.jpg";
 import samskruti4 from "@/assets/vidya-samskruti-4.jpg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { KrishiIcon, KhelIcon, AnubhavIcon, SamskrutiIcon } from "./VidyaIcons";
+import { KrishiIcon, KhelIcon, AnubhavIcon, SamskritiIcon } from "./VidyaIcons";
 
 const groups = [
   { id: "krishi", name: "Krishi Vidya", Icon: KrishiIcon, subtitle: "Nature becomes the classroom.", topics: [
@@ -39,7 +39,7 @@ const groups = [
     { title: "Industry Orientation", text: "Real-world projects connect classroom learning with practical applications.", image: anubhav3, alt: "Illustrative photograph of an educational engineering workshop visit", to: "/experiential-learning" as const },
     { title: "Robotics & Maker Projects", text: "Designing, coding and building help young thinkers turn ideas into practical solutions.", image: anubhav4, alt: "Illustrative photograph of students building an educational robot", to: "/experiential-learning" as const },
   ] },
-  { id: "samskruti", name: "Samskruti Vidya", Icon: SamskrutiIcon, subtitle: "Expression, culture and connections.", topics: [
+  { id: "samskruti", name: "Samskriti Vidya", Icon: SamskritiIcon, subtitle: "Expression, culture and connections.", topics: [
     { title: "Student Clubs", text: "Shared interests, house activities and teamwork create opportunities to participate.", image: samskruti1, alt: "Illustrative photograph of a student public speaking club", to: "/campus-life" as const },
     { title: "Events & Celebrations", text: "Festivals, performances and annual events celebrate every student's expression.", image: samskruti2, alt: "Illustrative photograph of students celebrating with flower rangoli", to: "/campus-life" as const },
     { title: "Student Performances", text: "Music, dance and creative expression give students opportunities to perform and connect.", image: samskruti3, alt: "Illustrative photograph of students enjoying music and dance with a teacher", to: "/campus-life" as const },

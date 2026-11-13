@@ -16,7 +16,9 @@ it("opens the existing school film from the third story and removes the player w
   fireEvent.click(screen.getByRole("button", { name: "Close" }));
   expect(document.querySelector("video")).toBeNull();
 });
-it("shows eight community cards in the marquee", () => {
+it("shows eight story cards in the staggered grid, two of them films", () => {
   render(<ExperienceStories />);
-  expect(document.querySelectorAll(".experience-set")[0]?.children).toHaveLength(8);
+  const grid = document.querySelector(".experience-grid");
+  expect(grid?.children).toHaveLength(8);
+  expect(grid?.querySelectorAll(".experience-video-card")).toHaveLength(2);
 });

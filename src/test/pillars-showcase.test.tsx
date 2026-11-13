@@ -13,7 +13,7 @@ describe("HKS pillars accordion", () => {
     expect(screen.getByRole("button", { name: "Open Krishi Vidya" })).toHaveAttribute("aria-expanded", "true");
     expect(controls.filter(control => control.getAttribute("aria-expanded") === "false")).toHaveLength(3);
   });
-  ["Khel Vidya", "Anubhav Vidya", "Samskruti Vidya"].forEach(name => {
+  ["Khel Vidya", "Anubhav Vidya", "Samskriti Vidya"].forEach(name => {
     it(`exclusively expands ${name} on hover, focus and tap`, () => {
       render(<PillarsShowcase />);
       const control = screen.getByRole("button", { name: `Open ${name}` });

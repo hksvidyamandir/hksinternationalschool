@@ -13,3 +13,7 @@
 - [x] Change Senior Secondary students to formal attire in all six photos and verify the slideshow.
 - [x] Include girls alongside boys in all six Senior Secondary photos, retaining formal attire and verifying slideshow display.
 - [x] Source recognition logos and add a polished strip below the hero; verify desktop and mobile. Omit the withdrawn British Council IDS badge.
+- [x] Move the recognition strip to a yellow band directly below the hero, with the heading left-aligned and the logos to the right.
+- [x] Replace the four quick-link CTAs with two section CTAs: Download our prospectus and Apply for admission.
+- [x] Restore the previously removed stacked video-card section from history and verify it on desktop and mobile.
+- [x] Rename the fourth pillar to Samskriti everywhere; verify tests and the live section.

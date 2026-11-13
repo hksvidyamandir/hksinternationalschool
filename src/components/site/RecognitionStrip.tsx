@@ -12,8 +12,11 @@ const recognitions = [
 
 export function RecognitionStrip() {
   return <section className="recognition-strip" aria-labelledby="recognition-title">
-    <div className="container-site">
-      <div className="recognition-heading"><span className="home-kicker">Our recognitions</span><h2 id="recognition-title">Accreditations &amp; recognition</h2></div>
+    <div className="container-site recognition-inner">
+      <div className="recognition-heading">
+        <span className="home-kicker">Our recognitions</span>
+        <h2 id="recognition-title">Accreditations &amp; recognition</h2>
+      </div>
       <ul className="recognition-logos">
         {recognitions.map(item => <li key={item.name}><div className="recognition-image"><img src={item.image} alt={`${item.name} logo`} loading="lazy" /></div></li>)}
       </ul>

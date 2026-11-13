@@ -18,6 +18,6 @@ export function AnubhavIcon(props: IconProps) {
   return <Frame {...props}><path d="M16 26c-4-3-8-3-12-2V10c4-1 8-1 12 2 2-1 4-2 6-2M16 12v14c4-3 8-3 12-2v-9M8 15l4 1M8 19l4 1" /><circle cx="24" cy="8" r="5" /><path d="m26 6-1 3-3 1 1-3Z" /></Frame>;
 }
 
-export function SamskrutiIcon(props: IconProps) {
+export function SamskritiIcon(props: IconProps) {
   return <Frame {...props}><path d="m4 13 12-8 12 8ZM7 13v12M12 13v12M20 13v12M25 13v12M5 25h22M3 29h26M16 5V2M16 2h5" /><path d="M14 25v-6a2 2 0 0 1 4 0v6" /></Frame>;
 }

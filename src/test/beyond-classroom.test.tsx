@@ -9,7 +9,7 @@ it("shows exactly four photo topics in each of the four Vidya selections", () =>
     ["Krishi Vidya", ["Experiential Learning", "Organic Farming & Gardening", "Horticulture & Sustainability", "Composting & Environmental Care"]],
     ["Khel Vidya", ["Physical Education", "Indoor Sports", "Yoga, Dance & Fitness", "Athletics & Teamwork"]],
     ["Anubhav Vidya", ["Laboratories", "Competitive Exams & Olympiads", "Industry Orientation", "Robotics & Maker Projects"]],
-    ["Samskruti Vidya", ["Student Clubs", "Events & Celebrations", "Student Performances", "Leadership & Community"]],
+    ["Samskriti Vidya", ["Student Clubs", "Events & Celebrations", "Student Performances", "Leadership & Community"]],
   ] as const;
   for (const [name, topics] of expected) {
     fireEvent.mouseDown(screen.getByRole("tab", { name }), { button: 0, ctrlKey: false });

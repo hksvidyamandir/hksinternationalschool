@@ -23,25 +23,19 @@ const experiences: Story[] = [
 export function ExperienceStories() {
   const [video, setVideo] = useState<Story["video"] | null>(null);
   const [videoError, setVideoError] = useState(false);
-  const card = (item: Story, i: number, copy: boolean) => {
+  const card = (item: Story, i: number) => {
     const tone = `tone-${i % 4}`;
     const body = <>
       <div className="experience-quote">{item.video ? <Play size={36} aria-hidden="true" /> : <Quote size={36} aria-hidden="true" />}<h3>{item.name}</h3><p>{item.text}</p><ArrowUpRight className="experience-arrow" size={18} aria-hidden="true" /></div>
-      <div className="experience-photo"><img src={item.image} alt={copy ? "" : `${item.category} at HKS Vidyamandir`} loading="lazy" /><span>{item.category}</span>{item.video && <i className="experience-play" aria-hidden="true"><Play /></i>}</div>
+      <div className="experience-photo"><img src={item.image} alt={`${item.category} at HKS Vidyamandir`} loading="lazy" /><span>{item.category}</span>{item.video && <i className="experience-play" aria-hidden="true"><Play /></i>}</div>
     </>;
-    const key = `${copy ? "c" : "o"}-${item.name}`;
-    if (item.video) return <Button key={key} variant="ghost" tabIndex={copy ? -1 : undefined} className={`experience-card experience-video-card ${tone}`} aria-label={item.video.trigger} onClick={() => { setVideoError(false); setVideo(item.video); }}>{body}</Button>;
-    return <Link key={key} to={item.to ?? "/about"} tabIndex={copy ? -1 : undefined} className={`experience-card ${tone}`} aria-label={`Explore ${item.name}`}>{body}</Link>;
+    if (item.video) return <Button key={item.name} variant="ghost" className={`experience-card experience-video-card ${tone}`} aria-label={item.video.trigger} onClick={() => { setVideoError(false); setVideo(item.video); }}>{body}</Button>;
+    return <Link key={item.name} to={item.to ?? "/about"} className={`experience-card ${tone}`} aria-label={`Explore ${item.name}`}>{body}</Link>;
   };
   return <section className="home-section home-experiences" aria-labelledby="experience-heading">
     <div className="container-site">
       <div className="experience-heading"><span className="home-kicker">The HKS community</span><h2 id="experience-heading">Our stories and<br /><em>experiences.</em></h2></div>
-    </div>
-    <div className="experience-marquee">
-      <div className="experience-track">
-        <div className="experience-set">{experiences.map((s, i) => card(s, i, false))}</div>
-        <div className="experience-set" aria-hidden="true">{experiences.map((s, i) => card(s, i, true))}</div>
-      </div>
+      <div className="experience-grid">{experiences.map((item, i) => card(item, i))}</div>
     </div>
     <Dialog open={Boolean(video)} onOpenChange={o => { if (!o) setVideo(null); }}>
       <DialogContent className="experience-video-dialog translate-x-0 translate-y-0">

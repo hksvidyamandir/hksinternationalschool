@@ -31,5 +31,7 @@
 - LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
 - BeyondClassroom uses four equal-height photo-led activity cards per accessible Vidya tab; generated images are illustrative and original school photos stay in the shared asset index.
 - SchoolChat provides a right-side, session-only school FAQ chat using browser-safe school-chat replies and shared contact details; it never claims to be a live agent or invents fees.
-- RecognitionStrip uses static CDN logo pointers with contained rendering; preserve original artwork and omit badges whose issuer has withdrawn permission.
+- RecognitionStrip uses static CDN logo pointers with contained rendering; preserve original artwork and omit badges whose issuer has withdrawn permission. The band sits directly below the hero on the gold surface with its heading left-aligned and the logos grouped to the right.
+- ExperienceStories is a staggered four-column card grid, not a scrolling marquee; two cards open the existing school films in a viewport-filling dialog, and card offsets reset to a single column on small screens.
+- The quick-link band keeps its four tiles free of per-tile buttons and carries exactly two section CTAs below: Download our prospectus (public/hks-prospectus.pdf) and Apply for admission.
 - EventsCommunity owns the Events/Celebration tabs and nested categories with independent selections, using contextual school photos without claiming unverified event dates or photo provenance.
