@@ -17,6 +17,7 @@ import { LifeGallery } from "./LifeGallery";
 import { PillarsShowcase } from "./PillarsShowcase";
 import { BeyondClassroom } from "./BeyondClassroom";
 import { RecognitionStrip } from "./RecognitionStrip";
+import { EventsCommunity } from "./EventsCommunity";
 const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
   { icon: "individual", title: "Personalized Attention", text: "Small Class Sizes" },
   { icon: "practical", title: "Practical Skills", text: "Real-World Application" },
@@ -43,7 +44,6 @@ function Action({ to, children, light = false }: { to: "/about" | "/academics" |
 export function HomePage() {
   const motionRef = useHomeMotion();
   const [gallery, setGallery] = useState(0);
-  const [community, setCommunity] = useState(0);
   const activeGallery = galleries[gallery];
   if (!activeGallery) return null;
   return <div className="hks-home" ref={motionRef}>
@@ -64,7 +64,7 @@ export function HomePage() {
 
     <BeyondClassroom />
 
-    <section className="evc-section"><div className="container-site"><div className="evc-head"><span className="home-kicker">Events &amp; community</span><h2>School is better, <em>together.</em></h2></div>{(() => { const stories = [{ tab: "Events", date: "Annual Day · 2025", title: "Annual Day:", sub: "A celebration of every talent", text: "Dance, drama, music and art fill our stage as every child takes a bow. Friendships, teamwork and new experiences make a school day about so much more than lessons.", image: img.campus5, alt: "Annual Day performance at HKS", badge: "EVENTS · EVENTS · EVENTS · ", Icon: Sparkles }, { tab: "Community", date: "Every day at HKS", title: "One school:", sub: "Many stories, one sense of belonging", text: "Parents, educators and students come together to support every child's growth, confidence and wellbeing - from orientation days to festivals and sports meets.", image: img.welcome, alt: "HKS school community", badge: "COMMUNITY · COMMUNITY · ", Icon: Users }]; const s = stories[community]; if (!s) return null; return <div className={`evc-folders is-${community}`}><div className="evc-tabs" role="tablist" aria-label="Community stories">{stories.map((st, i) => <Button variant="ghost" key={st.tab} type="button" role="tab" id={`evc-tab-${i}`} aria-selected={community === i} aria-controls="evc-panel" className={`evc-tab ${community === i ? "is-active" : ""}`} tabIndex={community === i ? 0 : -1} onKeyDown={event => { const next = event.key === "ArrowRight" ? (i + 1) % stories.length : event.key === "ArrowLeft" ? (i + stories.length - 1) % stories.length : event.key === "Home" ? 0 : event.key === "End" ? stories.length - 1 : undefined; if (next === undefined) return; event.preventDefault(); setCommunity(next); document.getElementById(`evc-tab-${next}`)?.focus(); }} onClick={() => setCommunity(i)}><st.Icon aria-hidden="true" />{st.tab}</Button>)}</div><div className="evc-panel" id="evc-panel" role="tabpanel" aria-labelledby={`evc-tab-${community}`} key={community}><div className="evc-copy"><span className="evc-date">{s.date}</span><h3>{s.title}<span>{s.sub}</span></h3><p>{s.text}</p><Action to="/campus-life">Life at HKS</Action></div><div className="evc-media"><img src={s.image} alt={s.alt} loading="lazy" /><div className="evc-badge" aria-hidden><svg viewBox="0 0 120 120"><defs><path id={`evc-circle-${community}`} d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs><text><textPath href={`#evc-circle-${community}`} textLength="286" lengthAdjust="spacing">{s.badge}</textPath></text></svg><span><s.Icon /></span></div></div></div></div>; })()}</div></section>
+    <EventsCommunity />
 
     <LifeGallery />
 
