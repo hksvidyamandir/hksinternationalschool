@@ -12,17 +12,28 @@ const pillars = [
   { title: "Samskriti Vidya", image: img.campus5, alt: "HKS students in a cultural performance", heading: "Where Culture Creates Connections", text: "Helping students appreciate traditions, celebrate diversity and express themselves.", points: ["Festivals and cultural celebrations", "Annual events and student performances", "House activities and competitions", "Community participation and leadership opportunities"], to: "/campus-life" as const },
 ];
 
+const pathway: [string, string][] = [
+  ["Know the Learner", "Understand each child's starting point, interests, strengths and support needs."],
+  ["Build the Foundations", "Make concepts clear through teaching, modelling, practice, reading, numeracy and feedback."],
+  ["Explore Ideas", "Ask questions, investigate, discuss and connect ideas through age-appropriate inquiry."],
+  ["Apply and Express", "Use learning through projects, demonstrations, presentations, performance and problem-solving."],
+  ["Reflect and Grow", "Recognise progress, use feedback, set next steps and seek support when needed."],
+];
+
 export function PillarsShowcase() {
   const [active, setActive] = useState(0);
   const go = (direction: number) => setActive(current => (current + direction + pillars.length) % pillars.length);
   return <section className="home-section pillars-showcase" aria-labelledby="pillars-heading">
     <div className="container-site">
       <div className="curr-head home-heading">
-        <span className="home-kicker">The four pillars of learning at HKS</span>
-        <h2 id="pillars-heading">The <em>HKS</em> Pillars</h2>
-        <h3 className="pil-subheading">Four Experiences. One Holistic Education.</h3>
-        <p>At HKS Vidyamandir, education extends beyond textbooks. Our four signature programmes give students opportunities to learn through innovation, movement, culture and nature.</p>
+        <span className="home-kicker">From Understanding to Confident Action</span>
+        <h2 id="pillars-heading">The Proposed <em>HKS</em> Growth Pathway</h2>
+        <p>Meaningful learning takes a child from first understanding to confident application. The proposed HKS Growth Pathway brings together teaching, exploration, expression and reflection.</p>
       </div>
+      <ol className="pathway-steps">
+        {pathway.map(([title, text], i) => <li key={title}><span className="pathway-num">{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{text}</p></li>)}
+      </ol>
+      <p className="pathway-motto">Know the child. Build the foundations. Open up the world. Help the child reflect and grow.</p>
       <div className="curr-stage" onMouseLeave={event => { if (!event.currentTarget.contains(document.activeElement)) setActive(0); }}>
         <Button type="button" variant="ghost" size="icon" className="curr-nav" aria-label="Previous pillar" onClick={() => go(-1)}><ArrowLeft /></Button>
         <div className="curr-track">

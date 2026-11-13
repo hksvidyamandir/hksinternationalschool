@@ -5,6 +5,7 @@ import { img } from "@/assets/site";
 import film from "@/assets/hks-doodle-film.mp4.asset.json";
 import heroFilm from "@/assets/hks-hero-clear.mp4.asset.json";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 
 type Story = { name: string; category: string; text: string; image: string; to?: "/about" | "/experiential-learning" | "/why-hks" | "/boarding" | "/campus-life" | "/campus"; video?: { src: string; label: string; trigger: string } };
@@ -35,7 +36,11 @@ export function ExperienceStories() {
   return <section className="home-section home-experiences" aria-labelledby="experience-heading">
     <div className="container-site">
       <div className="experience-heading"><span className="home-kicker">The HKS community</span><h2 id="experience-heading">Our stories and<br /><em>experiences.</em></h2></div>
-      <div className="experience-grid">{experiences.map((item, i) => card(item, i))}</div>
+      <Carousel className="experience-carousel" opts={{ align: "start", loop: true }}>
+        <CarouselContent>{experiences.map((item, i) => <CarouselItem key={item.name} className="experience-slide">{card(item, i)}</CarouselItem>)}</CarouselContent>
+        <CarouselPrevious className="experience-arrow-btn" aria-label="Previous story" />
+        <CarouselNext className="experience-arrow-btn" aria-label="Next story" />
+      </Carousel>
     </div>
     <Dialog open={Boolean(video)} onOpenChange={o => { if (!o) setVideo(null); }}>
       <DialogContent className="experience-video-dialog translate-x-0 translate-y-0">

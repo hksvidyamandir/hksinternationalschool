@@ -23,15 +23,12 @@ export function VideoStack() {
     <div className="container-site">
       <div className="vstack-head">
         <div><span className="home-kicker">Watch HKS</span><h2 id="vstack-title">Moments in motion</h2></div>
-        <div className="vstack-nav">
-          <button type="button" aria-label="Previous video" onClick={() => go(-1)}><ChevronLeft /></button>
-          <span>{active + 1} / {n}</span>
-          <button type="button" aria-label="Next video" onClick={() => go(1)}><ChevronRight /></button>
-        </div>
+        <span className="vstack-count">{active + 1} / {n}</span>
       </div>
       <div className="vstack-stage">
         {videos.map((v, i) => {
-          const pos = (i - active + n) % n;
+          const d = (i - active + n) % n;
+          const pos = d > n / 2 ? d - n : d;
           return <button key={v.title} type="button" className="vstack-card" data-pos={pos} tabIndex={pos === 0 ? 0 : -1} aria-hidden={pos !== 0}
             aria-label={`Play ${v.title}`} onClick={() => pos === 0 ? setOpen(i) : setActive(i)}>
             <img src={v.poster} alt="" loading="lazy" />
@@ -40,6 +37,8 @@ export function VideoStack() {
             <span className="vstack-cap"><em>{v.tag}</em><strong>{v.title}</strong></span>
           </button>;
         })}
+        <button type="button" className="vstack-arrow is-prev" aria-label="Previous video" onClick={() => go(-1)}><ChevronLeft /></button>
+        <button type="button" className="vstack-arrow is-next" aria-label="Next video" onClick={() => go(1)}><ChevronRight /></button>
       </div>
     </div>
     <Dialog open={open !== null} onOpenChange={o => { if (!o) setOpen(null); }}>
