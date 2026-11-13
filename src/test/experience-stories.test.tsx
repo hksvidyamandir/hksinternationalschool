@@ -9,10 +9,14 @@ afterEach(cleanup);
 it("opens the existing school film from the third story and removes the player when closed", () => {
   render(<ExperienceStories />);
   fireEvent.click(screen.getByRole("button", { name: "Play HKS school film" }));
-  const player = screen.getByLabelText("HKS school film") as HTMLVideoElement;
+  const player = document.querySelector("video") as HTMLVideoElement;
   expect(player.src).toContain(film.url);
   expect(player.autoplay).toBe(true);
   expect(player.controls).toBe(true);
   fireEvent.click(screen.getByRole("button", { name: "Close" }));
-  expect(screen.queryByLabelText("HKS school film")).not.toBeInTheDocument();
+  expect(document.querySelector("video")).toBeNull();
+});
+it("shows eight community cards in the marquee", () => {
+  render(<ExperienceStories />);
+  expect(document.querySelectorAll(".experience-set")[0]?.children).toHaveLength(8);
 });

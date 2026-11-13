@@ -1513,3 +1513,43 @@
 @media (prefers-reduced-motion: reduce) {
   .scroll-top { animation: none; }
 }
+
+/* Recognition logos: logos only, smaller */
+.recognition-logos li { padding: 0 16px; }
+.recognition-image { height: 64px; margin-bottom: 0; }
+.recognition-image img { width: 96px; height: 64px; }
+@media (max-width: 767px) { .recognition-image { height: 52px; } .recognition-image img { width: 80px; height: 52px; } }
+
+/* Intro activity icons */
+.home-intro-activities > div { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; align-items: start; text-align: left; }
+.home-intro-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: color-mix(in oklab, var(--gold) 18%, var(--background)); color: var(--cta); }
+.home-intro-icon svg { width: 22px; height: 22px; }
+
+/* Quick links: individual CTAs */
+.hks-home .qk-tile { gap: 20px; align-items: center; }
+.hks-home .qk-tile-cta { margin-top: 14px; padding: 10px 16px; min-height: 40px; font-size: 11px; gap: 8px; }
+.hks-home .qk-tile-cta svg { width: 14px; height: 14px; }
+@media (max-width: 767px) { .hks-home .qk-tile-cta { font-size: 10px; padding: 8px 10px; } }
+
+/* Community marquee */
+.experience-marquee { overflow: hidden; padding: 20px 0 10px; }
+.experience-track { display: flex; width: max-content; animation: experience-scroll 60s linear infinite; }
+.experience-marquee:hover .experience-track, .experience-marquee:focus-within .experience-track { animation-play-state: paused; }
+.experience-set { display: flex; gap: 20px; padding-right: 20px; }
+.experience-set .experience-card { width: 280px; flex: none; margin-top: 0; }
+.experience-set .experience-card:nth-child(even) { margin-top: 40px; }
+.experience-set .experience-card .experience-quote { background: var(--cream); color: var(--navy); }
+.experience-set .experience-card.tone-1 .experience-quote { background: var(--primary); color: var(--primary-foreground); }
+.experience-set .experience-card.tone-2 .experience-quote { background: var(--gold); color: var(--navy); }
+.experience-set .experience-card.tone-3 .experience-quote { background: var(--navy); color: var(--navy-foreground); }
+.experience-set .experience-card .experience-quote > svg:first-child { color: currentColor; }
+@keyframes experience-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 767px) { .experience-set .experience-card { width: 220px; } }
+@media (prefers-reduced-motion: reduce) { .experience-track { animation: none; } .experience-marquee { overflow-x: auto; } }
+
+/* Testimonials header with tabs */
+.tst-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; text-align: left; flex-wrap: wrap; }
+.tst-tabs { display: inline-flex; gap: 6px; padding: 6px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); }
+.tst-tabs button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 14px; color: var(--navy); transition: background .25s, color .25s; }
+.tst-tabs button.is-active { background: var(--navy); color: var(--navy-foreground); }
+.tst-tabs button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }

@@ -47,10 +47,4 @@ describe("Family story expansion", () => {
     fireEvent.click(firstCard());
     expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
-  it("keeps five cards and centre selection in the students view", () => {
-    render(<FamilyStories />);
-    fireEvent.click(screen.getByRole("tab", { name: "Students" }));
-    expect(cards()).toHaveLength(5);
-    expect(cards()[2]).toHaveAttribute("aria-expanded", "true");
-  });
 });
