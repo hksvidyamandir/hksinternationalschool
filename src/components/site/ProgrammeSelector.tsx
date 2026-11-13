@@ -64,20 +64,22 @@ export function ProgrammeSelector() {
           </TabsList>
           <div className="programme-panels" ref={detailRef}>
             {programmes.map((programme, index) => (
-              <TabsContent key={programme.title} value={String(index)} className="home-programme-detail">
+              <TabsContent key={programme.title} value={String(index)} className={`home-programme-detail ${programme.points?.length ? "has-programme-points" : ""}`}>
                 <ProgrammeCarousel title={programme.title} photos={programme.photos} />
                 <div className="programme-copy">
+                  <div className="programme-summary">
                   <div className="programme-detail-label"><span aria-hidden="true">0{index + 1}</span><span className="home-kicker">{programme.grade}</span></div>
                   <h3>{programme.title}</h3><p>{programme.text}</p>
+                  </div>
+                  <Button asChild className="home-action"><Link to="/academics">Explore the programme<ArrowUpRight /></Link></Button>
+                </div>
                   {programme.points?.length ? (
                     <ul className="programme-points">
-                      {programme.points.map((point) => (
-                        <li key={point.title}><h4>{point.title}</h4><p>{point.text}</p></li>
+                      {programme.points.map((point, pointIndex) => (
+                        <li key={point.title}><span className="programme-point-number" aria-hidden="true">0{pointIndex + 1}</span><div><h4>{point.title}</h4><p>{point.text}</p></div></li>
                       ))}
                     </ul>
                   ) : null}
-                  <Button asChild className="home-action"><Link to="/academics">Explore the programme<ArrowUpRight /></Link></Button>
-                </div>
               </TabsContent>
             ))}
           </div>

@@ -22,11 +22,13 @@ export function ProgrammeCarousel({ title, photos }: { title: string; photos: Pr
         <img src={photo.src} alt={`${title}: ${photo.caption} (illustrative image)`} loading="lazy" />
       </CarouselItem>)}
     </CarouselContent>
-    <div className="programme-photo-caption" aria-live="polite"><span>{photos[active]?.caption}</span><small>{active + 1} / {photos.length}</small></div>
+    <div className="programme-photo-footer">
+    <div className="programme-photo-caption" aria-live="polite"><span>{photos[active]?.caption}</span><small>{String(active + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</small></div>
     <div className="programme-photo-controls">
       <Button variant="ghost" size="icon" aria-label={`Previous ${title} photo`} title="Previous photo" onClick={() => api?.scrollPrev()}><ArrowLeft /></Button>
-      <div className="programme-photo-dots" aria-label="Choose a photo">{photos.map((photo, index) => <Button key={photo.src} variant="ghost" size="icon" aria-label={`Show ${title} photo ${index + 1}`} aria-current={index === active ? "true" : undefined} onClick={() => api?.scrollTo(index)}><span /></Button>)}</div>
+      <div className="programme-photo-dots" aria-label="Choose a photo">{photos.map((photo, index) => <Button key={photo.src} variant="ghost" size="icon" aria-label={`Show ${title} photo ${index + 1}`} title={photo.caption} aria-current={index === active ? "true" : undefined} onClick={() => api?.scrollTo(index)}><span /></Button>)}</div>
       <Button variant="ghost" size="icon" aria-label={`Next ${title} photo`} title="Next photo" onClick={() => api?.scrollNext()}><ArrowRight /></Button>
+    </div>
     </div>
   </Carousel>;
 }
