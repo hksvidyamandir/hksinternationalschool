@@ -24,9 +24,24 @@ const programmes: Programme[] = [
     { title: "Montessori Learning Experiences", text: "Scientifically designed materials develop concentration, fine motor skills, sensory awareness and independent problem-solving." },
     { title: "Whole-Child Development", text: "Art, music, movement, outdoor play and collaborative experiences support physical, emotional, social and creative growth." },
   ] },
-  { title: "Primary", grade: "Grades 3 - 5", image: img.progElementary, photos: programmePhotos.primary, text: "Curiosity becomes confidence through literacy, numeracy, collaborative projects and hands-on discovery." },
-  { title: "High School", grade: "Grades 6 - 10", image: img.progCbse, photos: programmePhotos.high, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations." },
-  { title: "Senior Secondary", grade: "Grades 11 - 12", image: img.progSenior, photos: programmePhotos.senior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance." },
+  { title: "Primary", grade: "Grades 3 - 5", image: img.progElementary, photos: programmePhotos.primary, text: "Curiosity becomes confidence through literacy, numeracy, collaborative projects and hands-on discovery.", points: [
+    { title: "Connected Learning", text: "Students connect ideas across languages, mathematics, science, social studies and technology, helping them see learning as a complete picture." },
+    { title: "Strong Literacy and Communication", text: "Reading, writing, speaking and listening experiences help learners express ideas clearly, understand different viewpoints and become confident communicators." },
+    { title: "Mathematical and Scientific Thinking", text: "Hands-on investigations and problem-solving develop logical reasoning, conceptual understanding and curiosity about how the world works." },
+    { title: "Character and Personal Growth", text: "Arts, sport, life skills and collaborative experiences build creativity, resilience, empathy, teamwork and responsible decision-making." },
+  ] },
+  { title: "High School", grade: "Grades 6 - 10", image: img.progCbse, photos: programmePhotos.high, text: "Deeper understanding, independent thinking and real-world application, with coding and competitive exam foundations.", points: [
+    { title: "Subject Depth", text: "Students explore languages, mathematics, science, social sciences and technology in greater detail, building strong knowledge and clear academic thinking." },
+    { title: "Independent Enquiry", text: "Research, experiments and interdisciplinary projects encourage learners to ask thoughtful questions, examine evidence and form their own conclusions." },
+    { title: "Personal Growth", text: "Life skills, wellbeing, arts and sport help students build self-awareness, resilience, communication and confidence during the teenage years." },
+    { title: "Innovation in Action", text: "Coding, design challenges and entrepreneurship experiences give learners opportunities to create solutions, test ideas and learn through application." },
+  ] },
+  { title: "Senior Secondary", grade: "Grades 11 - 12", image: img.progSenior, photos: programmePhotos.senior, text: "Science and Commerce pathways that connect academic ambition with purposeful career guidance.", points: [
+    { title: "Subject Depth and Academic Rigour", text: "Students study their chosen subjects in greater depth, developing analytical thinking, strong communication and the ability to apply knowledge with confidence." },
+    { title: "Personalised Educator Guidance", text: "Experienced educators provide focused academic support, regular feedback and mentoring that help each learner work towards their individual potential." },
+    { title: "College and Career Readiness", text: "Counselling, workshops and pathway planning help students understand their strengths, select suitable subjects and prepare for university applications and future careers." },
+    { title: "Leadership and Personal Growth", text: "Service, sport, clubs and leadership opportunities build resilience, responsibility, collaboration and the confidence to contribute beyond the classroom." },
+  ] },
 ];
 
 export function ProgrammeSelector() {

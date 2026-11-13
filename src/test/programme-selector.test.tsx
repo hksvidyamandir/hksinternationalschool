@@ -47,14 +47,19 @@ describe("Programme selection", () => {
     expect(items[3]?.querySelector("p")?.textContent).toContain("physical, emotional, social and creative growth");
   });
 
-  it("does not show Early Years pointers on the other stages", () => {
+  it("shows each remaining stage's own four pointers", () => {
     render(<ProgrammeSelector />);
-    for (const name of ["Primary", "High School", "Senior Secondary"]) {
+    const stageTitles = [
+      ["Connected Learning", "Strong Literacy and Communication", "Mathematical and Scientific Thinking", "Character and Personal Growth"],
+      ["Subject Depth", "Independent Enquiry", "Personal Growth", "Innovation in Action"],
+      ["Subject Depth and Academic Rigour", "Personalised Educator Guidance", "College and Career Readiness", "Leadership and Personal Growth"],
+    ];
+    for (const [index, name] of ["Primary", "High School", "Senior Secondary"].entries()) {
       const tab = screen.getByRole("tab", { name: new RegExp(name) });
       fireEvent.mouseDown(tab, { button: 0, ctrlKey: false });
       fireEvent.click(tab);
       const panel = screen.getByRole("tabpanel");
-      expect(panel.querySelector(".programme-points")).toBeNull();
+      expect(Array.from(panel.querySelectorAll(".programme-points h4")).map(item => item.textContent)).toEqual(stageTitles[index]);
       expect(within(panel).queryByText("Play-Based Learning")).toBeNull();
     }
   });
