@@ -16,6 +16,7 @@ import { VisitChooser } from "./VisitChooser";
 import { LifeGallery } from "./LifeGallery";
 import { PillarsShowcase } from "./PillarsShowcase";
 import { BeyondClassroom } from "./BeyondClassroom";
+import { RecognitionStrip } from "./RecognitionStrip";
 const advantages: { icon: AdvantageIconKind; title: string; text: string }[] = [
   { icon: "individual", title: "Personalized Attention", text: "Small Class Sizes" },
   { icon: "practical", title: "Practical Skills", text: "Real-World Application" },
@@ -47,6 +48,7 @@ export function HomePage() {
   if (!activeGallery) return null;
   return <div className="hks-home" ref={motionRef}>
     <HeroFilm />
+    <RecognitionStrip />
 
     <div className="home-trust"><div className="home-marquee">{[0, 1].map(i => <div key={i} aria-hidden={i === 1}>{["CBSE curriculum", "Nursery to Grade 12", "Day & residential", "Karnataka", "Learning since 2010"].map(text => <span key={text}>{text}<Sparkles size={18} /></span>)}</div>)}</div></div>
 

@@ -1469,6 +1469,28 @@
 .scroll-top {
   animation: scroll-top-in 0.24s ease-out both;
 }
+.recognition-strip { background: var(--card); padding: 40px 0 36px; border-bottom: 1px solid var(--border); }
+.recognition-heading { text-align: center; }
+.recognition-heading h2 { font-size: 30px; color: var(--navy); margin: 10px 0 28px; }
+.recognition-heading .home-kicker { color: var(--muted-foreground); }
+.recognition-logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.recognition-logos li { text-align: center; padding: 0 24px; min-width: 0; }
+.recognition-logos li + li { border-left: 1px solid var(--border); }
+.recognition-image { height: 100px; display: grid; place-items: center; margin-bottom: 14px; }
+.recognition-image img { width: 140px; height: 100px; object-fit: contain; transition: transform 240ms ease; }
+.recognition-logos li:hover img { transform: translateY(-4px); }
+.recognition-logos h3 { color: var(--navy); font-family: var(--font-sans); font-weight: 800; font-size: 15px; margin: 0; }
+.recognition-logos p { font-size: 12px; line-height: 1.6; color: var(--muted-foreground); max-width: 220px; margin: 6px auto 0; }
+@media (max-width: 767px) {
+  .recognition-strip { padding: 30px 0; }
+  .recognition-heading h2 { font-size: 24px; }
+  .recognition-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 0; }
+  .recognition-logos li { padding-inline: 12px; }
+  .recognition-logos li:nth-child(3) { border-left: 0; }
+  .recognition-image, .recognition-image img { height: 88px; }
+  .recognition-image img { width: 112px; }
+}
+@media (prefers-reduced-motion: reduce) { .recognition-image img { transition: none; } }
 @media (prefers-reduced-motion: reduce) {
   .scroll-top { animation: none; }
 }

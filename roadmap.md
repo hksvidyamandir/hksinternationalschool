@@ -10,3 +10,4 @@
 - [x] Redesign programme pointers, align photos with their content, and refresh slideshow navigation; verify desktop and mobile.
 - [x] Change Senior Secondary students to formal attire in all six photos and verify the slideshow.
 - [x] Include girls alongside boys in all six Senior Secondary photos, retaining formal attire and verifying slideshow display.
+- [x] Source recognition logos and add a polished strip below the hero; verify desktop and mobile. Omit the withdrawn British Council IDS badge.

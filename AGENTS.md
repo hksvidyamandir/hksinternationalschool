@@ -31,3 +31,4 @@
 - LifeGallery owns the eight school-life photos and an accessible image dialog with contained full-image rendering, keyboard navigation and focus restoration, keeping gallery interactions separate from page links.
 - BeyondClassroom groups supplied topics and additional activity imagery into accessible Vidya tabs; generated activity photos are illustrative, and real school images remain sourced through the shared asset index.
 - SchoolChat provides a right-side, session-only school FAQ chat using browser-safe school-chat replies and shared contact details; it never claims to be a live agent or invents fees.
+- RecognitionStrip uses static CDN logo pointers with contained rendering; preserve original artwork and omit badges whose issuer has withdrawn permission.
