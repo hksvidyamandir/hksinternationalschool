@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { img } from "@/assets/site";
 import { SITE } from "@/lib/site";
 import { HeroFilm } from "./HeroFilm";
-import { FamilyStories } from "./FamilyStories";
+import { VideoStack } from "./VideoStack";
 import { StudentsSpeak } from "./StudentsSpeak";
 import { useHomeMotion } from "@/hooks/use-home-motion";
 import { ExperienceStories } from "./ExperienceStories";
@@ -70,7 +70,7 @@ export function HomePage() {
     <nav className="qk-band" aria-label="Explore HKS"><div className="container-site qk-inner"><div className="qk-tiles">{([{ t: "Admissions", to: "/admissions", Icon: Users }, { t: "Curriculum", to: "/academics", Icon: BookOpen }, { t: "Campus Life", to: "/campus-life", Icon: Sparkles }, { t: "Residential Life", to: "/boarding", Icon: Heart }] as const).map(({ t, to, Icon }, i) => <Link key={t} to={to} className="qk-tile" data-motion-step={i}><span className="qk-icon"><Icon aria-hidden="true" /></span><span className="qk-title">{t}</span></Link>)}</div><div className="qk-actions"><Button asChild className="qk-cta"><a href="/hks-prospectus.pdf" download>Download our prospectus <ArrowRight aria-hidden="true" /></a></Button><Button asChild className="qk-cta"><Link to="/admissions">Apply for admission <ArrowRight aria-hidden="true" /></Link></Button></div></div></nav>
 
     <StudentsSpeak />
-    <FamilyStories />
+    <VideoStack />
 
     <ExperienceStories />
 

@@ -8,7 +8,7 @@ vi.mock("@tanstack/react-router", () => ({
 }));
 vi.mock("@/hooks/use-home-motion", () => ({ useHomeMotion: () => ({ current: null }) }));
 vi.mock("@/components/site/HeroFilm", () => ({ HeroFilm: () => null }));
-vi.mock("@/components/site/FamilyStories", () => ({ FamilyStories: () => null }));
+vi.mock("@/components/site/VideoStack", () => ({ VideoStack: () => null }));
 vi.mock("@/components/site/StudentsSpeak", () => ({ StudentsSpeak: () => null }));
 vi.mock("@/components/site/ExperienceStories", () => ({ ExperienceStories: () => null }));
 vi.mock("@/components/site/AdvantageStats", () => ({ AdvantageStats: () => null }));
