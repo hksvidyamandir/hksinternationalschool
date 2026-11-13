@@ -7,3 +7,4 @@
 - [x] Remove the introduction activity dividers while retaining the clean alignment.
 - [x] Create six age-appropriate programme photos for each of the four stages.
 - [x] Add accessible six-image carousels and verify all stages on desktop and mobile.
+- [x] Redesign the Early Years pointers and align them with the photo; verify desktop and mobile.
