@@ -206,6 +206,13 @@
 .home-slide-controls > span { font-size: 11px; margin-right: 16px; }
 .home-slide-controls button { border-radius: 50%; border: 1px solid color-mix(in oklab, var(--navy-foreground) 35%, transparent); }
 .home-slide-controls button:hover { background: var(--gold); color: var(--navy); }
+.home-trust { background: var(--gold); color: var(--navy); overflow: hidden; border-bottom: 1px solid var(--home-line); }
+.home-marquee { display: flex; width: max-content; animation: home-marquee 36s linear infinite; }
+.home-marquee > div { display: flex; }
+.home-marquee span { display: flex; gap: 54px; align-items: center; padding: 22px 27px; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.home-trust:hover .home-marquee { animation-play-state: paused; }
+@keyframes home-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .home-marquee { animation: none; } }
 .home-intro-heading { text-align: center; margin-bottom: 60px; }
 .home-intro-heading h2 { margin-top: 18px; color: var(--navy); font-size: 52px; }
 .home-intro-heading em { color: var(--primary); }
@@ -505,6 +512,7 @@
   .home-slide-controls > span { margin-right: 4px; font-size: 9px; }
   .home-slide-controls button { width: 30px; height: 30px; }
   .home-visit { font-size: 11px; }
+  .home-marquee span { padding-block: 18px; font-size: 10px; }
   .home-intro-heading { margin-bottom: 36px; }
   .home-intro-grid, .home-curriculum-grid, .home-community-story, .home-family-layout, .home-location-grid { grid-template-columns: 1fr; gap: 32px; }
   .home-intro-photo { min-height: 0; aspect-ratio: 5/4; }
@@ -1486,11 +1494,11 @@
 .recognition-heading { text-align: left; flex: none; }
 .recognition-heading .home-kicker { color: var(--primary); }
 .recognition-heading h2 { font-size: 26px; color: var(--navy); margin: 6px 0 0; }
-.recognition-logos { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 14px; list-style: none; margin: 0; padding: 0; }
+.recognition-logos { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 30px; list-style: none; margin: 0; padding: 0; }
 .recognition-logos li { min-width: 0; }
-.recognition-image { height: 58px; display: grid; place-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0 14px; box-shadow: 0 2px 10px color-mix(in oklab, var(--navy) 8%, transparent); transition: transform 240ms ease, border-color 240ms ease; }
-.recognition-image img { width: 88px; height: 42px; object-fit: contain; }
-.recognition-logos li:hover .recognition-image { transform: translateY(-3px); border-color: color-mix(in oklab, var(--gold) 70%, var(--border)); }
+.recognition-image { display: grid; place-items: center; transition: transform 240ms ease; }
+.recognition-image img { width: 104px; height: 52px; object-fit: contain; }
+.recognition-logos li:hover .recognition-image { transform: translateY(-3px); }
 @media (max-width: 1023px) {
   .recognition-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
   .recognition-logos { justify-content: flex-start; }
