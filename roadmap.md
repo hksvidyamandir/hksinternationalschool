@@ -8,3 +8,4 @@
 - [x] Create six age-appropriate programme photos for each of the four stages.
 - [x] Add accessible six-image carousels and verify all stages on desktop and mobile.
 - [x] Redesign programme pointers, align photos with their content, and refresh slideshow navigation; verify desktop and mobile.
+- [x] Change Senior Secondary students to formal attire in all six photos and verify the slideshow.
