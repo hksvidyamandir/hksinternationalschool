@@ -1,4 +1,6 @@
 # Current tasks
+- [x] Redesign Vidya activity cards to match the supplied reference, with four cards per category.
+- [x] Create sixteen matching illustrative photos and verify all four categories on desktop and mobile.
 - [x] Replace Beyond the classroom with four Vidya tabs covering the nine supplied topics.
 - [x] Add matching activity imagery and verify desktop/mobile tab interactions.
 - [x] Add a second generated agriculture image to Krishi Vidya and verify both photos display.
