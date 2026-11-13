@@ -993,7 +993,7 @@
 @media (max-width: 767px) {
   .evc-story { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .evc-event-tabs { gap: 4px; }
-  .evc-event-tab { flex: 1; min-width: 0; padding: 10px 6px; font-size: 12px; gap: 5px; white-space: normal; min-height: 58px; }
+  .evc-event-tab { flex: 1; min-width: 0; flex-direction: column; padding: 10px 6px; font-size: 12px; gap: 5px; white-space: normal; min-height: 70px; }
   .evc-event-tab svg { width: 15px; height: 15px; flex-shrink: 0; }
   .evc-event-tab span { min-width: 0; line-height: 1.3; }
 }
