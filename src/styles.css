@@ -206,12 +206,6 @@
 .home-slide-controls > span { font-size: 11px; margin-right: 16px; }
 .home-slide-controls button { border-radius: 50%; border: 1px solid color-mix(in oklab, var(--navy-foreground) 35%, transparent); }
 .home-slide-controls button:hover { background: var(--gold); color: var(--navy); }
-.home-trust { background: var(--gold); color: var(--navy); overflow: hidden; border-bottom: 1px solid var(--home-line); }
-.home-marquee { display: flex; width: max-content; animation: home-marquee 36s linear infinite; }
-.home-marquee > div { display: flex; }
-.home-marquee span { display: flex; gap: 54px; align-items: center; padding: 22px 27px; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-.home-trust:hover .home-marquee { animation-play-state: paused; }
-@keyframes home-marquee { to { transform: translateX(-50%); } }
 .home-intro-heading { text-align: center; margin-bottom: 60px; }
 .home-intro-heading h2 { margin-top: 18px; color: var(--navy); font-size: 52px; }
 .home-intro-heading em { color: var(--primary); }
@@ -511,7 +505,6 @@
   .home-slide-controls > span { margin-right: 4px; font-size: 9px; }
   .home-slide-controls button { width: 30px; height: 30px; }
   .home-visit { font-size: 11px; }
-  .home-marquee span { padding-block: 18px; font-size: 10px; }
   .home-intro-heading { margin-bottom: 36px; }
   .home-intro-grid, .home-curriculum-grid, .home-community-story, .home-family-layout, .home-location-grid { grid-template-columns: 1fr; gap: 32px; }
   .home-intro-photo { min-height: 0; aspect-ratio: 5/4; }
@@ -574,7 +567,6 @@
 @media (prefers-reduced-motion: reduce) {
   .home-doodle-stroke path { animation: none; stroke-dashoffset: 0; }
   .home-hero-copy > * { animation: none; }
-  .home-marquee { animation: none; }
   .home-hero-photo, .hks-home img, .home-orbit { transition: none; }
   .hks-home { scroll-behavior: auto; }
 }
