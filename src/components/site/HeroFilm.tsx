@@ -3,8 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, CalendarPlus, ChevronDown, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { VisitChooser } from "./VisitChooser";
-import { img } from "@/assets/site";
-import film from "@/assets/hks-doodle-film.mp4.asset.json";
+import film from "@/assets/hks-hero-clear.mp4.asset.json";
+import poster from "@/assets/hks-hero-poster.jpg.asset.json";
 
 const scenes = [
   { word: "Beyond the classroom.", label: "Creativity. Confidence. Expression." },
@@ -44,7 +44,7 @@ export function HeroFilm() {
   const active = scenes[scene];
   if (!active) return null;
   return <section className={`home-hero home-hero-film ${reducedMotion ? "has-reduced-motion" : ""}`} aria-label="Welcome to HKS">
-    <video ref={videoRef} className="home-hero-video" src={film.url} poster={img.infra5} autoPlay muted loop playsInline preload="auto" aria-label="HKS school life with animated white sketches" onTimeUpdate={e => setScene(Math.min(2, Math.floor(e.currentTarget.currentTime / 8)))} />
+    <video ref={videoRef} className="home-hero-video" src={film.url} poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="HKS school life with animated white sketches" onTimeUpdate={e => setScene(Math.min(2, Math.floor(e.currentTarget.currentTime / 8)))} />
     <div className="home-hero-shade" />
     <div className="container-site home-hero-content">
       <h1 className="sr-only">HKS Vidyamandir</h1>
