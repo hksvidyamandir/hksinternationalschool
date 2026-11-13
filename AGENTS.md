@@ -35,3 +35,5 @@
 - ExperienceStories is a staggered four-column card grid, not a scrolling marquee; two cards open the existing school films in a viewport-filling dialog, and card offsets reset to a single column on small screens.
 - The quick-link band keeps its four tiles free of per-tile buttons and carries exactly two section CTAs below: Download our prospectus (public/hks-prospectus.pdf) and Apply for admission.
 - EventsCommunity owns the Events/Celebration tabs and nested categories with independent selections, using contextual school photos without claiming unverified event dates or photo provenance.
+
+- Media files are self-hosted under public/media and asset pointers reference those paths, because the site also deploys outside Lovable hosting where /__l5e asset URLs do not resolve.

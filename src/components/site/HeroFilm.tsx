@@ -44,7 +44,7 @@ export function HeroFilm() {
   const active = scenes[scene];
   if (!active) return null;
   return <section className={`home-hero home-hero-film ${reducedMotion ? "has-reduced-motion" : ""}`} aria-label="Welcome to HKS">
-    <video ref={videoRef} className="home-hero-video" src={film.url} poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="HKS school life with animated white sketches" onTimeUpdate={e => setScene(Math.min(2, Math.floor(e.currentTarget.currentTime / 8)))} />
+    <video controlsList="nodownload noplaybackrate" disablePictureInPicture ref={videoRef} className="home-hero-video" src={film.url} poster={poster.url} autoPlay muted loop playsInline preload="auto" aria-label="HKS school life with animated white sketches" onTimeUpdate={e => setScene(Math.min(2, Math.floor(e.currentTarget.currentTime / 8)))} />
     <div className="home-hero-shade" />
     <div className="container-site home-hero-content">
       <h1 className="sr-only">HKS Vidyamandir</h1>

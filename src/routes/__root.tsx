@@ -143,6 +143,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => {
+    const block = (e: Event) => e.preventDefault();
+    const blockKeys = (e: KeyboardEvent) => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") e.preventDefault(); };
+    const blockDrag = (e: DragEvent) => { if (e.target instanceof HTMLImageElement || e.target instanceof HTMLVideoElement) e.preventDefault(); };
+    document.addEventListener("contextmenu", block);
+    document.addEventListener("dragstart", blockDrag);
+    document.addEventListener("keydown", blockKeys);
+    return () => { document.removeEventListener("contextmenu", block); document.removeEventListener("dragstart", blockDrag); document.removeEventListener("keydown", blockKeys); };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

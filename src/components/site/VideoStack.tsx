@@ -45,7 +45,7 @@ export function VideoStack() {
       <DialogContent className="experience-video-dialog translate-x-0 translate-y-0">
         <DialogTitle className="sr-only">{cur?.title ?? "HKS film"}</DialogTitle>
         <DialogDescription className="sr-only">School film.</DialogDescription>
-        {cur && <video src={cur.src} autoPlay controls playsInline aria-label={cur.title} />}
+        {cur && <video controlsList="nodownload noplaybackrate" disablePictureInPicture src={cur.src} autoPlay controls playsInline aria-label={cur.title} />}
       </DialogContent>
     </Dialog>
   </section>;

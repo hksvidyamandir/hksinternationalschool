@@ -46,7 +46,7 @@ export function ExperienceStories() {
       <DialogContent className="experience-video-dialog translate-x-0 translate-y-0">
         <DialogTitle className="sr-only">{video?.label ?? "HKS film"}</DialogTitle>
         <DialogDescription className="sr-only">Photo-and-doodle school film.</DialogDescription>
-        {video && (videoError ? <p role="alert">The film could not load. Please close and try again.</p> : <video src={video.src} autoPlay controls playsInline preload="auto" aria-label={video.label} onError={() => setVideoError(true)} />)}
+        {video && (videoError ? <p role="alert">The film could not load. Please close and try again.</p> : <video controlsList="nodownload noplaybackrate" disablePictureInPicture src={video.src} autoPlay controls playsInline preload="auto" aria-label={video.label} onError={() => setVideoError(true)} />)}
       </DialogContent>
     </Dialog>
   </section>;

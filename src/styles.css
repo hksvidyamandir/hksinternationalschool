@@ -1596,3 +1596,5 @@
 .pathway-motto { text-align: center; font-family: Fraunces, serif; font-style: italic; font-size: clamp(17px, 2vw, 22px); color: var(--navy); margin: 18px auto 36px; max-width: 760px; }
 @media (max-width: 1023px) { .pathway-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 767px) { .pathway-steps { grid-template-columns: minmax(0, 1fr); } }
+
+img, video { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
