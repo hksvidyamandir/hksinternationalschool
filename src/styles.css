@@ -985,10 +985,6 @@
 .evc-panel::before { content: ""; position: absolute; left: 0; top: 48px; bottom: 48px; width: 3px; background: var(--gold); pointer-events: none; }
 @keyframes evc-in { from { opacity: 0; transform: translateY(18px); } }
 .evc-copy { position: relative; }
-.evc-event-choices { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-.evc-event-choice { border: 1px solid color-mix(in oklab, var(--navy-foreground) 35%, transparent); border-radius: 6px; color: var(--navy-foreground); font-size: 12px; padding: 8px 12px; height: auto; }
-.evc-event-choice svg { width: 16px; height: 16px; }
-.evc-event-choice[aria-pressed="true"], .evc-event-choice:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 .evc-date { display: inline-flex; align-items: center; gap: 9px; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; }
 .evc-date::before { content: ""; width: 20px; height: 2px; background: currentColor; }
 .evc-copy h3 { margin-top: 20px; font-size: clamp(32px, 4vw, 50px); line-height: 1.08; color: var(--navy-foreground); }
