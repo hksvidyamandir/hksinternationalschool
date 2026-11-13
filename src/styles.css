@@ -394,7 +394,7 @@
 .tour-waves path { animation: tour-wave 14s ease-in-out infinite alternate; }
 .tour-waves .tw1 { fill: color-mix(in oklab, var(--teal) 45%, transparent); }
 .tour-waves .tw2 { fill: color-mix(in oklab, var(--gold) 55%, transparent); animation-duration: 10s; animation-direction: reverse; }
-.tour-waves .tw3 { fill: var(--background); animation-duration: 18s; }
+.tour-waves .tw3 { fill: var(--navy); animation-duration: 18s; }
 @keyframes tour-wave { from { transform: translateX(0); } to { transform: translateX(-360px); } }
 @media (max-width: 760px) { .home-tour > div { padding-block: 80px 130px !important; } .tour-waves { height: 90px; } }
 @media (prefers-reduced-motion: reduce) { .home-tour > img, .tour-waves path { animation: none; } }
