@@ -3,7 +3,6 @@ import { ArrowUpRight, Heart, Quote, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { img } from "@/assets/site";
-import { voices } from "./StudentsSpeak";
 
 const stories = [
   { name: "Dr. Maimoona Arshi", role: "Parent of Abdul Majeeb", title: "Every child’s", emphasis: "potential matters.", image: img.welcome, text: "HKSIS has excellent infrastructure in a serene environment, with highly qualified staff. Teachers always go that extra mile to bring out the best in every child. I would recommend this esteemed institution to anyone seeking all-round development." },
@@ -19,18 +18,15 @@ const parentCards = [
 ];
 
 export function FamilyStories() {
-  const [tab, setTab] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [active, setActive] = useState(2);
-  const heads = [["Learning", "that clicks"], ["From playing", "to leading"], ["Ready for", "big goals"], ["A second", "home"], ["Finding", "my voice"]];
-  const list = tab === 0 ? parentCards : voices.map((v, i) => ({ name: v.name, role: v.grade, image: v.image, text: v.text, h: heads[i] ?? [v.name, ""], editorial: false }));
+  const list = parentCards;
   const story = selected === null ? undefined : list[selected];
   return <section className="exp-section family-accordion" aria-labelledby="family-stories-heading">
     <div className="container-site">
       <div className="exp-head"><div><span className="home-kicker">Hear from our families</span><h2 id="family-stories-heading">Experiences That Speak <em>for Themselves</em></h2></div>
-        <div className="exp-toggle" role="tablist" aria-label="Choose voices">{["Parents", "Students"].map((t, i) => <Button variant="ghost" key={t} type="button" role="tab" aria-selected={tab === i} className={tab === i ? "is-active" : ""} onClick={() => { setTab(i); setActive(2); setSelected(null); }}>{t}</Button>)}</div>
       </div>
-      <div className="exp-grid" key={tab} onMouseLeave={() => setActive(2)}>
+      <div className="exp-grid" onMouseLeave={() => setActive(2)}>
         {list.map((item, index) => <Button variant="ghost" key={item.name} type="button" className={`exp-card ${active === index ? "is-expanded" : ""}`} aria-expanded={active === index} onMouseEnter={() => setActive(index)} onMouseLeave={() => setActive(2)} onFocus={() => setActive(index)} onBlur={() => setActive(2)} onClick={() => { if (active !== index) setActive(index); else setSelected(index); }} aria-label={`Read ${item.name}’s story`}>
           <img src={item.image} alt="" loading="lazy" />
           <span className="exp-shade" aria-hidden="true" />
