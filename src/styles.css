@@ -664,7 +664,8 @@
 .adv-panel h3 { font-family: var(--font-sans); font-size: 17px; font-weight: 800; margin-top: 10px; color: var(--foreground); }
 .adv-panel p { font-size: 14px; line-height: 1.65; margin-top: 10px; }
 .adv-panel-0 { background: var(--gold); color: var(--navy); }
-.adv-panel-1 { background: var(--teal); color: var(--navy); }
+.adv-panel-1 { background: var(--teal); color: var(--card); }
+.adv-panel-1 h3 { color: inherit; }
 .adv-panel-2 { background: var(--card); color: var(--navy); }
 .adv-panel-3 { background: var(--navy); color: var(--navy-foreground); }
 .adv-panel-3 h3 { color: var(--navy-foreground); }
