@@ -64,33 +64,20 @@ export function ProgrammeSelector() {
           </TabsList>
           <div className="programme-panels" ref={detailRef}>
             {programmes.map((programme, index) => (
-              <TabsContent key={programme.title} value={String(index)} className={`home-programme-detail ${programme.points?.length ? "programme-with-points" : ""}`}>
-                {programme.points?.length ? (
-                  <>
-                    <div className="programme-overview">
-                      <div className="programme-detail-label"><span aria-hidden="true">0{index + 1}</span><span className="home-kicker">{programme.grade}</span></div>
-                      <h3>{programme.title}</h3><p>{programme.text}</p>
-                    </div>
-                    <div className="programme-learning-grid">
-                      <ProgrammeCarousel title={programme.title} photos={programme.photos} />
-                      <ul className="programme-points">
-                        {programme.points.map((point, pointIndex) => (
-                          <li key={point.title}><span className="programme-point-number" aria-hidden="true">0{pointIndex + 1}</span><div><h4>{point.title}</h4><p>{point.text}</p></div></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="programme-detail-action"><Button asChild className="home-action"><Link to="/academics">Explore the programme<ArrowUpRight /></Link></Button></div>
-                  </>
-                ) : (
-                  <>
+              <TabsContent key={programme.title} value={String(index)} className="home-programme-detail">
                 <ProgrammeCarousel title={programme.title} photos={programme.photos} />
                 <div className="programme-copy">
                   <div className="programme-detail-label"><span aria-hidden="true">0{index + 1}</span><span className="home-kicker">{programme.grade}</span></div>
                   <h3>{programme.title}</h3><p>{programme.text}</p>
+                  {programme.points?.length ? (
+                    <ul className="programme-points">
+                      {programme.points.map((point) => (
+                        <li key={point.title}><h4>{point.title}</h4><p>{point.text}</p></li>
+                      ))}
+                    </ul>
+                  ) : null}
                   <Button asChild className="home-action"><Link to="/academics">Explore the programme<ArrowUpRight /></Link></Button>
                 </div>
-                  </>
-                )}
               </TabsContent>
             ))}
           </div>

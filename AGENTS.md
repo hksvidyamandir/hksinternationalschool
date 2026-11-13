@@ -23,7 +23,6 @@
 - AdvantageIcon owns the advantage section's decorative SVG artwork, keeping its icon set separate from navigation icons.
 - CTA colors use shared semantic tokens and the site-cta treatment; section-specific actions share that treatment so button states remain consistent without changing navigation controls.
 - ProgrammeSelector owns programme data and accessible controlled Tabs with matched detail panels; ProgrammeCarousel uses the shared Embla carousel for six manually controlled, swipeable photos per stage, and programme-photos keeps generated illustrative imagery separate from authentic school assets so selection and photo navigation stay independent.
-- Programme details with supplied learning points use a shared introduction above aligned photo and numbered-list columns, avoiding photo stretching beside stacked introductory content.
 - Photo shading uses the shared neutral photo-black token (photo-shade utility); keep brand-colour section surfaces and interactive selection accents separate from image overlays.
 - VisitChooser shares virtual visit and campus tour choices; Our Campus uses its centered dialog variant while other triggers retain anchored popovers, and validated /contact?visit= links carry the choice into the enquiry form and message.
 - CurriculumShowcase owns a manually controlled four-card accordion with the first card initially expanded and hover, focus and tap selection; no timer changes the user's selection.
