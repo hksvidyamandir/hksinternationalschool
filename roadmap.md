@@ -1,4 +1,7 @@
 # Current tasks
+- [x] Optimize the entire homepage through 767px, including advantage panels and recognition logos.
+- [x] Enable mobile swiping in Moments in motion and verify arrows and fullscreen playback.
+- [x] Refine the hamburger menu, scrolling and focus behavior; verify phone and desktop layouts.
 - [x] Redesign Vidya activity cards to match the supplied reference, with four cards per category.
 - [x] Create sixteen matching illustrative photos and verify all four categories on desktop and mobile.
 - [x] Replace Beyond the classroom with four Vidya tabs covering the nine supplied topics.

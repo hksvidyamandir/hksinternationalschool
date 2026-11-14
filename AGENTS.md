@@ -37,3 +37,5 @@
 - EventsCommunity owns the Events/Celebration tabs and nested categories with independent selections, using contextual school photos without claiming unverified event dates or photo provenance.
 
 - Media files are self-hosted under public/media and asset pointers reference those paths, because the site also deploys outside Lovable hosting where /__l5e asset URLs do not resolve.
+- VideoStack handles directional touch gestures only through 767px and suppresses the post-swipe click, so swiping changes the active film without opening playback or blocking vertical page scrolling.
+- The phone menu locks page scrolling, contains keyboard focus and hides floating controls while open, so its independently scrollable links remain unobstructed.

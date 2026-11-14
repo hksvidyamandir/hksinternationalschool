@@ -9,23 +9,45 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const closeMenu = () => { setOpen(false); setExpanded(null); };
 
   useEffect(() => {
     if (!open) return;
+    const mobile = window.matchMedia("(max-width: 767px)");
+    const previousOverflow = document.body.style.overflow;
+    if (mobile.matches) {
+      document.body.style.overflow = "hidden";
+      document.body.dataset["mobileMenu"] = "open";
+    }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
         setExpanded(null);
         toggleRef.current?.focus();
       }
+      if (event.key === "Tab" && mobile.matches) {
+        const items = headerRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+        const visible = Array.from(items ?? []).filter(el => el.getClientRects().length > 0);
+        const first = visible[0];
+        const last = visible[visible.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
     };
+    const resize = () => { if (!mobile.matches) setOpen(false); };
+    mobile.addEventListener("change", resize);
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      mobile.removeEventListener("change", resize);
+      document.body.style.overflow = previousOverflow;
+      delete document.body.dataset["mobileMenu"];
+    };
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
+    <header ref={headerRef} className="site-header sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
       <div className="site-topbar hidden md:block bg-gold text-ink text-xs">
         <div className="container-site flex h-9 items-center justify-between">
           <div className="flex items-center gap-5">
@@ -44,7 +66,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:flex md:justify-between md:gap-6 lg:h-24">
+      <div className="site-header-main container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:flex md:justify-between md:gap-6 lg:h-24">
         <Link to="/" aria-label="HKS Vidyamandir home" className="min-w-0 shrink-0 md:min-w-auto">
           <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
         </Link>
@@ -91,7 +113,7 @@ export function SiteHeader() {
 
         <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <Button asChild className="hidden sm:inline-flex min-h-11 px-5 font-bold"><Link to="/admissions" hash="enquire">Apply Now</Link></Button>
-          <Button ref={toggleRef} variant="ghost" size="icon" className="lg:hidden min-h-11 min-w-11 text-navy" onClick={() => { setOpen(!open); setExpanded(null); }} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
+          <Button ref={toggleRef} variant="ghost" size="icon" className="mobile-menu-toggle lg:hidden min-h-11 min-w-11 text-navy" onClick={() => { setOpen(!open); setExpanded(null); }} aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded={open}>
             {open ? <X /> : <Menu />}
           </Button>
         </div>
