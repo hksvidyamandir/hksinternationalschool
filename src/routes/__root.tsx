@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { SITE } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -106,8 +107,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           alternateName: "HKS Vidyamandir",
           slogan: "Strengthening Your Wings of Success",
           foundingDate: "2010",
-          telephone: "+91-8277078474",
-          email: "hksinternationalschool417@gmail.com",
+          telephone: SITE.phones.map((phone) => phone.href.replace("tel:", "")),
+          email: SITE.email,
           url: "https://hksinternationalschool.in/",
           address: {
             "@type": "PostalAddress",

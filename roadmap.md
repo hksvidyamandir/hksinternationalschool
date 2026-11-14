@@ -1,4 +1,5 @@
 # Current tasks
+- [x] Update the school email, add both supplied phone numbers, and correct cropped logos; verify phone and desktop views.
 - [x] Optimize the entire homepage through 767px, including advantage panels and recognition logos.
 - [x] Enable mobile swiping in Moments in motion and verify arrows and fullscreen playback.
 - [x] Refine the hamburger menu, scrolling and focus behavior; verify phone and desktop layouts.

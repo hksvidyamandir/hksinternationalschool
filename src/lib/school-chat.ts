@@ -18,7 +18,7 @@ export function schoolChatReply(question: string): string {
     return "HKS Vidyamandir is a CBSE school offering Nursery to Grade 12: Early Years, Primary, Middle and Senior School. Explore Academics below for more information.";
   }
   if (/where|address|location|contact|phone|email/.test(text)) {
-    return `Find us at ${SITE.address}. Call ${SITE.phone} or email ${SITE.email}.`;
+    return `Find us at ${SITE.address}. Call ${SITE.phones.map((phone) => phone.label).join(", ")} or email ${SITE.email}.`;
   }
   if (/^(hi|hello|hey)\b/.test(text)) {
     return "Hello! What would you like to know about admissions, academics, residential life or visiting HKS Vidyamandir?";

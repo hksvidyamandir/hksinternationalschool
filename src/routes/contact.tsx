@@ -5,11 +5,12 @@ import { seo } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { PageHero, Section } from "@/components/site/blocks";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
+import type { ReactNode } from "react";
 
 export type VisitKind = "virtual" | "tour";
 
 export const Route = createFileRoute("/contact")({
-  head: () => seo("Contact Us - Visit Our Campus", "Contact HKS Vidyamandir, NH 75, Kenchattahalli. Call +91 82770 78474 or email hksinternationalschool417@gmail.com to book a campus tour.", "/contact"),
+  head: () => seo("Contact Us - Visit Our Campus", `Contact HKS Vidyamandir, NH 75, Kenchattahalli. Call ${SITE.phones.map((phone) => phone.label).join(", ")} or email ${SITE.email} to book a campus tour.`, "/contact"),
   validateSearch: (search: Record<string, unknown>): { visit?: VisitKind } => ({
     ...(search["visit"] === "virtual" || search["visit"] === "tour" ? { visit: search["visit"] } : {}),
   }),
@@ -20,8 +21,8 @@ const visitTitles: Record<VisitKind, string> = { virtual: "Schedule a virtual vi
 
 function Contact() {
   const { visit } = Route.useSearch();
-  const cards = [
-    { i: <Phone />, t: "Call us", v: SITE.phone, h: SITE.phoneHref },
+  const cards: { i: ReactNode; t: string; v: string; h?: string }[] = [
+    ...SITE.phones.map((phone, index) => ({ i: <Phone />, t: index === 0 ? "Call us" : `Call us - ${index + 1}`, v: phone.label, h: phone.href })),
     { i: <Mail />, t: "Email us", v: SITE.email, h: `mailto:${SITE.email}` },
     { i: <MapPin />, t: "Our location", v: SITE.address, h: SITE.mapsUrl },
     { i: <Clock />, t: "Office hours", v: SITE.hours },

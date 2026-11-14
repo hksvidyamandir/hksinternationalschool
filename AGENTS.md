@@ -9,7 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Site nav and contact details live in src/lib/site.ts; every route builds head() via src/lib/seo.ts — keeps menu, footer and SEO consistent.
+- Site nav and contact details live in src/lib/site.ts; render all call links from SITE.phones and use SITE.email in page metadata and school structured data so contacts stay consistent; every route builds head() via src/lib/seo.ts.
 - Scraped school photos are CDN asset pointers exposed through src/assets/site/index.ts — import `img` rather than raw files.
 - `img.logo` is the original stacked logo (favicon source); `img.logoFull` is a horizontal rearrangement of the same artwork pixels for header and footer.
 - Homepage presentation and interactive sections live in a dedicated browser-safe site component with scoped global styles, keeping the index route focused on page metadata.

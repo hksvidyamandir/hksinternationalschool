@@ -1647,7 +1647,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: 
   .loc-head p svg { margin-top: 3px; flex-shrink: 0; }
   .home-final .final-actions { grid-template-columns: minmax(0, 1fr); }
   .site-header-main { height: 72px; }
-  .site-header-main img { width: auto; max-width: 100%; height: 46px; object-fit: contain; }
+  .site-header-main img { width: auto; max-width: 100%; height: 56px; object-fit: contain; }
   .mobile-menu-toggle { border: 1px solid var(--border); border-radius: 8px; background: var(--muted); }
   .mobile-menu-toggle svg { width: 22px; height: 22px; }
   #mobile-navigation { position: absolute; inset: 72px 0 auto; height: calc(100dvh - 72px); max-height: none; padding-bottom: env(safe-area-inset-bottom); }

@@ -27,7 +27,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-muted text-foreground">
       <div className="container-site grid grid-cols-1 items-center gap-6 py-10 md:flex md:flex-wrap md:justify-between">
         <Link to="/" aria-label="HKS Vidyamandir home" className="min-w-0 md:min-w-auto">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-14 w-auto" width={449} height={165} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="block h-16 w-auto max-w-full object-contain" width={473} height={189} />
         </Link>
         <div className="flex shrink-0 gap-2">
           <a href={SITE.phoneHref} aria-label="Call the school" className={social}><Phone className="h-4 w-4" /></a>
@@ -55,7 +55,7 @@ export function SiteFooter() {
       </div>
       <div className="container-site flex flex-col gap-2 border-t border-border py-5 text-xs text-foreground/70 sm:flex-row sm:justify-between">
         <p>© {new Date().getFullYear()} HKS Vidyamandir. All rights reserved.</p>
-        <p className="grid min-w-0 gap-2 md:flex md:gap-3"><a href={SITE.phoneHref} className="hover:text-primary">{SITE.phone}</a><span className="hidden md:inline">|</span><a href={`mailto:${SITE.email}`} className="min-w-0 break-all md:break-normal hover:text-primary">{SITE.email}</a></p>
+        <p className="flex min-w-0 flex-wrap gap-x-4 gap-y-2">{SITE.phones.map((phone) => <a key={phone.href} href={phone.href} className="whitespace-nowrap hover:text-primary">{phone.label}</a>)}<a href={`mailto:${SITE.email}`} className="min-w-0 break-all hover:text-primary">{SITE.email}</a></p>
       </div>
       <div aria-label="Contact the school" className="fixed bottom-5 left-3 z-40 flex flex-col gap-3 md:left-5">
         <Button asChild variant="ghost" size="icon" className="h-12 w-12 rounded-full bg-navy text-navy-foreground shadow-soft hover:bg-navy/90 hover:text-navy-foreground md:h-14 md:w-14 [&_svg]:size-6">

@@ -4,8 +4,13 @@ export const SITE = {
   tagline: "Strengthening Your Wings of Success",
   phone: "+91 82770 78474",
   phoneHref: "tel:+918277078474",
+  phones: [
+    { label: "+91 82770 78474", href: "tel:+918277078474" },
+    { label: "+91 95130 01414", href: "tel:+919513001414" },
+    { label: "+91 95130 01818", href: "tel:+919513001818" },
+  ],
   whatsapp: "https://wa.me/918277078474",
-  email: "hksinternationalschool417@gmail.com",
+  email: "hksvidyamandir@gmail.com",
   address: "NH 75, Bengaluru - Mangaluru Highway, Kenchattahalli - 573 201, Karnataka",
   mapsUrl: "https://maps.app.goo.gl/EmG9n465WQdnDxa26",
   mapsEmbed:

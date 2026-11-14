@@ -49,9 +49,9 @@ export function SiteHeader() {
   return (
     <header ref={headerRef} className="site-header sticky top-0 z-50 bg-card/95 backdrop-blur border-b border-border">
       <div className="site-topbar hidden md:block bg-gold text-ink text-xs">
-        <div className="container-site flex h-9 items-center justify-between">
-          <div className="flex items-center gap-5">
-            <a href={SITE.phoneHref} className="flex items-center gap-1.5 hover:text-gold"><Phone className="h-3.5 w-3.5" />{SITE.phone}</a>
+        <div className="container-site flex min-h-9 flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {SITE.phones.map((phone) => <a key={phone.href} href={phone.href} className="flex items-center gap-1.5 hover:text-navy"><Phone className="h-3.5 w-3.5" />{phone.label}</a>)}
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-1.5 hover:text-gold"><Mail className="h-3.5 w-3.5" />{SITE.email}</a>
           </div>
           <div className="flex items-center font-bold">
@@ -68,7 +68,7 @@ export function SiteHeader() {
 
       <div className="site-header-main container-site grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 md:flex md:justify-between md:gap-6 lg:h-24">
         <Link to="/" aria-label="HKS Vidyamandir home" className="min-w-0 shrink-0 md:min-w-auto">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="h-11 sm:h-12 w-auto" width={449} height={165} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="block h-14 w-auto max-w-full object-contain sm:h-16" width={473} height={189} />
         </Link>
 
         <div className="hidden lg:flex flex-col items-end gap-1.5">
@@ -161,7 +161,7 @@ export function SiteHeader() {
                 <Link to="/contact" onClick={closeMenu} className="flex min-h-11 items-center">Contact</Link>
               </div>
               <div className="mt-2 border-t border-border pt-2">
-                <a href={SITE.phoneHref} className="flex min-h-11 items-center gap-2 text-sm text-navy"><Phone className="h-4 w-4 shrink-0" />{SITE.phone}</a>
+                {SITE.phones.map((phone) => <a key={phone.href} href={phone.href} className="flex min-h-11 items-center gap-2 text-sm text-navy"><Phone className="h-4 w-4 shrink-0" />{phone.label}</a>)}
                 <a href={`mailto:${SITE.email}`} className="grid min-h-11 grid-cols-[auto_minmax(0,1fr)] items-center gap-2 text-xs text-navy"><Mail className="h-4 w-4 shrink-0" /><span className="min-w-0 break-all">{SITE.email}</span></a>
               </div>
             </div>
