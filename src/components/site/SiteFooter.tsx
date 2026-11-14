@@ -27,7 +27,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-muted text-foreground">
       <div className="container-site grid grid-cols-1 items-center gap-6 py-10 md:flex md:flex-wrap md:justify-between">
         <Link to="/" aria-label="HKS Vidyamandir home" className="min-w-0 md:min-w-auto">
-          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="block h-16 w-auto max-w-full object-contain" width={473} height={189} />
+          <img src={img.logoFull} alt="HKS Vidyamandir logo" className="block h-16 w-auto max-w-full object-contain" width={480} height={190} />
         </Link>
         <div className="flex shrink-0 gap-2">
           <a href={SITE.phoneHref} aria-label="Call the school" className={social}><Phone className="h-4 w-4" /></a>
